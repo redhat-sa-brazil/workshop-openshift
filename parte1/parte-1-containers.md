@@ -34,7 +34,5 @@ Os **registros remotos são servidores, públicos ou privados, responsáveis por
 * [https://registry.access.redhat.com](https://registry.access.redhat.com)
 * [https://registry.fedoraproject.org](https://registry.fedoraproject.org)
 
-## Chega de papo, vamos ao que interessa... labs!
-
 
 
