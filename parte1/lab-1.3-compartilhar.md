@@ -88,7 +88,7 @@ Verifique a sua imagem nova no registro local:
 
 ### 1.3.2 - Publicar Imagens no Registry
 
-Para publicar uma imagem em um Registry, muitas das vezes é necessário autenticação. Para tal, usamos:
+Para publicar uma imagem em um registro remoto, muitas das vezes é necessário autenticação. Para tal, usamos:
 
 ```
 # docker login docker.io
