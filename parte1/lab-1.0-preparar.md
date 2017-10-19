@@ -75,6 +75,14 @@ DEVS="vdb"
 VG="docker"
 ```
 
+* Observar a saída do comando lsblk qual o block device utilizar para o segundo disco. Por exemplo, vdb, sdb... 
+
+Depois precisamos executar o utilitário para criar e configurar o storage do docker. Execute a linha de comando abaixo:
+
+```
+# docker-storage-setup
+```
+
 Para finalizar, configuramos o Systemd para habilitar e inicializar o runtime:
 
 ```
