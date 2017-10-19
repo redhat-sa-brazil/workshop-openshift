@@ -6,7 +6,7 @@ A tecnologia de container Linux é, na verdade, um conjunto de capacidades que p
 
 ![](/parte1/extras/virtualization-vs-containers.png)
 
-Ao contrário da tecnologia de virtualização que encapsula um sistema operacional completo em cima de um hardware virtual para usar como casulo para aplicações, a tecnologia de containers usa de funcionalidades nativas do kernel Linux para garantir um isolamento:
+Ao contrário da tecnologia de virtualização que encapsula um sistema operacional completo em cima de um hardware virtual para usar como casulo para aplicações, **containers usam de funcionalidades nativas do kernel Linux para garantir isolamento e contenção das aplicações**:
 
 * **Namespaces:** _Permite criar uma abstração de um recurso de sistema global particular e fazê-lo aparecer como uma instância separada para processos dentro de um namespace. Conseqüentemente, vários containers podem usar o mesmo recurso simultaneamente sem criar um conflito._
 
@@ -30,9 +30,9 @@ O **registro local é um espaço de armazenamento especial que reside no mesmo h
 
 Os **registros remotos são servidores, públicos ou privados, responsáveis por compartilhar imagens construidas por entidades e/ou usuários**. Estes registros podem permitir não só o acesso para download de imagens, mas também envio de imagens novas por usuários autenticados/autorizados. Dentre os mais famosos temos:
 
-* _https://hub.docker.com_
-* _https://registry.access.redhat.com_
-* _https://registry.fedoraproject.org_
+* [https://hub.docker.com](https://hub.docker.com)
+* [https://registry.access.redhat.com](https://registry.access.redhat.com)
+* [https://registry.fedoraproject.org](https://registry.fedoraproject.org)
 
 ## Chega de papo, vamos ao que interessa... labs!
 
