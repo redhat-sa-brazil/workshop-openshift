@@ -302,6 +302,10 @@ node('maven') {
 }
 ```
 
+Pela linha de comando, crie o build config que definimos no passo anterior:
+
+`oc create -f buildconfig.yaml`
+
 Agora no menu lateral esquerdo, selecione a opção `Builds` &gt; `Pipelines` e  
 selecione a opção `Start pipeline`
 
