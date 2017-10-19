@@ -12,7 +12,7 @@ Inspirados na cultura open-source, acreditamos que ao disponibilizar o material 
 
 ## Como usar?
 
-Entendemos que **não existe uma maneira certa ou errada de usar o conteúdo deste material.** Você poderia segui-lo como um roteiro independente, usando a sua máquina particular como ambiente de experimentações, ou você pode se reunir com colegas e compartilhar um ambiente previamente existe.
+Entendemos que **não existe uma maneira certa ou errada de usar o conteúdo deste material.** Você poderia segui-lo como um roteiro independente, usando a sua máquina particular como ambiente de experimentações, ou você pode se reunir com colegas e compartilhar um ambiente previamente existente.
 
 Nossa recomendação geral é:
 
