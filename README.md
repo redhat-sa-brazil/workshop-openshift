@@ -29,7 +29,7 @@ Nossa recomendação geral é:
 
 Esse material é dividido em 2 partes:
 
-* **Parte 1 - Containers:** _Material dedicado à discussão sobre a tecnologia de containers._
+* [**Parte 1 - Containers**](/parte1/parte-1-containers.html)**:** _Material dedicado à discussão sobre a tecnologia de containers._
 * **Parte 2 - OpenShift:** _Material dedicado à discussão sobre a solução de plataforma como serviço \(PaaS\) OpenShift._
 
 
