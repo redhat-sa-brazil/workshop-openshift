@@ -225,6 +225,7 @@ oc login https://console.ocp.rhbrlab.com:8443 -u <user>
 oc get pods 
 oc port-forward <pod id> 3306:3306
 ```
+
 ![](https://storage.googleapis.com/workshop-openshift/port-forward.png)
 
 Neste momento temos o MYSQL disponível "localmente", podemos conectar a ele com ferramentas gráficas ou como será demonstrado  
@@ -268,23 +269,22 @@ Crie o arquivo `buildconfig.yaml`
 kind: "BuildConfig"
 apiVersion: "v1"
 metadata:
-name: "workshop-pipeline"
-annotations:
+  name: "workshop-pipeline"
+  annotations:
     pipeline.alpha.openshift.io/uses: '[{"name": "workshop-php", "kind": "DeploymentConfig"}]'
 spec:
-source:
+  source:
     type: "Git"
     git:
-    uri: "https://github.com/<seu-usuario>/workshop-php.git"
-    ref: "master"
-strategy:
+      uri: "http://github.com/<seu-usuario>/workshop-php.git"
+  strategy:
     type: "JenkinsPipeline"
     jenkinsPipelineStrategy:
-    jenkinsfilePath: "pipeline/Jenkinsfile.groovy"
+      jenkinsfilePath: "pipeline/jenkins-pipeline.groovy"
 ```
 
 Vamos definir um pipeline simples, crie o arquivo  
-`Jenkinsfile.groovy`
+jenkins-pipeline.groovy
 
 ```
 node('maven') {
