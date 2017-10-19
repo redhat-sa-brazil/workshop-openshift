@@ -14,11 +14,6 @@ Aceitamos contribuições de todas as formas! Você pode fazer uso da funcionali
 
 Entendemos que não existe uma maneira certa ou errada de usar o conteúdo deste material. Você poderia segui-lo como um roteiro independente, usando a sua máquina particular como ambiente de experimentações, ou você pode se reunir com colegas e compartilhar um ambiente previamente existe.
 
-Esse material é dividido em 2 partes:
-
-* **Parte 1 - Containers:** _Material dedicado à discussão sobre a tecnologia de containers._
-* **Parte 2 - OpenShift:** _Material dedicado à discussão sobre a solução de plataforma como serviço \(PaaS\) OpenShift._
-
 Nossa recomendação geral é:
 
 * _Reserve entre **4-6 horas** para discussão dos assuntos e execução das atividades._
@@ -30,7 +25,12 @@ Nossa recomendação geral é:
     * _**40GB de disco livre**_
     * _**Ferramenta de virtualização instalada \(QEMU/KVM, VirtualBox, etc\)**_
 
+## Por onde começar?
 
+Esse material é dividido em 2 partes:
+
+* **Parte 1 - Containers:** _Material dedicado à discussão sobre a tecnologia de containers._
+* **Parte 2 - OpenShift:** _Material dedicado à discussão sobre a solução de plataforma como serviço \(PaaS\) OpenShift._
 
 
 
