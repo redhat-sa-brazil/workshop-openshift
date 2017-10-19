@@ -8,8 +8,8 @@
 
 Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoal/profissional, recomendamos o uso de uma ferramenta de virtualização. Dentre as diversas opções, **recomendamos o VirtualBox \(Windows/Mac\) ou o Virt-Manager/KVM \(Linux\):**
 
-* [https://www.virtualbox.org](https://www.virtualbox.org)
-* [https://virt-manager.org](https://virt-manager.org)
+* [**https://www.virtualbox.org**](https://www.virtualbox.org)
+* [**https://virt-manager.org**](https://virt-manager.org)
 
 ### 1.0.2 - Obter imagem de instalação
 
@@ -17,7 +17,7 @@ Nesse exercício vamos usar o **CentOS 7, uma distribuição gratuita e de livre
 
 Você pode obter a ISO de instalação no site oficial:
 
-[https://www.centos.org/download/](https://www.centos.org/download/)
+* [**https://www.centos.org/download/**](https://www.centos.org/download/)
 
 Ou **uma cópia com o instrutor** desse workshop!
 

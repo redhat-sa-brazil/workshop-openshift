@@ -30,9 +30,9 @@ O **registro local é um espaço de armazenamento especial que reside no mesmo h
 
 Os **registros remotos são servidores, públicos ou privados, responsáveis por compartilhar imagens construidas por entidades e/ou usuários**. Estes registros podem permitir não só o acesso para download de imagens, mas também envio de imagens novas por usuários autenticados/autorizados. Dentre os mais famosos temos:
 
-* [https://hub.docker.com](https://hub.docker.com)
-* [https://registry.access.redhat.com](https://registry.access.redhat.com)
-* [https://registry.fedoraproject.org](https://registry.fedoraproject.org)
+* [**https://hub.docker.com**](https://hub.docker.com)
+* [**https://registry.access.redhat.com**](https://registry.access.redhat.com)
+* [**https://registry.fedoraproject.org**](https://registry.fedoraproject.org)
 
 
 

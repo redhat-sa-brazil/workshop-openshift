@@ -7,4 +7,6 @@
   * [Lab 1.2 - Operar](parte1/lab-1.2-operar.md)
   * [Lab 1.3 - Compartilhar](parte1/lab-1.3-compartilhar.md)
 * [Parte 2 - OpenShift](parte2/parte-2-openshift.md)
+  * [Lab 2.0 - Preparar](parte2/lab-2.0-preparar.md)
+  * [Lab 2.x - Tudo](parte2/lab-2.x-tudo.md)
 
