@@ -1,6 +1,6 @@
 # Lab 1.0 - Objetivos
 
-* Preparar o ambiente local para os próximos exercícios
+* Preparar o ambiente local para os próximos exercícios.
 
 # Tarefas
 
@@ -13,13 +13,11 @@ Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoa
 
 ### 1.0.2 - Obter imagem de instalação
 
-Nesse exercício vamos usar o **CentOS 7, uma distribuição gratuita e de livre acesso**, apoiada pela Red Hat.
+Nos exercícios desse material vamos usar o **Red Hat Enterprise Linux Server**, mas também podemos usar qualquer outra distribuição derivada, como CentOS ou Fedora.
 
-Você pode obter a ISO de instalação no site oficial:
+Para obter uma subscrição gratuita para **uso em desenvolvimento**, basta se inscrever gratuitamente no programa ** Red Hat Developers**. Mais informações em:
 
-* [**https://www.centos.org/download/**](https://www.centos.org/download/)
-
-Ou **uma cópia com o instrutor** desse workshop!
+* [**https://developers.redhat.com/products/rhel/download/**](https://developers.redhat.com/products/rhel/download/)
 
 ### 1.0.3 - Preparar e instalar a máquina virtual
 
