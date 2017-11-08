@@ -1,7 +1,7 @@
 # Summary
 
 * [Introdução](README.md)
-* [Parte 1 - Containers](parte1/parte-1-containers.md)
+* [Parte 1 - Linux Containers](parte1/parte-1-linux-containers.md)
   * [Lab 1.0 - Preparar](parte1/lab-1.0-preparar.md)
   * [Lab 1.1 - Executar](parte1/lab-1.1-executar.md)
   * [Lab 1.2 - Operar](parte1/lab-1.2-operar.md)
