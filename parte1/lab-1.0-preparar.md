@@ -19,16 +19,18 @@ Para obter uma subscrição gratuita para **uso em desenvolvimento**, basta se i
 
 * [**https://developers.redhat.com/products/rhel/download/**](https://developers.redhat.com/products/rhel/download/)
 
-### 1.0.3 - Preparar e instalar a máquina virtual
+### 1.0.3 - Preparar a máquina virtual (VM)
 
-Após a instalação do virtualizador e a cópia do ISO do CentOS 7, vamos criar uma máquina virtual nas seguintes características:
+Após a instalação do virtualizador e a cópia do ISO do sistema operacional, vamos criar uma máquina virtual nas seguintes características:
 
 * **CPU**: 2 vCPU
 * **RAM**: 2G
 * **HDD**: 2x 20GB
-* **REDE**: NAT \(Padrão\)
-* **SO**: Linux 64bits \(CentOS/RHEL\)
-* **BOOT**: ISO do CentOS 7
+* **REDE**: Bridged Adapter \(escolher a NIC correta\)
+* **SO**: Red Hat 64bits
+* **BOOT**: ISO \(apontar pro caminho correto\)
+
+### 1.0.4 - Instalação do Sistema Operacional (SO)
 
 Alguns passos importantes para a instalação:
 
@@ -44,7 +46,7 @@ Alguns passos importantes para a instalação:
 
 ![](/parte1/extras/centos-install-networking.png)
 
-### 1.0.4 - Instalar os pré-requisitos para hospedar containers
+### 1.0.5 - Instalar os pré-requisitos para hospedar containers
 
 Antes de começarmos a instalação do ambiente, precisamos garantir que todos os pacotes do sistema estejam atualizados:
 
@@ -65,15 +67,13 @@ Antes de inicializarmos o runtime de containers, precisamos preparar o segundo d
 # lsblk
 ```
 
-Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o seguinte conteúdo:
+Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o seguinte conteúdo (adaptando o `vdb` para o dispositivo em questão):
 
 ```
 STORAGE_DRIVER="devicemapper"
 DEVS="vdb"
 VG="docker"
 ```
-
-* Observar a saída do comando lsblk qual o block device utilizar para o segundo disco. Por exemplo, vdb, sdb... 
 
 Depois precisamos executar o utilitário para criar e configurar o storage do docker. Execute a linha de comando abaixo:
 
