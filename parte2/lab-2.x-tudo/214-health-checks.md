@@ -12,6 +12,8 @@ O readiness define quando que o container está pronto para receber requisiçõe
 
 #### Configuração no Openshift
 
+![](https://storage.googleapis.com/workshop-openshift/ocp-health-checks.gif)
+
 1. Selecione no menu vertical esquerdo a opção **Deployments &gt; openshift-workshop**
 2. Selecione **Actions &gt; Edit Health Checks** no canto superior direito da GUI.
 3. Selecione Add Readiness Probe
