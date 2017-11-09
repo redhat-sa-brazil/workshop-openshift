@@ -15,7 +15,7 @@
     * [2.1.4 Health Checks](parte2/lab-2.x-tudo/214-health-checks.md)
     * [2.1.5 Source to Image \(S2I\)](parte2/lab-2.x-tudo/215-source-to-image-s2i.md)
     * [2.1.6 Integração Contínua \(Webhook\)](parte2/lab-2.x-tudo/216-integracao-continua-webhook.md)
-    * [2.1.7 Log Aggregation](parte2/lab-2.x-tudo/217-log-aggregation.md)
+    * [2.1.7 Agregação de Logs](parte2/lab-2.x-tudo/217-log-aggregation.md)
     * [2.1.8 Utilizando banco de dados MYSQL](parte2/lab-2.x-tudo/218-utilizando-banco-de-dados-mysql.md)
     * [2.1.9 Pipeline](parte2/lab-2.x-tudo/219-pipeline.md)
     * 2.1.10 Auto Scale \(TODO\)
