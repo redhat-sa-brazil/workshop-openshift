@@ -4,6 +4,7 @@
 
 # Tarefas
 
+## Criando uma VM do zero
 ### 1.0.1 - Instalar um virtualizador
 
 Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoal/profissional, recomendamos o uso de uma ferramenta de virtualização. Dentre as diversas opções, **recomendamos o VirtualBox \(Windows/Mac\) ou o Virt-Manager/KVM \(Linux\):**
@@ -46,7 +47,82 @@ Alguns passos importantes para a instalação:
 
 ![](/parte1/extras/centos-install-networking.png)
 
-### 1.0.5 - Instalar os pré-requisitos para hospedar containers
+## Usando um VM pronta através do Vagrant
+### 1.0.5 Obtendo uma assinatura __Red Hat Developer__
+
+Acesse o endereço developers.redhat.com
+
+![](/parte1/extras/rhdev-portal-registernewuser.png)
+
+realize o Registro de uma nova Conta
+
+![](/parte1/extras/rhdev-new-account.png)
+
+Após criar sua conta, confirme através do link enviado para o seu email.
+
+Verifique sua subscrição acessando: https://access.redhat.com/management
+Realize o login com sua conta recém criada!
+Clique em Subscriptions. Deve haver uma subscrição `Red Hat Enterprise Linux Developer Suite`
+
+![](/parte1/extras/subscription-active.png)
+
+Ainda nessa página
+
+![](/parte1/extras/myactivesubs.png)
+
+Copie o PooldID da sua subscrição!
+
+![](/parte1/extras/subs-poolid.png)
+
+### 1.0.6 Importando a VM através do Vagrant
+Realize o download do Vagrant para a sua plataforma (Win, Linux ou Mac) acessando https://www.vagrantup.com/downloads.html
+
+Após o Vagrant devidamente instalado:
+ * instale o seguinte plugin
+
+ ```
+ vagrant plugin install vagrant-registration
+ vagrant plugin list
+ ```
+
+ * copie diretório `vagrant-workshop` fornecido pelo instrutor para sua máquina local.
+
+Na console, acesse o diretório `vagrant-workshop` Execute o seguinte comando em uma console:
+
+```
+vagrant add rhel74-ocp-workshop ./rhel74-ocp-workshop.box
+vagrant box list
+```
+
+Antes de subir a vm com Vagrant, abra o arquivo `Vagrantfile` e altere o seguinte trecho no final:
+
+```
+if Vagrant.has_plugin?('vagrant-registration')
+  config.registration.username = 'seu login no developers.redhat.com'
+  #config.registration.password = '<access.redhat.com password>'
+  config.registration.pools = [ '8a85f98a5ffdXXXXXX15fff7a77e74ca1' ] # PoolID da sua subscrição!!!
+end
+```
+
+Salve o arquivo.
+
+### 1.0.6 Iniciando a VM usando o Vagrant
+inicie a VM com o seguinte comando:
+
+```
+vagrant up
+```
+
+Após alguns minutos a VM deve subir (obseve a saída no terminal)
+
+Acesse a console da VM via `ssh`
+
+```
+vagrant ssh
+sudo -i
+```
+
+### 1.0.7 - Instalar os pré-requisitos para hospedar containers
 
 Antes de começarmos a instalação do ambiente, precisamos garantir que todos os pacotes do sistema estejam atualizados:
 
@@ -67,7 +143,7 @@ Antes de inicializarmos o runtime de containers, precisamos preparar o segundo d
 # lsblk
 ```
 
-Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o seguinte conteúdo (adaptando o `vdb` para o dispositivo em questão):
+Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o seguinte conteúdo (adaptando o `vdb` ou `sdb` para o dispositivo em questão):
 
 ```
 STORAGE_DRIVER="devicemapper"
@@ -93,6 +169,3 @@ Caso queira confirmar que tudo está certo, execute:
 ```
 # docker run hello-world
 ```
-
-
-
