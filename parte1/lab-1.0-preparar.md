@@ -50,7 +50,7 @@ Alguns passos importantes para a instalação:
 ## Usando um VM pronta através do Vagrant
 ### 1.0.5 Obtendo uma assinatura __Red Hat Developer__
 
-Acesse o endereço developers.redhat.com
+Acesse o endereço https://developers.redhat.com
 
 ![](/parte1/extras/rhdev-portal-registernewuser.png)
 
@@ -90,7 +90,7 @@ Após o Vagrant devidamente instalado:
 Na console, acesse o diretório `vagrant-workshop` Execute o seguinte comando em uma console:
 
 ```
-vagrant add rhel74-ocp-workshop ./rhel74-ocp-workshop.box
+vagrant box add rhel74-ocp-workshop ./rhel74-ocp-workshop.box
 vagrant box list
 ```
 
@@ -130,6 +130,24 @@ Antes de começarmos a instalação do ambiente, precisamos garantir que todos o
 # yum update -y
 # systemctl reboot
 ```
+
+> Caso tenha algum problema com o auto-registro através do Vagrant, realize o registro manualmente da seguinte forma.
+>
+
+ ```
+ subscription-manager register --username=rhnuser --password=rhnpasswd
+ subscription-manager list --available    Find valid RHEL pool ID
+ subscription-manager attach --pool=pool_id
+ ```
+
+> 
+> Adicione os seguintes repositórios para instalar o `docker`
+>
+
+ ```
+ subscription-manager repos --enable=rhel-7-server-extras-rpms
+ subscription-manager repos --enable=rhel-7-server-optional-rpms
+ ```
 
 Depois do servidor reiniciar, precisamos instalar os pacotes mínimos necessários:
 
