@@ -58,7 +58,7 @@ FROM fedora:26
 
 LABEL maintainer="dvercill@redhat.com"
 
-LABEL version="1.0" 
+LABEL version="1.0"
 
 RUN mkdir /var/www
 
@@ -77,7 +77,7 @@ Para iniciarmos o processo de construção da nova imagem, usa-se:
 
 ```
 # cd ~/workshop-openshift/lab1.3
-# docker image build -t workshop-openshift .
+# docker build -t workshop-openshift .
 ```
 
 Verifique a sua imagem nova no registro local:
@@ -97,14 +97,11 @@ Para publicar uma imagem em um registro remoto, muitas das vezes é necessário 
 Depois de autenticados, precisamos colocar um tag na nossa imagem usando a convenção _registry/username/image:tag_:
 
 ```
-# docker image tag nova-imagem docker.io/<username>/workshop-openshift
+# docker tag workshop-openshift docker.io/<username>/workshop-openshift
 ```
 
 E depois já podemos enviar nossa imagem:
 
 ```
-# docker image push docker.io/<username>/workshop-openshift
+# docker push docker.io/<username>/workshop-openshift
 ```
-
-
-
