@@ -21,7 +21,7 @@
     * [2.1.10 Limite de Recursos](2110-quota-e-limits.md)
     * [2.1.11 Auto Scale](parte2/lab-2.x-tudo/2110-auto-scale-todo.md)
     * [2.1.12 Rollback](parte2/lab-2.x-tudo/2111-rollback-todo.md)
-    * [2.1.13 Idle \(TODO\)](parte2/lab-2.x-tudo/2112-idle.md)
+    * [2.1.13 Idle](parte2/lab-2.x-tudo/2112-idle.md)
     * 2.1.14 Image Stream \(TODO\)
     * 2.1.15 ConfigMap e Secrets \(TODO\)
   * [Lab 2.2 - Diferentes estratégias de deployment \(TODO\)](parte2/lab-22-diferentes-tipos-de-deployment.md)
