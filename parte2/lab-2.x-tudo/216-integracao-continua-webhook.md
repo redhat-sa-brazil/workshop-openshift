@@ -1,6 +1,6 @@
 ### Integração Continua
 
-Para que sempre que ocorra um commit o Openshift faça de forma automátia o processo de build e deploy, iremos configurar  
+Para que sempre que ocorra um commit o Openshift faça de forma automática o processo de build e deploy, iremos configurar  
 um webhook, dessa forma o servidor git avisará o Openshift sempre que um commit novo ocorrer.
 
 #### Configuração webhook
