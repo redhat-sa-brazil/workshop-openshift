@@ -6,7 +6,9 @@ Neste laboratório vamos testar esse recurso.
 
 #### Scale up
 
-Selecione o a seta para cima na lateral do pod, escalando para 2 pods no total.
+Selecione a seta para cima na lateral do pod, escalando para 2 pods no total.
+
+![](/assets/scale-out.gif)
 
 Enquanto o círculo estiver na cor cinza, indica que está sendo provisionado.
 
@@ -27,5 +29,11 @@ Para testar o comportamento vamos deletar um POD em execução, o intuito é sim
 
 > Este comportamento evita aquele caso clássico de precisar ligar para alguém de operações para reiniciar a aplicação em um caso de falha
 
+Também podemos deletar um POD usando a linha de comando:
 
+```
+oc delete po <nome do pod>
+```
+
+![](/assets/delete-pod.gif)
 
