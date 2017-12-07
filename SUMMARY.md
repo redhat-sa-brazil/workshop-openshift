@@ -18,7 +18,7 @@
     * [2.1.7 Agregação de Logs](parte2/lab-2.x-tudo/217-log-aggregation.md)
     * [2.1.8 Utilizando banco de dados MYSQL](parte2/lab-2.x-tudo/218-utilizando-banco-de-dados-mysql.md)
     * [2.1.9 Pipeline](parte2/lab-2.x-tudo/219-pipeline.md)
-    * [2.1.10 Quota e Limits](2110-quota-e-limits.md)
+    * [2.1.10 Limite de Recursos](2110-quota-e-limits.md)
     * [2.1.10 Auto Scale](parte2/lab-2.x-tudo/2110-auto-scale-todo.md)
     * [2.1.11 Rollback \(TODO\)](parte2/lab-2.x-tudo/2111-rollback-todo.md)
     * [2.1.12 Idle \(TODO\)](parte2/lab-2.x-tudo/2112-idle.md)
