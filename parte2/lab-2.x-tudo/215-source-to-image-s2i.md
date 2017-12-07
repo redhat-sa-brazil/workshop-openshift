@@ -10,7 +10,7 @@ Crie um repositório com o nome `workshop-php`
 Faça o clone deste novo repositório e crie a página inicial `index.php`
 
 ```
-git clone https://github.com/<seu-usuario/workshop-php.git
+git clone https://github.com/<seu-usuario/workshop-php.git && cd workshop-php 
 ```
 
 Crie o arquivo `index.php` com o seguinte conteúdo
