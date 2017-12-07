@@ -84,6 +84,14 @@ O Openshift não tem como saber que nosso código foi alterado pois não configu
 
 ![](/assets/new-build.gif)
 
+Assim que o build terminar, podemos verificar se aplicação está na sua nova versão. Para isso, basta abrir o contexto `/liveness.php` e `/readiness.php`
+
+Caso esteja tudo certo, você verá um **Ok** na tela.
+
+![](/assets/live-read.gif)
+
+#### Configurando o liveness e readiness no Openshift
+
 Agora vamos informar o Openshift para monitorar esses dois contextos. Isso pode ser feito pela linha de comando.
 
 Para o `readiness`:
@@ -92,11 +100,15 @@ Para o `readiness`:
 oc set probe dc/workshop-php --readiness --get-url=http://:8080/readiness.php
 ```
 
+![](/assets/readiness-cmd.gif)
+
 Para o `liveness`:
 
 ```
 oc set probe dc/workshop-php --initial-delay-seconds=20 --liveness --get-url=http://:8080/liveness.php
 ```
+
+![](/assets/liveness-cmd.gif)
 
 Perceba que adicionamos um delay inicial para o health check do liveness. Fizemos isso para evitar que o Openshift fique matando o container enquanto o mesmo estiver "subindo".
 
@@ -106,9 +118,29 @@ O Openshift informa para nós por meio da console web que a aplicação não est
 
 O container ficar azul claro rapidamente e logo em seguida volta a ficar azul escuro. Isso quer dizer que por um breve período de tempo, ele não passou no readiness probe.
 
+#### Testando liveness e o readiness da nossa aplicação
+
+Para testarmos o readiness, vamos executar um comando que cria um arquivo na pasta tmp.
+
+```
+oc exec <nome do pod> touch /tmp/readiness
+```
+
+![](/assets/readiness-file.gif)Na console, agora o container ficará azul claro assim que o Openshift perceber que o readiness probe falhou.
+
+O mesmo passo deve ser executado para o liveness.
+
+```
+oc exec <nome do pod> touch /tmp/liveness
+```
+
+![](/assets/liveness-cmd2.gif)
+
 ##### Debug do container
 
 O Openshift permite que você faça um debug do seu container caso ele não passe no teste de readiness. Para testar essa funcionalidade, basta clicar no container que está com problema e logo em seguida clicar em "Debug in Terminal"
+
+![](/assets/debug.gif)
 
 ##### Mais informações
 
