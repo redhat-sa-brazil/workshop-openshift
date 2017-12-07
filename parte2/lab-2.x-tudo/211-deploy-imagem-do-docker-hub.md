@@ -16,6 +16,10 @@ Caso não tenha nenhuma você pode usar essa de exemplo:
 
 > **OBS: Por questões de segurança a imagem não pode ser executada utilizando o usuário root.**
 
+Se a imagem escolhida rodar como root, o Openshift te avisa na console que ela pode eventualmente não executar conforme o esperado.
+
+![](/assets/img-root.gif)
+
 Caso queira usar a linha de comando, execute:
 
 `oc new-app <nome do seu usuario>/workshop-openshift -n <nome do seu projeto>`
