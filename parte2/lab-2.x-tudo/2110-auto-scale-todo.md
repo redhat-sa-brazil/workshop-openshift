@@ -8,7 +8,25 @@ Vamos preparar nossa aplicação para o autoscale.
 
 O Openshift suporte autoscale por CPU ou memória. Na console, temos somente a opção por CPU e portanto usaremos ela nessa etapa.
 
+1. Selecione no menu vertical esquerdo a opção **Applications** -&gt; **Deployments**
+2. Na tabela a seguir, clique em **workshop-php**
+3. No menu lateral superior, clique em **Actions** -&gt; **Add Autoscaler**
 
+![](/assets/autoscale.gif)
 
+#### Estressando a aplicação
 
+Vamos gerar uma carga agora na aplicação para ver como ela se comporta. Utilizaremo o [ab \(Apache Benchmark\)](https://httpd.apache.org/docs/2.4/programs/ab.html).
+
+```
+ab -n 10000 -c 50 <url da aplicação>
+```
+
+Para ver a url da sua aplicação, basta executar o comando abaixo ou copiar da Web Console
+
+```
+oc get route -n <nome do projeto>
+```
+
+O Autoscale pode demorar um pouco para acontecer. Openshift demora aproximadamente 1 minuto para coletar as métricas necessárias para tomar uma decisão de escalar a aplicação.
 
