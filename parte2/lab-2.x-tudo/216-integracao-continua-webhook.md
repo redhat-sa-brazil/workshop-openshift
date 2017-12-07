@@ -22,12 +22,12 @@ No _Github.com_:
 
 #### Altere a aplicação
 
-Para fazermos uma alteração na aplicação, vamos inserir a versão na página inicial da aplicação.
+Para fazermos uma alteração na aplicação, vamos alterar a versão na página inicial da aplicação.
 
-No `index.php` insira uma linha com a versão da aplicação.
+No `index.php` altere a linha com a versão da aplicação para versão 2.0.
 
 ```
-echo "<h4>Versão 2.0</h4> ";
+echo "<h1>Openshift Workshop v2.0</h1>";
 ```
 
 #### Acompanhe o rolling deployment
