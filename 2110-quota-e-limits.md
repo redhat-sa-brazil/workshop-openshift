@@ -6,11 +6,11 @@ O Openshift permite que você limite a quantidade de recursos que serã disponib
 
 ##### **Request**
 
-**`Request`** seria o equivalente ao valor mínimo de um determinado recurso. Esse campo é muito importante para o scheduler do Openshift. Toda vez que uma nova aplicação é criada, o Openshift escolhe automaticamente em qual nó do cluster ela irá rodar. Ele faz isso utilizando o valor do request como base para descobrir qual node tem o valor do request disponível.
+`Request` seria o equivalente ao valor mínimo de um determinado recurso. Esse campo é muito importante para o scheduler do Openshift. Toda vez que uma nova aplicação é criada, o Openshift escolhe automaticamente em qual nó do cluster ela irá rodar. Ele faz isso utilizando o valor do request como base para descobrir qual node tem o valor do request disponível.
 
 ##### **Limit**
 
-**`Limit` **é o valor máximo de um determinado recurso que o Openshift permitirá ser utilizado. Esse campo também é importante pois evita que sua aplicação possa consumir mais recurso do que foi alocado. Situações como _Out of Memory_ acabam sendo minimizadas quando este valor está configurado corretamente.
+`Limit`** **é o valor máximo de um determinado recurso que o Openshift permitirá ser utilizado. Esse campo também é importante pois evita que sua aplicação possa consumir mais recurso do que foi alocado. Situações como _Out of Memory_ acabam sendo minimizadas quando este valor está configurado corretamente.
 
 #### QoS \(Quality of Service\) - TODO
 
@@ -58,6 +58,20 @@ while :; do _+=( $((++__)) ); done
 ```
 
 Use o comando acima com cuidado uma vez que ele pode travar o sistema operacional se utilizado em ambientes sem restrições de recurso.
+
+Para executar esse comando dentro do container, vamos primeiro acessar nossa aplicação remotamente com o comando abaixo:
+
+```
+oc rsh <nome do pod>
+```
+
+#### ![](/assets/quota.gif)
+
+#### Acompanhando o consumo de recursos
+
+Podemos acompanhar o uso de recursos da aplicação pela Web Console.
+
+
 
 
 
