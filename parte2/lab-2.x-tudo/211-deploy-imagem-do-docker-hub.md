@@ -4,6 +4,12 @@
 
 #### Escolha a imagem
 
+Você pode usar a imagem criada durante o lab de introdução ao Docker. Ela ficou salva no seguinte formato
+
+```
+docker.io/<usuario>/workshop-openshift
+```
+
 Caso não tenha nenhuma você pode usar essa de exemplo:
 
 [https://hub.docker.com/r/davivcgarcia/workshop-openshift/](https://hub.docker.com/r/davivcgarcia/workshop-openshift/)
