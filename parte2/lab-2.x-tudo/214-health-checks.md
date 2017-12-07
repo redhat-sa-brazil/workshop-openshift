@@ -46,7 +46,11 @@ O Openshift informa para nós por meio da console web que a aplicação não est
 
 ![](/assets/readiness.gif)
 
-Perceba que a container ficar azul claro rapidamente e logo em seguida volta a ficar azul escurot. Isso quer dizer que por um breve período de tempo, ele não passou no readiness probe.
+Perceba que a container ficar azul claro rapidamente e logo em seguida volta a ficar azul escuro. Isso quer dizer que por um breve período de tempo, ele não passou no readiness probe.
+
+##### Debug do container
+
+O Openshift permite que você faça um debug do seu container caso ele não passe no teste de readiness. Para testar essa funcionalidade, basta clicar no container que está com problema e logo em seguida clicar em "Debug in Terminal"
 
 ##### Mais informações
 
