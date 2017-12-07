@@ -10,7 +10,7 @@ Crie um repositório com o nome `workshop-php`
 Faça o clone deste novo repositório e crie a página inicial `index.php`
 
 ```
-git clone https://github.com/<seu-usuario/workshop-php.git && cd workshop-php 
+git clone https://github.com/<seu-usuario/workshop-php.git && cd workshop-php
 ```
 
 Crie o arquivo `index.php` com o seguinte conteúdo
@@ -47,6 +47,14 @@ Agora que já temos uma aplicação, podemos prosseguir.
 Acesse a url gerada e verifique a aplicação em funcionamento. O resultado deve ser algo similar a isso:
 
 ![](https://storage.googleapis.com/workshop-openshift/s2i-deploy-final.png)
+
+Você também pode usar a linha de comando para fazer o S2I.
+
+```
+oc new-app https://github.com/<seu-usuario>/workshop.php.git -n <nome do seu projeto>
+```
+
+Nesse caso, o Openshfit irá tentar adivinhar qual a linguagem que você utilizou na sua aplicação.
 
 #### Escalar para 4 PODs
 
