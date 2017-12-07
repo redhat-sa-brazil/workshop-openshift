@@ -4,7 +4,7 @@ O Openshift permite monitorar e realizar algumas ações assim que uma imagem é
 
 Todo esse poder de notificação, só existe graças a um componente chamado Image Stream. Um Image Stream é um repositório virtual que contém as informações das suas imagens.
 
-Nessa demo iremos mostrar criar uma imagem base baseado no Httpd e, baseado nela, iremos criar duas aplicações. Logo em seguida simularemos uma atualização da imagem base, o que acarretará na construção \(build\) e atualização das duas aplicações que dependem dela.
+Nessa demo iremos criar uma imagem base baseado no Httpd e, baseado nela, iremos criar duas aplicações. Logo em seguida simularemos uma atualização da imagem base, o que acarretará na construção \(build\) e atualização das duas aplicações que dependem dela.
 
 #### Preparando o ambiente
 
