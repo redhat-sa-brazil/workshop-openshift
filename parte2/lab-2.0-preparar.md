@@ -27,5 +27,11 @@ Caso você queira instalar o cliente do OpenShift na sua máquina real, ao invé
 
 * [**https://www.openshift.org/download.html**](https://www.openshift.org/download.html)
 
+### 2.0.3 - Criar conta no GitHub
 
+Caso o instrutor esteja usando um ambiente compartilhado do Openshift no Google Cloud, crie uma conta no GitHub para poder executar os passos necessários no exercícios.
+
+Para criar sua conta, basta acessar:
+
+[https://github.com/join](https://github.com/join)
 
