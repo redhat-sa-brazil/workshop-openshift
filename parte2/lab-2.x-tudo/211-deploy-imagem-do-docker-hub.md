@@ -16,9 +16,11 @@ Caso não tenha nenhuma você pode usar essa de exemplo:
 
 > **OBS: Por questões de segurança a imagem não pode ser executada utilizando o usuário root.**
 
-Command line
+Caso queira usar a linha de comando, execute:
 
-`oc new-app davivcgarcia/workshop-openshift`
+`oc new-app <nome do seu usuario>/workshop-openshift -n <nome do seu projeto>`
+
+![](/assets/Peek 2017-12-07 09-29.gif)
 
 #### Crie a rota para expor a aplicação externamente
 
@@ -27,6 +29,8 @@ Na interface web selecione a opção _**create route.**_
 Command line
 
 `oc expose svc workshop-openshift`
+
+![](/assets/svc.gif)
 
 #### Explorando a GUI do POD
 
