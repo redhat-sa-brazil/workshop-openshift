@@ -26,5 +26,7 @@ Agora já podemos executar o template
 oc new-app --template=base-image-example --param=GIT_URL=https://github.com/luszczynski/openshift-image-stream-example.git -n myproject
 ```
 
+#### Atualizando a base image \(TODO\)
+
 
 
