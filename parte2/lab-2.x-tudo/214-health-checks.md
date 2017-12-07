@@ -32,21 +32,79 @@ O readiness também pode ser verificado de 3 possíveis formas:
 * Executando alguns dos verbos HTTP \(GET, POST, PUT, DELETE, etc\) em um contexto da aplicação
 * Executando um comando ou script dentro do container
 
-No nosso caso, vamos configurar o readiness para verificar se o contexto raiz da aplicação está respondendo conforme esperado.
+#### Preparando a aplicação
 
-Podemos fazer isso pela linha de comando também:
+Para testarmos o liveness e o readiness vamos criar dois novos contextos na nossa aplicação. Para isso, crie os seguinte arquivos na raiz do seu repositório git:
+
+`liveness.php`
 
 ```
-oc set probe dc/workshop-openshift --readiness --get-url=http://:8080/
+<?php
+$filename = '/tmp/liveness';
+
+if (file_exists($filename)) {
+    header("HTTP/1.1 500 Internal Server Error");
+} else {
+    echo "Ok";
+}
+?>
 ```
 
-Dessa forma, o Openshift irá tentar acessar a url raiz da aplicação e caso ela não esteja acessível, o balanceamento de carga não irá adicoinar esse container em sua lista de aplicações balanceadas.
+e o`readiness.php`
+
+```
+<?php
+$filename = '/tmp/readiness';
+
+if (file_exists($filename)) {
+    header("HTTP/1.1 500 Internal Server Error");
+} else {
+    echo "Ok";
+}
+?>
+```
+
+Os códigos dos dois probes verificam se existe um arquivo no `/tmp` dentro do container. No caso do `liveness.php`ele verifica se existe um arquivo chamado `/tmp/liveness`. Caso exista, ele retorna status 500. O mesmo procedimento é executado também no `readiness.php com a diferença que ele busca o arquivo /tmp/readiness.`
+
+Vamos atualizar nosso repositório
+
+```
+git add .
+git commit -m "health check adicionado"
+git push
+```
+
+#### Atualizando nosso container
+
+O Openshift não tem como saber que nosso código foi alterado pois não configuramos os `webhooks`. Isso será feito na próxima lição. Enquanto isso, vamos criar um novo build da nossa aplicação de maneira manual.
+
+1. Selecione no menu vertical esquerdo a opção **Builds** -&gt; **Builds**
+2. Clique no **workshop-php **na tabela apresentada
+3. No menu superior direito, clique em **Start Build**
+
+![](/assets/new-build.gif)
+
+Agora vamos informar o Openshift para monitorar esses dois contextos. Isso pode ser feito pela linha de comando.
+
+Para o `readiness`:
+
+```
+oc set probe dc/workshop-php --readiness --get-url=http://:8080/readiness.php
+```
+
+Para o `liveness`:
+
+```
+oc set probe dc/workshop-php --initial-delay-seconds=20 --liveness --get-url=http://:8080/liveness.php
+```
+
+Perceba que adicionamos um delay inicial para o health check do liveness. Fizemos isso para evitar que o Openshift fique matando o container enquanto o mesmo estiver "subindo".
 
 O Openshift informa para nós por meio da console web que a aplicação não está pronta para receber requisição por meio da cor azul clara. Se o circulo ficar azul claro, quer dizer que o seu POD não passou no teste de readiness.
 
 ![](/assets/readiness.gif)
 
-Perceba que a container ficar azul claro rapidamente e logo em seguida volta a ficar azul escuro. Isso quer dizer que por um breve período de tempo, ele não passou no readiness probe.
+O container ficar azul claro rapidamente e logo em seguida volta a ficar azul escuro. Isso quer dizer que por um breve período de tempo, ele não passou no readiness probe.
 
 ##### Debug do container
 
