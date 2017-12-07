@@ -14,7 +14,7 @@ Ao contrário da tecnologia de virtualização que encapsula um sistema operacio
 
 * **SELinux:** _Fornece uma separação segura, pois impede que os processos raiz dentro do container interfiram com outros processos globais._
 
-Apesar de ser uma tecnologia antiga, os containers ganharam mais popularidade hoje em dia principalmente pela sua **portabilidade**. Soluções como [Docker](https://www.docker.com/) ficaram realmente atrativas quando permitiram que um container pudesse ser compartilhado entre infraestruturas heterogêneas. Isso foi possível graças a criação do conceito de imagem, que será nosso próximo tópico nesse guia. 
+Apesar de ser uma tecnologia antiga, os containers ganharam mais popularidade hoje em dia principalmente pela sua **portabilidade**. Soluções como [Docker](https://www.docker.com/) ficaram realmente atrativas quando permitiram que um container pudesse ser compartilhado entre infraestruturas heterogêneas. Isso foi possível graças a criação do conceito de imagem, que será nosso próximo tópico nesse guia.
 
 Apesar da grande quantidade de informações que dizem ser possível a portabilidade de containers entre diferentes sistemas operacionais, ela não é sempre obtida na prática. Existem situações que podem não funcionar conforme esperado quando executamos, por exemplo, um container com Ubuntu em um servidor hospedeiro rodando CentOS. Além disso, precisamos garantir que a [mesma versão do Docker esteja rodando nos servidores](https://www.infoworld.com/article/3223073/containers/what-does-container-portability-really-mean.html) e até mesmo o tempo de vida da imagem pode influenciar nesse equação. Vale sempre lembrar que, [container é linux](https://www.redhat.com/en/blog/containers-are-linux) e sua execução depende das bibliotecas e principalmente do kernel do host.
 
@@ -23,7 +23,7 @@ Além do Docker, existem também outras soluções de containers no mercado:
 * [RKT](https://coreos.com/rkt/)
 * [LXD](https://www.ubuntu.com/containers/lxd)
 
-Com o surgimento de novas tecnologias de containers e com uma grande demanda por parte do mercado por esse tipo de ferramenta, foi criado uma especificação que norteia e direciona como os containers e imagens devem ser executados/criados. A [OCI](https://www.opencontainers.org/) \(Open Container Iniciative\) foi criada em 2015 e se propõe a cria uma padrão de mercado quando o assunto é container e imagens.
+Com o surgimento de novas tecnologias de containers e com uma grande demanda por parte do mercado por esse tipo de ferramenta, foi criado uma especificação que norteia e direciona como os containers e imagens devem ser executados/criados. A [OCI](https://www.opencontainers.org/) \(Open Container Iniciative\) foi criada em 2015 e se propõe a cria uma padrão de mercado para runtime e images. Grandes empresas como Google, Red Hat, Intel e Amazon apoiam essa iniciativa.
 
 ## Como as imagens funcionam?
 
