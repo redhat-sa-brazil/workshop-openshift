@@ -36,7 +36,7 @@ Se tudo ocorreu conforme o espero, você terá uma tela com duas aplicações.
 
 Um dos builds foi somente para criar a nossa imagem base e salvá-la no registry. As aplicações **app-a** e **app-b** são baseadas nessa imagem chamada **httpd-base**.
 
-#### Atualizando a base image \(TODO\)
+#### Atualizando a base image
 
 Digamos que descobrimos um bug crítico no apache \(httpd\). Para isso, vamos simular a atualização da imagem base e ver como as aplicações **app-a** e **app-b** se comportam.
 
