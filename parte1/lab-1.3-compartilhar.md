@@ -105,3 +105,6 @@ E depois já podemos enviar nossa imagem:
 ```
 # docker push docker.io/<username>/workshop-openshift
 ```
+
+
+
