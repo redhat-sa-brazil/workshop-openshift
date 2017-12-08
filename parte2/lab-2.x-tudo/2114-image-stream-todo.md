@@ -26,7 +26,29 @@ Agora já podemos executar o template
 oc new-app --template=base-image-example --param=GIT_URL=https://github.com/luszczynski/openshift-image-stream-example.git -n myproject
 ```
 
+Espere alguns minutos. Aproveite e tome um café nesse tempo.
+
+Se tudo ocorreu conforme o espero, você terá uma tela com duas aplicações.
+
+![](/assets/Selection_038.png)Se acessarmos os builds, veremos que foram realizados 3 builds. Mas então porque só temos 2 aplicações?
+
+![](/assets/Selection_041.png)
+
+Um dos builds foi somente para criar a nossa imagem base e salvá-la no registry. As aplicações **app-a** e **app-b** são baseadas nessa imagem chamada **httpd-base**.
+
 #### Atualizando a base image \(TODO\)
 
+Digamos que descobrimos um bug crítico no apache \(httpd\). Para isso, vamos simular a atualização da imagem base e ver como as aplicações **app-a** e **app-b** se comportam.
 
+Para atualizar a base image, precisamos criar um novo build.
+
+1. No menu lateral esquerdo, acesse **Builds** -&gt; **Builds**
+2. Selecione o build de nome **httpd-base **na tabela
+3. Depois clique no canto superior direito em **Start build**
+
+![](/assets/new-build-is.gif)
+
+Repare que após o build **httpd-base** o Openshift inicia o build das aplicações **app-a** e **app-b** automaticamente. Ou seja, ele está reconstruindo essas aplicações pois elas dependem da imagem base.
+
+![](/assets/Selection_043.png)
 
