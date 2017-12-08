@@ -25,7 +25,7 @@ Toda instalação do runtime Docker acompanha configuração dos Registries mais
 # docker search centos
 ```
 
-![](/assets/gustavo@localhost: ~_017.png)
+Nesse caso, ele irá buscar as imagens do centos no Dockerhub que já vem pré-configurado com o Docker.![](/assets/gustavo@localhost: ~_017.png)
 
 ### 1.1.3 - Baixando Imagens dos Registries
 
