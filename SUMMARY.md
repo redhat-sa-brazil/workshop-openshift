@@ -27,6 +27,7 @@
     * [2.1.16 Idle](parte2/lab-2.x-tudo/2112-idle.md)
     * [2.1.17 Image Stream](parte2/lab-2.x-tudo/2114-image-stream-todo.md)
     * [2.1.18 ConfigMap e Secrets](parte2/lab-2.x-tudo/2115-configmap-e-secrets-todo.md)
+    * [2.1.19 - Debug com o CLI \(TODO\)](parte2/lab-2.x-tudo/2119-debug-com-a-linha-de-comando.md)
   * [Lab 2.2 - Diferentes estratégias de deployment \(TODO\)](parte2/lab-22-diferentes-tipos-de-deployment.md)
     * [2.2.1 Canary Release \(TODO\)](parte2/lab-22-diferentes-tipos-de-deployment/221-canary-release.md)
     * [2.2.2 Blue/Green deployment \(TODO\)](parte2/lab-22-diferentes-tipos-de-deployment/222-bluegreen-deployment.md)
