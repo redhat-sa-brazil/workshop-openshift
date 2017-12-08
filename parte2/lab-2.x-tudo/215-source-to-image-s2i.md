@@ -62,8 +62,6 @@ Através da seta para cima na lateral do círculo do pod, clique até escalar a 
 
 #### ![](https://storage.googleapis.com/workshop-openshift/scale-up-4.png)
 
-#### Binary Build \(TODO\)
-
 #### Source-to-Image com outras imagens \(TODO\)
 
 ##### Mais informações:
