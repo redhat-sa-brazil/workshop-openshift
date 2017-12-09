@@ -32,7 +32,7 @@
     * [2.1.21 - Usando o JBoss Developer Studio \(TODO\)](parte2/lab-2.x-tudo/2120-usando-o-jboss-developer-studio-todo.md)
   * [Lab 2.2 - Diferentes estratégias de deployment \(TODO\)](parte2/lab-22-diferentes-tipos-de-deployment.md)
     * [2.2.1 Canary Release](parte2/lab-22-diferentes-tipos-de-deployment/221-canary-release.md)
-    * [2.2.2 Blue/Green deployment \(TODO\)](parte2/lab-22-diferentes-tipos-de-deployment/222-bluegreen-deployment.md)
+    * [2.2.2 Blue/Green deployment](parte2/lab-22-diferentes-tipos-de-deployment/222-bluegreen-deployment.md)
 * [Parte 3 - OpenShift para ops](parte3/parte-3-openshift-ops.md)
   * [Lab 3.0 - Preparar](parte3/lab-3.0-preparar.md)
 
