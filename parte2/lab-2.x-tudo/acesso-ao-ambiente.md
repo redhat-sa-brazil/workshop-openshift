@@ -2,9 +2,7 @@
 
 ![](https://storage.googleapis.com/workshop-openshift/oc-login.gif)
 
-
-
-1. Acesse a url: https://console.ocp.rhbrlab.com:8443/console/
+1. Acesse a url: [https://console.ocp.rhbrlab.com:8443/console/](https://console.ocp.rhbrlab.com:8443/console/)
 2. Insira suas credenciais de acesso.
 3. No menu superior direito selecione a opção "**Command Line Tools**"
 4. Copie o comando gerado "`oc login..`.". O seu token de acesso já estará nessa string.
@@ -16,5 +14,11 @@ Neste momento você já estará dentro do seu projeto. Para listar os PODs deste
 
 `oc get pods`
 
+Também é possível visualizar quais projetos você tem permissão de acesso:
 
+```
+oc get projects
+```
+
+![](/assets/oc-get-projects.gif)
 
