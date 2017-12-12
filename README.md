@@ -4,11 +4,11 @@
 
 Esse material é usado para capacitação e transferência de conhecimento de clientes e parceiros da Red Hat Brasil em **OpenShift**, aplicável tanto ao [**Red Hat OpenShift Container Platform**](https://www.openshift.com/container-platform/index.html) \(enterprise\) quanto ao [**OpenShift Origin**](https://www.openshift.org/) \(community\).
 
-## Porque dessa forma?
+## Por que dessa forma?
 
 Inspirados na cultura open-source, acreditamos que, ao disponibilizar o material de forma aberta, podemos **evoluir o workshop de forma colaborativa e alinhado com as necessidades dos nossos clientes, parceiros e a comunidade**.
 
-Este trabalho está licenciado sob a [**Licença Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional Creative Commons (CC BY-NC-SA 4.0)**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR).
+Este trabalho está licenciado sob a [**Licença Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional Creative Commons \(CC BY-NC-SA 4.0\)**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR).
 
 ## Como usar?
 
@@ -21,10 +21,10 @@ Para conseguir aproveitar o material, nossa recomendação é:
 * _Reserve entre **4-8 horas** para discussão dos assuntos e execução das atividades._
 * _Acesso à** Internet é indispensável**._
 * _Todos os participantes devem ter **acesso à um computador capaz de rodar máquinas virtuais**, preferencialmente individual:_
-    * _**Processador dual-core de 2GHz**_
-    * _**8GB de memória RAM**_
-    * _**40GB de disco livre**_
-    * _**Virtualizador \(QEMU/KVM, Oracle VirtualBox, VMware Workstation\)**_
+  * _**Processador dual-core de 2GHz**_
+  * _**8GB de memória RAM**_
+  * _**40GB de disco livre**_
+  * _**Virtualizador \(QEMU/KVM, Oracle VirtualBox, VMware Workstation\)**_
 
 ## Por onde começar?
 
@@ -37,3 +37,4 @@ Esse material é dividido em 3 partes:
 ## Posso contribuir?
 
 **Aceitamos contribuições de todas as formas!** Você pode fazer uso da funcionalidade de "Issues" direto do repositório fonte no [**Github**](https://github.com/RedHatBrasil/workshop-openshift). Uma outra alternativa é através das funcionalidades de colaboração do próprio [**GitBook**](https://redhatbrasil.gitbooks.io/workshop-openshift/). Fique a vontade de usar qualquer um dos dois!
+
