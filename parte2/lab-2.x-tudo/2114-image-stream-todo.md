@@ -1,4 +1,4 @@
-### Image Stream
+### Image Stream e Compartilhamento de bibliotecas
 
 O Openshift permite monitorar e realizar algumas ações assim que uma imagem é atualizada no seu registry interno. Se uma aplicação tiver uma falha de segurança crítica, e existirem 200 containers desse sistema, basta que a sua respectiva imagem seja atualizada no registry que todos os 200 containers serão atualizados automaticamente.
 
