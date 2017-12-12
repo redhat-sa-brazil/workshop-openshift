@@ -70,7 +70,7 @@ Através da seta para cima na lateral do círculo do pod, clique até escalar a 
 
 [https://docs.openshift.com/container-platform/3.6/creating\_images/s2i.html](https://docs.openshift.com/container-platform/3.6/creating_images/s2i.html)
 
-### Criando sua imagem com S2i \(TODO\)
+### 
 
 
 
