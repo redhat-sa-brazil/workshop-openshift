@@ -62,7 +62,40 @@ Através da seta para cima na lateral do círculo do pod, clique até escalar a 
 
 #### ![](https://storage.googleapis.com/workshop-openshift/scale-up-4.png)
 
-#### Source-to-Image com outras imagens \(TODO\)
+#### Source-to-Image com outras imagens
+
+Iremos agora utilizar o S2I com um template do Apache HTTPD. Já existe [um repositório](https://github.com/openshift/httpd-ex.git) com um arquivo de exemplo para testarmos essa funcionalidade. 
+
+1. No menu superior clique em **Add to project**
+2. Na busca, digite **httpd**
+3. Selecione o template **Httpd** versão **2.4**
+
+![](/assets/Selection_060.png)Logo em seguida, preencha os valores conforme abaixo:
+
+* Name: **apache**
+* Git Repository Url: Clique no botão **try it**
+
+![](/assets/select-apache.gif)Caso sua aplicação não abra e mostre a seguinte tela:
+
+![](/assets/Selection_061.png)Isso pode ser devido a um bug no template do Openshift. Para corrigir, basta alterar a porta que a nossa route está utilizando.
+
+Se olharmos a nossa rota, ela está direcionando o acesso para a porta 80.
+
+![](/assets/Selection_062.png)Quando abrimos o serviço, percebemos que nosso container utiliza também outras portas:
+
+![](/assets/Selection_063.png)Nosso apache está escutando na porta 8080 e não na 80.
+
+Vamos alterar a rota para apontar para essa porta. Primeiro abrimos a rota do Apache.
+
+![](/assets/route.gif)Logo em seguida, clicamos no menu lateral direito **Action** -&gt; **Edit**
+
+E trocamos a porta que nossa rota está utilizando para a **8080**
+
+![](/assets/altera-porta.gif)
+
+Agora, nossa aplicação já deve estar disponível.
+
+![](/assets/Selection_064.png)
 
 ##### Mais informações:
 
