@@ -25,7 +25,17 @@ Toda instalação do runtime Docker acompanha configuração dos Registries mais
 # docker search centos
 ```
 
-Nesse caso, ele irá buscar as imagens do centos no Dockerhub que já vem pré-configurado com o Docker.![](/assets/gustavo@localhost: ~_017.png)
+Nesse caso, ele irá buscar as imagens do centos no Dockerhub que já vem pré-configurado com o Docker.![](/assets/gustavo@localhost: ~_017.png)Você também pode filtrar pelo número de estrelas \(stars\) que um repo possui.
+
+Para isso basta passar o parametro --filter
+
+```
+docker search centos --filter=stars=10
+```
+
+![](/assets/Selection_081.png)
+
+Só existirão resultados que tenham mais que 10 estrelas.
 
 ### 1.1.3 - Baixando Imagens dos Registries
 
@@ -36,6 +46,14 @@ Além de nomes, imagens possuem _tags_ \(sufixo separado por ':'\) que podem ide
 ```
 
 ![](/assets/gustavo@localhost: ~_018.png)
+
+É possível também baixar imagens de outros registries quando especificamos isso na linha de comando:
+
+```
+docker pull registry.access.redhat.com/rhel-atomic
+```
+
+![](/assets/Selection_082.png)No exemplo acima, ele buscará a imagem no registry `registry.access.redhat.com`
 
 ### 1.1.4 - Listando Imagens Locais
 
@@ -55,7 +73,15 @@ Para remover as imagens, ou tags, do repositório local, usa-se:
 # docker rmi <ID/tag>
 ```
 
-![](/assets/gustavo@localhost: ~_021.png)
+![](/assets/gustavo@localhost: ~_021.png)Caso a imagem já esteja sendo utilizada por um container. o Docker não irá executar essa ação e retornará um erro informando qual o id do container que está utilizando a imagem que desejamos apagar.
+
+![](/assets/Selection_083.png)Para resolver, basta remover o container que está causando problemas para a gente.
+
+```
+docker rm <id do container>
+```
+
+![](/assets/Selection_085.png)
 
 ### 1.1.6 - Executando Containers
 
