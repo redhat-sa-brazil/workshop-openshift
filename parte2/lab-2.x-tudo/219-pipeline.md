@@ -13,7 +13,7 @@ diretório pipeline.
 mkdir pipeline
 ```
 
-Crie o arquivo `buildconfig.yaml`
+Crie o arquivo `buildconfig.yaml Repare que existe um campo que deve ser alterado com o nome do usuário do github.`
 
 ```
 kind: "BuildConfig"
@@ -26,7 +26,7 @@ spec:
   source:
     type: "Git"
     git:
-      uri: "http://github.com/<seu-usuario>/workshop-php.git"
+      uri: "http://github.com/<seu-usuario-do-github>/workshop-php.git"
   strategy:
     type: "JenkinsPipeline"
     jenkinsPipelineStrategy:
@@ -61,8 +61,6 @@ Pela linha de comando, crie o build config que definimos no passo anterior:
 
 > Observe que logo ao fim da execução deste passo, o Jenkins \(master/slave\) será provisionado automaticamente no projeto em questão.
 
-
-
 No menu lateral esquerdo, selecione a opção `Builds` &gt; `Pipelines` e selecione a opção `Start pipeline`
 
 ![](https://storage.googleapis.com/workshop-openshift/start-pipeline.png)
@@ -74,8 +72,4 @@ No menu lateral esquerdo, selecione a opção `Builds` &gt; `Pipelines` e seleci
 [https://docs.openshift.com/container-platform/3.6/using\_images/other\_images/jenkins.html](https://docs.openshift.com/container-platform/3.6/using_images/other_images/jenkins.html)
 
 [https://docs.openshift.com/container-platform/3.6/dev\_guide/application\_lifecycle/promoting\_applications.html](https://docs.openshift.com/container-platform/3.6/dev_guide/application_lifecycle/promoting_applications.html)
-
-
-
-
 
