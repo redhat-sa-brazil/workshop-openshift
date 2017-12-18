@@ -51,7 +51,7 @@ Acesse a url gerada e verifique a aplicação em funcionamento. O resultado deve
 Você também pode usar a linha de comando para fazer o S2I.
 
 ```
-oc new-app https://github.com/<seu-usuario>/workshop.php.git -n <nome do seu projeto>
+oc new-app https://github.com/<seu-usuario>/workshop.php.git -n <nome do seu projeto do openshift>
 ```
 
 Nesse caso, o Openshfit irá tentar adivinhar qual a linguagem que você utilizou na sua aplicação.
