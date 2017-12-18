@@ -55,6 +55,14 @@ node('maven') {
 }
 ```
 
+Antes de continuar, precisamos fazer push para o repositório do github:
+
+```
+git add pipeline/
+git commit -m "criado jenkinsfile"
+git push origin master
+```
+
 Pela linha de comando, crie o build config que definimos no passo anterior:
 
 `oc create -f buildconfig.yaml`
