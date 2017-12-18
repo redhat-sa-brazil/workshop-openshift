@@ -66,7 +66,7 @@ oc port-forward <pod id> 3306:3306
 
 ![](https://storage.googleapis.com/workshop-openshift/port-forward.png)
 
-Neste momento temos o MYSQL disponível "localmente", podemos conectar a ele com ferramentas gráficas ou como será demonstrado aqui com o mysql client.
+Neste momento temos o MYSQL disponível "localmente", podemos conectar a ele com ferramentas gráficas ou como será demonstrado aqui com o mysql client. Lembre-se de abrir um outro terminal ou colocar o processo do port-forward em background. Importante é que ele deve estar rodando antes de executar o comando abaixo:
 
 ```
 mysql -u redhat -h 127.0.0.1 -p
