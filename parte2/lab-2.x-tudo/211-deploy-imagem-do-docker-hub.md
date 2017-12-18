@@ -14,6 +14,12 @@ Caso não tenha nenhuma você pode usar essa de exemplo:
 
 [https://hub.docker.com/r/davivcgarcia/workshop-openshift/](https://hub.docker.com/r/davivcgarcia/workshop-openshift/)
 
+Ficando assim o formato:
+
+```
+docker.io/davivcgarcia/workshop-openshift
+```
+
 > **OBS: Por questões de segurança a imagem não pode ser executada utilizando o usuário root.**
 
 Se a imagem escolhida rodar como root, o Openshift te avisa na console \(por meio de uma tarja laranja\) que ela pode eventualmente não executar conforme o esperado.
