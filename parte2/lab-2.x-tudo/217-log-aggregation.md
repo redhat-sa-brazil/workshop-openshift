@@ -7,6 +7,10 @@ Devido a facilidade de criar e escalar aplicações, torna-se praticamente impos
 * Navegue até a tab de logs de um dos pods.
 * Selecione a opção `Archive`
 
+Abaixo segue destaque de onde devemos clicar:![](/assets/Selection_089.png)
+
+Assim que acessar, a tela do Kibana estará semelhante a foto abaixo:
+
 ![](https://storage.googleapis.com/workshop-openshift/log-aggregation.png)
 
 É possível criar relatórios e consolidar em dashboards, com informações mostrando o crescimento de erros da aplicação `x` nos últimos meses ou semanas, etc...
