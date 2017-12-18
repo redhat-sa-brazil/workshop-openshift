@@ -20,7 +20,10 @@ No _Github.com_:
 * Selecione `Settings` no menu horizontal
 * Selecione o `Webhooks` no menu lateral esquerdo 
 * Selecione `Add Webhooks`, cole a URL copiada no campo `Payload URL`, no campo `Content Type` selecione a opção `application/json`
+* Clique em `Disable SSL verification`
 * Finalize no botão `Add webhook`
+
+![](/assets/Selection_088.png)
 
 #### Altere a aplicação
 
