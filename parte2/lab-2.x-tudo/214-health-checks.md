@@ -96,7 +96,13 @@ Caso esteja tudo certo, você verá um **Ok** na tela.
 
 Agora vamos informar o Openshift para monitorar esses dois contextos. Isso pode ser feito pela linha de comando.
 
-Para o `readiness`:
+Antes, veja qual o nome do deploymentconfig usando o comando:
+
+```
+oc get dc
+```
+
+Substitua ele no comando abaixo para o `readiness`:
 
 ```
 oc set probe dc/workshop-php --readiness --get-url=http://:8080/readiness.php
