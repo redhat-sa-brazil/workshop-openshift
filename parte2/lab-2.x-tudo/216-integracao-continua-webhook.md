@@ -13,6 +13,8 @@ No _Openshift_:
 * Selecione `workshop-php`
 * Selecione a aba `Configuration` e clique em copy no campo `Github Webhook URL`
 
+![](/assets/Selection_087.png)
+
 No _Github.com_:
 
 * Selecione `Settings` no menu horizontal
@@ -28,6 +30,12 @@ No `index.php` altere a linha com a versão da aplicação para versão 2.0.
 
 ```
 echo "<h1>Openshift Workshop v2.0</h1>";
+```
+
+```
+git add index.php
+git commit -m "webhook adicionado"
+git push
 ```
 
 #### Acompanhe o rolling deployment
