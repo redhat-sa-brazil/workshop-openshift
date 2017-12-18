@@ -27,6 +27,8 @@ Para isso o primeiro passo será conectar a nossa aplicação já existente nest
 precisamos adicionar o trecho de código abaixo ao arquivo `index.php` já existente.
 
 ```
+
+
 echo "<br><hr>";
 echo "<h2>Cidades cadastradas no Banco de Dados:</h2>";
 $conn = new mysqli("mysql", "redhat", "redhat@123", "workshop");
