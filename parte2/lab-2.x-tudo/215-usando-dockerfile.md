@@ -1,6 +1,10 @@
 ### Usando Dockerfile
 
-Além do Source to Image, o Openshift permite realiza o build de `Dockerfile` para você. Basta adicionar o seu `Dockerfile`em um repositório git e informar ao Openshift que iremos utilizar a estratégia de build do tipo docker.
+Além do Source to Image, o Openshift permite realiza o build de `Dockerfile` para você. Basta adicionar o seu `Dockerfile`em um repositório git e informar ao Openshift que iremos utilizar a estratégia de build do tipo docker. Para esse exemplo, iremos **utilizar o mesmo repositório criado no lab anterior **conforme exemplo abaixo**:**
+
+```
+https://github.com/<seu-usuario>/workshop-php.git
+```
 
 #### Criando nosso Dockerfile
 
@@ -29,7 +33,7 @@ git push
 Para criar uma aplicação com base no Dockerfile criado, precisamos executar o seguinte comando:
 
 ```
-oc new-app --name=dockerfile-app --strategy=docker https://github.com/<seu-usuario/workshop-php.git -n <nome do seu projeto>
+oc new-app --name=dockerfile-app --strategy=docker https://github.com/<seu-usuario>/workshop-php.git -n <nome do seu projeto>
 ```
 
 O valor default para o parametro **strategy** é **source. **Isso indica que, por padrão, o Openshift irá analisar o repositório git tentando compilar o código da aplicação e usar o source-to-image. No nosso caso, queremos que ele use somente o Dockerfile e ignore o código fonte. Por isso informamos o parametro **--strategy=docker**

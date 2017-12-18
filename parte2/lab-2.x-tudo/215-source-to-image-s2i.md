@@ -10,7 +10,7 @@ Crie um repositório com o nome `workshop-php`
 Faça o clone deste novo repositório e crie a página inicial `index.php`
 
 ```
-git clone https://github.com/<seu-usuario/workshop-php.git && cd workshop-php
+git clone https://github.com/<seu-usuario>/workshop-php.git && cd workshop-php
 ```
 
 Crie o arquivo `index.php` com o seguinte conteúdo
@@ -64,7 +64,7 @@ Através da seta para cima na lateral do círculo do pod, clique até escalar a 
 
 #### Source-to-Image com outras imagens
 
-Iremos agora utilizar o S2I com um template do Apache HTTPD. Já existe [um repositório](https://github.com/openshift/httpd-ex.git) com um arquivo de exemplo para testarmos essa funcionalidade. 
+Iremos agora utilizar o S2I com um template do Apache HTTPD. Já existe [um repositório](https://github.com/openshift/httpd-ex.git) com um arquivo de exemplo para testarmos essa funcionalidade.
 
 1. No menu superior clique em **Add to project**
 2. Na busca, digite **httpd**
