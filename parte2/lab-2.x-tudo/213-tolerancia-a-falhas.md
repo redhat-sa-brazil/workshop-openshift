@@ -35,5 +35,15 @@ Também podemos deletar um POD usando a linha de comando:
 oc delete po <nome do pod>
 ```
 
-![](/assets/delete-pod.gif)
+#### ![](/assets/delete-pod.gif)
+
+#### Limpeza do ambiente
+
+Agora podemos apagar essa aplicação já que não a utilizaremos mais. O comando abaixo executa essa limpeza:
+
+```
+oc delete all -l app=workshop-openshift -n <nome do seu projeto do openshift>
+```
+
+![](/assets/Selection_086.png)
 
