@@ -20,11 +20,13 @@ O readiness define quando que o container está pronto para receber requisiçõe
 
 ![](https://storage.googleapis.com/workshop-openshift/ocp-health-checks.gif)
 
-1. Selecione no menu vertical esquerdo a opção **Deployments &gt; openshift-workshop**
+1. Selecione no menu vertical esquerdo a opção **Deployments &gt; workshop-openshift**
 2. Selecione **Actions &gt; Edit Health Checks** no canto superior direito da GUI.
 3. Selecione Add Readiness Probe
 4. Selecione Add Liveness Probe
 5. Selecione Save
+
+Os passos acima, servem para ilustrar como é feita a configuração do liveness e readiness. Elas não precisam ser executadas agora. Avance para o passo **Preparando a aplicação**
 
 O readiness também pode ser verificado de 3 possíveis formas:
 
