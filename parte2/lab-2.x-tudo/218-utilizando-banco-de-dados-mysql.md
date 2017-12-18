@@ -28,7 +28,7 @@ precisamos adicionar o trecho de código abaixo ao arquivo `index.php` já exist
 
 ```
 <?php
-echo "<h1>Openshift Workshop v1.0</h1> ";
+echo "<h1>Openshift Workshop v2.0</h1> ";
 echo $_SERVER['SERVER_ADDR'];
 echo "<br><hr>";
 echo "<h2>Cidades cadastradas no Banco de Dados:</h2>";
