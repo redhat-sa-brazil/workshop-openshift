@@ -48,5 +48,13 @@ Assim que executamos o comando, o Openshift inicia o novo build.
 oc expose svc dockerfile-app -n <nome do seu projeto>
 ```
 
+#### Limpando nosso lab
+
+Vamos apagar nossa aplicação criada com base no Dockerfile. Dessa forma, deixaremos nosso Openshift limpo e organizado.
+
+```
+oc delete all -l app=dockerfile-app -n <nome do seu projeto do openshift>
+```
+
 
 
