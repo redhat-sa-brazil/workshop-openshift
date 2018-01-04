@@ -35,5 +35,7 @@
     * [2.2.1 Canary Release](parte2/lab-22-diferentes-tipos-de-deployment/221-canary-release.md)
     * [2.2.2 Blue/Green deployment](parte2/lab-22-diferentes-tipos-de-deployment/222-bluegreen-deployment.md)
 * [Parte 3 - OpenShift para ops](parte3/parte-3-openshift-ops.md)
-  * [Lab 3.0 - Preparar](parte3/lab-3.0-preparar.md)
+  * [Topico 1 - Conceitos Básicos](parte3/topico-1-conceitos-basicos.md)
+  * [Lab 3.0 - Instalação do Cluster](parte3/lab-3.0-preparar.md)
+  * [Lab 3.1 - Adicionando nós ao Cluster](parte3/lab-31-adicionando-nos-ao-cluster.md)
 
