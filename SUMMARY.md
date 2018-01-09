@@ -35,7 +35,11 @@
     * [2.2.1 Canary Release](parte2/lab-22-diferentes-tipos-de-deployment/221-canary-release.md)
     * [2.2.2 Blue/Green deployment](parte2/lab-22-diferentes-tipos-de-deployment/222-bluegreen-deployment.md)
 * [Parte 3 - OpenShift para ops](parte3/parte-3-openshift-ops.md)
-  * [Topico 1 - Conceitos Básicos](parte3/topico-1-conceitos-basicos.md)
-  * [Lab 3.0 - Instalação do Cluster](parte3/lab-3.0-preparar.md)
-  * [Lab 3.1 - Adicionando nós ao Cluster](parte3/lab-31-adicionando-nos-ao-cluster.md)
+  * [Lab 3.0 - Requerimentos Instalação](parte3/lab-3.0-preparar.md)
+  * [Lab 3.1 - Requerimentos do Host](parte3/topico-1-conceitos-basicos.md)
+  * [Lab 3.2 - Instalação Cluster](lab-32-instalacao-oc-cluster-up.md)
+  * [Lab 3.3 - Instalando Oc Cluster Up](parte3/lab-31-adicionando-nos-ao-cluster.md)
+  * Lab 3.4 - Utilizando OC Client
+  * Lab 3.5 - Gerenciando Volumes Persistentes
+  * Lab 3.6  - Criando um Projeto e uma aplicação
 

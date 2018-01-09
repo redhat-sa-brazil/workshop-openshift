@@ -15,7 +15,7 @@ O objetivo deste workshop é, de uma forma rápida, apresentar os principais con
 
 **O que é e por que preciso de Kubernetes?**
 
-Com o crescimento no uso de containers, o gerenciamento manual pode tornar-se confuso e por vezes inviável. Se gerenciar 100 máquinas virtuais é complicado, 1000 containers será uma tarefa impossível manter a segurança, estabilidade, escalabilidade e robustez do ambiente. Kubernetes é um orquestrador de containers que permite, entre outras funções, orquestração e escalonamento de containers , gerenciamento de storage persistente, descoberta e catálogo de serviços sobre um cluster de nós físicos ou virtuais. 
+Com o crescimento no uso de containers, o gerenciamento manual pode tornar-se confuso e por vezes inviável. Se gerenciar 100 máquinas virtuais é complicado, 1000 containers será uma tarefa impossível manter a segurança, estabilidade, escalabilidade e robustez do ambiente. Kubernetes é um orquestrador de containers que permite, entre outras funções, orquestração e escalonamento de containers , gerenciamento de storage persistente, descoberta e catálogo de serviços sobre um cluster de nós físicos ou virtuais.
 
 Originalmente desenvolvido pelo Google, foi "doado" para a CNCF \(Cloud Native Computing Foundation\) permitindo que seu codigo aberto receba contribuições da comunidade. \(Kubernetes foi considerado um dos projetos open-source mais rapidamente desenvolvidos da historia\).
 
@@ -28,8 +28,6 @@ Openshift permite o uso corporativo de Kubernetes, introduzindo segurança, cola
 ![](/assets/openshif_features.png)
 
 **Arquitetura Openshift**
-
-
 
 ![](/assets/parte_3_arquitetura_ocp.png)
 
@@ -49,6 +47,18 @@ Terminologia Openshift
 
 * Aplicação - Basicamente é a aplicação Web que irá rodar no Openshift. Openshift é focado em aplicações Web, sendo assim, as portas associadas as aplicações estão basicamente limitadas a 80, 443 e eventualmente, 22. Consiste, internamente, em tudo o que voce precisa para fazer sua aplicação funcionar. Deployments, Pods, Services, Routes e etc, assim como as ligações entre elas.
 * Pods e Cluster
+
+## Objetivos deste Workshop
+
+**Qual o escopo deste workshop?**
+
+* Entender os principais conceitos de Openshift
+* Compreender a arquitetura do Openshift
+* Instalação e Configuração de um cluster
+* Instalação e Operação do Oc Cluster Up
+* Utilizando OC client
+* Gerenciando Volumes Persistentes
+* Criação de Um projeto
 
 
 
