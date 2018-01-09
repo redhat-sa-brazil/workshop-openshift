@@ -39,7 +39,7 @@
   * [Lab 3.1 - Requerimentos do Host](parte3/topico-1-conceitos-basicos.md)
   * [Lab 3.2 - Instalação Cluster](lab-32-instalacao-oc-cluster-up.md)
   * [Lab 3.3 - Instalando Oc Cluster Up](parte3/lab-31-adicionando-nos-ao-cluster.md)
-  * Lab 3.4 - Utilizando OC Client
-  * Lab 3.5 - Gerenciando Volumes Persistentes
-  * Lab 3.6  - Criando um Projeto e uma aplicação
+  * [Lab 3.4 - Utilizando OC Client](parte3/lab-34-utilizando-oc-client.md)
+  * [Lab 3.5 - Gerenciando Volumes Persistentes](parte3/lab-35-gerenciando-volumes-persistentes.md)
+  * [Lab 3.6  - Criando um Projeto e uma aplicação](parte3/lab-36-criando-um-projeto-e-uma-aplica-cao.md)
 
