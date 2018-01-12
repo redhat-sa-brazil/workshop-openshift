@@ -31,6 +31,12 @@ Vamos mostrar uma lista de cidades cadastradas no banco de dados com essa aplica
 Para isso o primeiro passo será conectar a nossa aplicação já existente neste banco de dados, para isso  
 precisamos adicionar o trecho de código abaixo ao arquivo `index.php` já existente.
 
+
+
+Observe através do menu lateral `Storage` que o volume para persistência dos registros no MySQL foi provisionado dinâmicamente
+
+
+
 ```
 <?php
 echo "<h1>Openshift Workshop v2.0</h1> ";

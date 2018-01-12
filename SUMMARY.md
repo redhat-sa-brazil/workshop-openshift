@@ -30,7 +30,7 @@
     * [2.1.19 - Cron Job \(TODO\)](2119-cron-job.md)
     * [2.1.20 - Debug com o CLI \(TODO\)](parte2/lab-2.x-tudo/2119-debug-com-a-linha-de-comando.md)
     * [2.1.21 - Usando o JBoss Developer Studio \(TODO\)](parte2/lab-2.x-tudo/2120-usando-o-jboss-developer-studio-todo.md)
-    * 2.1.22 - Criando sua imagem com S2I \(TODO\)
+    * [2.1.22 - Criando sua imagem com S2I \(TODO\)](parte2/lab-2.x-tudo/2122-criando-sua-imagem-com-s2i-todo.md)
   * [Lab 2.2 - Diferentes estratégias de deployment \(TODO\)](parte2/lab-22-diferentes-tipos-de-deployment.md)
     * [2.2.1 Canary Release](parte2/lab-22-diferentes-tipos-de-deployment/221-canary-release.md)
     * [2.2.2 Blue/Green deployment](parte2/lab-22-diferentes-tipos-de-deployment/222-bluegreen-deployment.md)
