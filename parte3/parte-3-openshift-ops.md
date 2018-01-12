@@ -56,9 +56,10 @@ Terminologia Openshift
 * Compreender a arquitetura do Openshift
 * Instalação e Configuração de um cluster
 * Instalação e Operação do Oc Cluster Up
-* Utilizando OC client
-* Gerenciando Volumes Persistentes
 * Criação de Um projeto
+* Utilizando OC client
+* Openshift Networking/SDN
+* Gerenciando Volumes Persistentes
 
 
 
