@@ -126,7 +126,7 @@ O Openshift informa para nós por meio da console web que a aplicação não est
 
 O container ficar azul claro rapidamente e logo em seguida volta a ficar azul escuro. Isso quer dizer que por um breve período de tempo, ele não passou no readiness probe.
 
-#### Testando liveness e o readiness da nossa aplicação
+#### Testando o readiness da nossa aplicação
 
 Para testarmos o readiness, vamos executar um comando que cria um arquivo na pasta tmp.
 
@@ -136,19 +136,27 @@ oc exec <nome do pod> touch /tmp/readiness
 
 ![](/assets/readiness-file.gif)Na console, agora o container ficará azul claro assim que o Openshift perceber que o readiness probe falhou.
 
-O mesmo passo deve ser executado para o liveness.
+##### Debug do container
+
+O Openshift permite que você faça um debug do seu container caso ele não passe no teste de readiness. Para testar essa funcionalidade, basta clicar no container que está com problema e logo em seguida clicar em "Debug in Terminal".
+
+Essa opção `Debug in Terminal` é condicional. Ela só aparece na Web Console quando o seu container está com problema.
+
+![](/assets/debug.gif)
+
+
+
+#### Testando o liveness da nossa aplicação
+
+O mesmo passo executado no passo anterior pode ser feito para o liveness.
 
 ```
 oc exec <nome do pod> touch /tmp/liveness
 ```
 
-![](/assets/liveness-cmd2.gif)
+![](/assets/liveness-cmd2.gif)Assim que o Openshift perceber que o container parou de responder no contexto do /liveness.php, ele vai matar e criar outro container \(que não terá esse arquivo /tmp/liveness já que ele não existe na imagem\).
 
-##### Debug do container
-
-O Openshift permite que você faça um debug do seu container caso ele não passe no teste de readiness. Para testar essa funcionalidade, basta clicar no container que está com problema e logo em seguida clicar em "Debug in Terminal"
-
-![](/assets/debug.gif)
+##### 
 
 ##### Mais informações
 
