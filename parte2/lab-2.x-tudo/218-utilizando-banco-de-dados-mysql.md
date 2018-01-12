@@ -4,6 +4,9 @@
 
 * Selecione no menu super "Add to project"
 * Selecione a sub categoria "Data Stores" &gt; "MySQL \(Persistent\) 
+
+![](/assets/Selection_165.png)
+
 * Preencha os campos do template com os seguintes valores:
   * `Database Service Name` com `mysql`
   * `MySQL Connection Username` com `redhat`
@@ -11,6 +14,8 @@
   * `MySQL root user Password` com `redhat@123`
   * `MySQL Database Name com` com `workshop`
   * `Volume Capacity com` com `1Gi`
+
+![](/assets/Selection_166.png)
 
 O resultado deve ser similar a este
 
