@@ -64,6 +64,8 @@ oc get pods
 oc port-forward <pod id> 3306:3306
 ```
 
+O comando `oc port-forward` mantém o terminal preso enquanto estiver executando. Para continuar com os próximos passos, será necessário abrir um segundo terminal no nosso servidor.
+
 ![](https://storage.googleapis.com/workshop-openshift/port-forward.png)
 
 Neste momento temos o MYSQL disponível "localmente", podemos conectar a ele com ferramentas gráficas ou como será demonstrado aqui com o mysql client. Lembre-se de abrir um outro terminal ou colocar o processo do port-forward em background. Importante é que ele deve estar rodando antes de executar o comando abaixo:
@@ -82,6 +84,10 @@ SELECT * FROM cidade;
 Ao acessar novamente a interface de nossas aplicação a mesma deverá estar mostrando a lista de cidades incluídas neste passo.
 
 ![](https://storage.googleapis.com/workshop-openshift/app-with-results.png)
+
+Assim que todos os exercícios tiverem terminados, podemos parar o port-forward. Para isso, basta acessar o terminal em questão e executar um Ctrl + C.
+
+![](/assets/Selection_164.png)
 
 ##### Mais informações
 
