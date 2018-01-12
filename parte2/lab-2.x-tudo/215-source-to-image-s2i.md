@@ -91,11 +91,15 @@ Vamos alterar a rota para apontar para essa porta. Primeiro abrimos a rota do Ap
 
 E trocamos a porta que nossa rota está utilizando para a **8080**
 
-![](/assets/altera-porta.gif)
-
-Agora, nossa aplicação já deve estar disponível.
+![](/assets/altera-porta.gif)Agora, nossa aplicação já deve estar disponível.
 
 ![](/assets/Selection_064.png)
+
+Para limpar nosso ambiente, execute o seguinte comando:
+
+```
+oc delete all -l app=apache -n <nome do seu projeto no openshift>
+```
 
 ##### Mais informações:
 
