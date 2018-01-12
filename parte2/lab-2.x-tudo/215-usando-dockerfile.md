@@ -33,7 +33,13 @@ git push
 Para criar uma aplicação com base no Dockerfile criado, precisamos executar o seguinte comando:
 
 ```
-oc new-app --name=dockerfile-app --strategy=docker https://github.com/<seu-usuario>/workshop-php.git -n <nome do seu projeto do openshift>
+oc new-app --name=dockerfile-app --strategy=docker https://github.com/<seu-usuario>/workshop-php.git -n <nome do seu projeto do openshift
+```
+
+Para saber o nome do seu projeto no Openshift, basta executar:
+
+```
+oc get projects
 ```
 
 O valor default para o parametro **strategy** é **source. **Isso indica que, por padrão, o Openshift irá analisar o repositório git tentando compilar o código da aplicação e usar o source-to-image. No nosso caso, queremos que ele use somente o Dockerfile e ignore o código fonte. Por isso informamos o parametro **--strategy=docker**
