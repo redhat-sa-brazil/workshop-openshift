@@ -25,7 +25,7 @@ curl https://github.com/luszczynski/contador/blob/master/contador.war?raw=true -
 Agora precisamos falar para o Openshift criar um novo build usando o JBoss EAP e dizendo para ele para não usar o código-fonte e sim o binário da aplicação.
 
 ```
-oc new-build --image-stream=jboss-eap70-openshift-openshift --binary=true --name=binary-deployment -n <nome do seu projeto>
+oc new-build --image-stream=jboss-eap70-openshift --binary=true --name=binary-deployment -n <nome do seu projeto>
 ```
 
 Esse comando irá criar um BuildConfig que nada mais é que um arquivo descritor explicando como o Openshift deve construir a imagem docker. O detalhe nesse caso é o parametro **--binary=true. **Ele instrui que o BuildConfig use o binário ao invés do código-fonte da aplicação.
