@@ -28,7 +28,7 @@ Se a imagem escolhida rodar como root, o Openshift te avisa na console \(por mei
 
 Caso queira usar a linha de comando, execute:
 
-`oc new-app <nome do seu usuario>/workshop-openshift -n <nome do seu projeto do openshift>`
+`oc new-app <nome do seu usuario docker.io>/workshop-openshift -n <nome do seu projeto do openshift>`
 
 ![](/assets/Peek 2017-12-07 09-29.gif)
 
@@ -38,7 +38,7 @@ Na interface web selecione a opção _**create route.**_
 
 Command line
 
-`oc expose svc workshop-openshift`
+`oc expose svc workshop-openshift -n <nome do seu projeto do openshift>`
 
 ![](/assets/svc.gif)
 
