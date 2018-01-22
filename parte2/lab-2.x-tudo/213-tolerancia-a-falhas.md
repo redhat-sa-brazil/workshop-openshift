@@ -1,6 +1,6 @@
 ### Tolerância a falhas
 
-O Openshift garante que a quantidade de instâncias \(PODs\) definidas para uma aplicação seja respeitado. O responsável por fazer este controle é o Replication Controller.
+O Openshift garante que a quantidade de instâncias \(PODs\) definidas para uma aplicação seja respeitada. O responsável por fazer este controle é o Replication Controller.
 
 Neste laboratório vamos testar esse recurso.
 
