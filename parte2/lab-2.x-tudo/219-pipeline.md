@@ -33,10 +33,10 @@ spec:
       jenkinsfilePath: "pipeline/jenkins-pipeline.groovy"
 ```
 
-Vamos definir um pipeline simples, crie o arquivo `jenkins-pipeline.groovy`
+Vamos definir um pipeline simples, crie o arquivo `jenkins-pipeline.groovy `dentro da pasta pipeline
 
 ```
-node('maven') {
+ node('maven') {
     stage('build') {
         echo 'building app :)'
         openshiftBuild(buildConfig: 'workshop-php', showBuildLogs: 'true')
@@ -58,7 +58,7 @@ node('maven') {
 Antes de continuar, precisamos fazer push para o repositório do github:
 
 ```
-git add pipeline/
+git add .
 git commit -m "criado jenkinsfile"
 git push origin master
 ```
