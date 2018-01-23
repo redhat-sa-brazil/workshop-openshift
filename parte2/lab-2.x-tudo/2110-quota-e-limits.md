@@ -1,6 +1,6 @@
 ### Limite de Recursos
 
-O Openshift permite que você limite a quantidade de recursos que serã disponibilizados para sua aplicação. Antes de continuarmos esse assunto, é preciso esclarecer duas nomenclaturas
+O Openshift permite que você limite a quantidade de recursos que serão disponibilizados para sua aplicação. Antes de continuarmos esse assunto, é preciso esclarecer duas nomenclaturas
 
 #### Request vs Limit
 
@@ -70,8 +70,4 @@ oc rsh <nome do pod>
 #### Acompanhando o consumo de recursos
 
 Podemos acompanhar o uso de recursos da aplicação pela Web Console.
-
-
-
-
 
