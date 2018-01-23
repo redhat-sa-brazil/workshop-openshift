@@ -1,6 +1,6 @@
 ### Health Checks
 
-Componentes de software ficam indisponíveis por varias razões, como por exemplo falha de comunicação, erro de configuração ou problemas com dependências externas como banco de dados ou broker de mensagens. O Openshift possui dois recursos bastante poderosos para fazer o health checks de aplicações. O primeiro é que iremos abordar é o Liveness e em seguida o Readiness.
+Componentes de software ficam indisponíveis por varias razões, como por exemplo falha de comunicação, erro de configuração ou problemas com dependências externas como banco de dados ou broker de mensagens. O Openshift possui dois recursos bastante poderosos para fazer o health checks de aplicações. O primeiro que iremos abordar é o Liveness e em seguida o Readiness.
 
 #### Liveness
 
@@ -20,7 +20,7 @@ O readiness define quando que o container está pronto para receber requisiçõe
 
 ![](https://storage.googleapis.com/workshop-openshift/ocp-health-checks.gif)
 
-1. Selecione no menu vertical esquerdo a opção **Applications** -&gt; **Deployments &gt; workshop-openshift**
+1. Selecione no menu vertical esquerdo a opção **Applications** -&gt; **Deployments &gt; workshop-php**
 2. Selecione **Actions &gt; Edit Health Checks** no canto superior direito da GUI.
 3. Selecione Add Readiness Probe
 4. Selecione Add Liveness Probe
@@ -143,8 +143,6 @@ O Openshift permite que você faça um debug do seu container caso ele não pass
 Essa opção `Debug in Terminal` é condicional. Ela só aparece na Web Console quando o seu container está com problema.
 
 ![](/assets/debug.gif)
-
-
 
 #### Testando o liveness da nossa aplicação
 
