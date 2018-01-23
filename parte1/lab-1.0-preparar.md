@@ -4,15 +4,31 @@
 
 # Tarefas
 
+## Para usuários de estação de trabalho com MS Windows
+
+### 1.0.1 Cliente SSH
+
+Instale um cliente SSH para acessar o _shell_ da VM que será utilizada durante todo o nosso workshop.
+
+Existem duas opções de _SSH Client_ que recomendamos:
+
+ * [**PutTTY**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+ > baixe o arquivo `putty-64bit-0.70-installer.msi`
+
+ * [**Git Bash**](https://git-scm.com/download/win) (incluso no GIT SCM for Windows) 
+
 ## Criando uma VM do zero
-### 1.0.1 - Instalar um virtualizador
+
+> Caso queira baixar uma VM (VirtualBOX `ova`) pronta [baixe aqui](https://drive.google.com/open?id=16CHefCCaXL9wfhsx6C7jgH11ODO5mFdP) (`~845mb`)
+
+### 2.0.1 - Instalar um virtualizador
 
 Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoal/profissional, recomendamos o uso de uma ferramenta de virtualização. Dentre as diversas opções, **recomendamos o VirtualBox \(Windows/Mac\) ou o Virt-Manager/KVM \(Linux\):**
 
 * [**https://www.virtualbox.org**](https://www.virtualbox.org)
 * [**https://virt-manager.org**](https://virt-manager.org)
 
-### 1.0.2 - Obter imagem de instalação
+### 2.0.2 - Obter imagem de instalação
 
 Nos exercícios desse material vamos usar o **Red Hat Enterprise Linux Server**, mas também podemos usar qualquer outra distribuição derivada, como CentOS ou Fedora.
 
@@ -20,7 +36,7 @@ Para obter uma subscrição gratuita para **uso em desenvolvimento**, basta se i
 
 * [**https://developers.redhat.com/products/rhel/download/**](https://developers.redhat.com/products/rhel/download/)
 
-### 1.0.3 - Preparar a máquina virtual (VM)
+### 2.0.3 - Preparar a máquina virtual (VM)
 
 Após a instalação do virtualizador e a cópia do ISO do sistema operacional, vamos criar uma máquina virtual nas seguintes características:
 
@@ -31,7 +47,7 @@ Após a instalação do virtualizador e a cópia do ISO do sistema operacional, 
 * **SO**: Red Hat 64bits
 * **BOOT**: ISO \(apontar pro caminho correto\)
 
-### 1.0.4 - Instalação do Sistema Operacional (SO)
+### 2.0.4 - Instalação do Sistema Operacional (SO)
 
 Alguns passos importantes para a instalação:
 
@@ -48,7 +64,7 @@ Alguns passos importantes para a instalação:
 ![](/parte1/extras/centos-install-networking.png)
 
 ## Usando um VM pronta através do Vagrant
-### 1.0.5 Obtendo uma assinatura __Red Hat Developer__
+### 2.0.5 Obtendo uma assinatura __Red Hat Developer__
 
 Acesse o endereço https://developers.redhat.com
 
@@ -74,7 +90,7 @@ Copie o PooldID da sua subscrição!
 
 ![](/parte1/extras/subs-poolid.png)
 
-### 1.0.6 Importando a VM através do Vagrant
+### 2.0.6 Importando a VM através do Vagrant
 Realize o download do Vagrant para a sua plataforma (Win, Linux ou Mac) acessando https://www.vagrantup.com/downloads.html
 
 Após o Vagrant devidamente instalado:
@@ -106,7 +122,7 @@ end
 
 Salve o arquivo.
 
-### 1.0.6 Iniciando a VM usando o Vagrant
+### 2.0.6 Iniciando a VM usando o Vagrant
 inicie a VM com o seguinte comando:
 
 ```
@@ -122,7 +138,11 @@ vagrant ssh
 sudo -i
 ```
 
-### 1.0.7 - Instalar os pré-requisitos para hospedar containers
+### 2.0.7 - Instalar os pré-requisitos para hospedar containers (OPCIONAL!)
+
+> recomendamos acessar o _shell_ da VM usando um _SSH client_ (PuTTY ou Git Bash no caso do windows). Para isso abra seu SSH client, informe o IP da VM (pode ser obtido através do comando `ip a s` executado dentro da janela da VM) e faça a conexão informando usuário e senha.
+
+> Caso necessite, peça ajuda ao instrutor! 
 
 Antes de começarmos a instalação do ambiente, precisamos garantir que todos os pacotes do sistema estejam atualizados:
 
@@ -131,8 +151,9 @@ Antes de começarmos a instalação do ambiente, precisamos garantir que todos o
 # systemctl reboot
 ```
 
-> Caso tenha algum problema com o auto-registro através do Vagrant, realize o registro manualmente da seguinte forma.
->
+#### 2.0.7.1 - Registro do RHEL 7 (somente se estiver usando RHEL 7)
+
+Caso tenha algum problema com o auto-registro através do Vagrant, realize o registro manualmente da seguinte forma.
 
  ```
  subscription-manager register --username=rhnuser --password=rhnpasswd
@@ -140,20 +161,20 @@ Antes de começarmos a instalação do ambiente, precisamos garantir que todos o
  subscription-manager attach --pool=pool_id
  ```
 
-> 
-> Adicione os seguintes repositórios para instalar o `docker`
->
+Adicione os seguintes repositórios para instalar o `docker`
 
  ```
  subscription-manager repos --enable=rhel-7-server-extras-rpms
  subscription-manager repos --enable=rhel-7-server-optional-rpms
  ```
 
-Depois do servidor reiniciar, precisamos instalar os pacotes mínimos necessários:
+#### 2.0.7.2 Instalação dos pacotes mínimos necessários
 
 ```
 # yum install vim wget git bash-completion docker
 ```
+
+#### 2.0.7.3 Preparação do Docker Storage no host
 
 Antes de inicializarmos o runtime de containers, precisamos preparar o segundo disco para ser usado como registro local de imagens. Para tal, precisamos descobrir qual o dispositivo é o disco:
 
@@ -165,7 +186,7 @@ Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o se
 
 ```
 STORAGE_DRIVER="devicemapper"
-DEVS="vdb"
+DEVS="sdb"
 VG="docker"
 ```
 

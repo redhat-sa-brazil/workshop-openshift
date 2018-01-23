@@ -5,6 +5,14 @@
 * Mapear volumes locais aos containers
 * Mapear rede aos containers
 
+Para as tarefas seguintes execute alguns containers conforme comandos abaixo:
+
+```
+docker run -d busybox /bin/sh -c "while true; do echo Hello from Linux container [\$HOSTNAME];sleep 1;done"
+docker run -d busybox /bin/sh -c "while true; do echo Hello from Linux container [\$HOSTNAME];sleep 2;done"
+docker run -d busybox /bin/sh -c "while true; do echo Hello from Linux container [\$HOSTNAME];sleep 3;done"
+```
+
 # Tarefas
 
 ### 1.2.1 - Monitorando Containers
@@ -41,6 +49,12 @@ Também podemos inspecionar os metadados do container, ou de uma imagem, atravé
 
 ![](/assets/gustavo@localhost: ~_028.png)
 
+Tente obter o endereço IP de um conatiner usando o comando abaixo:
+
+```
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' <id do container>
+```
+
 ### 1.2.2 - Execução Ad-Hoc
 
 Também podemos conectar em um container em execução e executar processos adicionais usando:
@@ -51,17 +65,22 @@ Também podemos conectar em um container em execução e executar processos adic
 
 ![](/assets/Selection_029.png)
 
-### 1.2.3 - Adicionando Persistência
+### 1.2.3 - Adicionando Persistência através de Volumes
 
 Containers são essencialmente efêmeros. Entretanto, podemos mapear diretórios a eles e ter mecanismos de persistência de dados. Esse mecanismo é usado através do comando:
 
 ```
-# docker run -it -v /tmp/:/tmp/host:z centos:7
+# docker run -it -v /tmp/:/tmp_from_host:z centos:7
 ```
+> `/tmp`: diretório no FS do Host
+> `/tmp_from_host`: volume mapeado dentro do container
+> `z`: em sistemas com SELinux habilitado, indica que conteúdo do volume pode ser compartilhado por múltiplos containers
+
+> _nota_: para mais detlahes sobre o volumes no Docker veja: https://docs.docker.com/engine/admin/volumes/volumes/
 
 No exemplo acima, o diretório /tmp/host do container será mapeado para o diretório /tmp no host hospedeiro
 
-### 1.2.4 - Mapeando Rede
+### 1.2.4 - Mapeando Portas de rede entre o container e o host
 
 Por padrão, os containers utilizam de redes privadas locais no host hospedeiro. Dessa forma se faz necessário usar mapeamento de portas para expor serviços de rede, como uma aplicação web:
 
@@ -69,7 +88,19 @@ Por padrão, os containers utilizam de redes privadas locais no host hospedeiro.
 # docker run -it -p 8080:80 httpd
 ```
 
-No exemplo acima, a porta 80 do container será exposta na porta 8080 do host hospedeiro
+No exemplo acima, a porta 80 do container (httpd) será exposta na porta 8080 do host hospedeiro
+
+para se certificar disso use o comando abaixo:
+
+```
+docker port <id do conatiner httpd>
+```
+
+execute o teste abaixo tentando acessr a porta `8080` a partir do host (fora do container):
+
+```
+curl http://localhost:8080
+```
 
 Ao invés de mapear manualmente, podemos usar portas aleatórias:
 

@@ -25,7 +25,7 @@ Para essa atividades, vamos criar os seguintes diretórios:
 
 No subdiretório `~/workshop-openshift/lab1.3/src`, vamos adicionar dois arquivos, `app.py` e `requirements.txt`, com os seguintes conteúdos \(respectivamente\):
 
-```
+```python
 #! /usr/bin/env python
 
 from flask import Flask
@@ -42,7 +42,7 @@ if __name__ == '__main__':
 
 e
 
-```
+```python
 click==6.7
 Flask==0.12.2
 itsdangerous==0.24
@@ -53,11 +53,10 @@ Werkzeug==0.12.2
 
 Na raiz do diretório `~/workshop-openshift/lab1.3/`, vamos adicionar um arquivo de texto com nome `Dockerfile` com o seguinte conteúdo:
 
-```
-FROM fedora:26
+```dockerfile
+FROM fedora:27
 
 LABEL maintainer="dvercill@redhat.com"
-
 LABEL version="1.0"
 
 RUN mkdir /var/www
@@ -90,11 +89,13 @@ Verifique a sua imagem nova no registro local:
 
 Para publicar uma imagem em um registro remoto, muitas das vezes é necessário autenticação. Para tal, usamos:
 
+>_note_: caso não possua uma conta no Docker Hub, acesse https://hub.docker.com/register e crie um conta pessoal.
+
 ```
 # docker login docker.io
 ```
 
-Depois de autenticados, precisamos colocar um tag na nossa imagem usando a convenção _registry/username/image:tag_:
+Depois de autenticados, precisamos colocar um tag na nossa imagem usando a convenção `registry/username/image:tag`:
 
 ```
 # docker tag workshop-openshift docker.io/<username>/workshop-openshift

@@ -49,6 +49,14 @@ Além de nomes, imagens possuem _tags_ \(sufixo separado por ':'\) que podem ide
 
 É possível também baixar imagens de outros registries quando especificamos isso na linha de comando:
 
+No exemplo abaixo utilizaremos o registry oficial da Red Hat:
+> _nota_: para acessar o registry da Red Hat é ncessário baixar o certificado SSL e incluir na lista de certificados do **Docker Engine** (`/etc/docker/certs.d/`). Para isso instale o seguinte pacote:
+```
+yum install python-rhsm-certificates
+``` 
+
+Faça o pull da imagem `rhel-atomic` por exemplo:
+
 ```
 docker pull registry.access.redhat.com/rhel-atomic
 ```
@@ -116,6 +124,8 @@ docker run --rm -p 8080:80 wordpress
 ```
 
 O parametro -p exporta a porta interna do container \(80\) para a nossa máquina na porta 8080. Esse parâmetro será explicado melhor nos próximos exercícios.![](/assets/wordpress.gif)Agora podemos abrir nosso browser na página: [http://localhost:8080](http://localhost:8080)
+
+> _nota_: caso esteja usando uma VM acesse a URL utilizando o endereço IP da sua VM. Execute o comando `ip a s` dentro do shel da VM para saber o IP da rede interna do VirtualBox.
 
 ![](/assets/Selection_047.png)
 
