@@ -64,7 +64,7 @@ recurso permite que uma porta TCP remota possa ser acessada como se estivesse di
 através do uso de túnels.
 
 ```
-oc login https://console.ocp.rhbrlab.com:8443 -u <user>
+oc login https://console.paas.rhbrlab.com -u <user>
 oc get pods 
 oc port-forward <pod id> 3306:3306
 ```
@@ -77,6 +77,8 @@ Neste momento temos o MYSQL disponível "localmente", podemos conectar a ele com
 
 ```
 mysql -u redhat -h 127.0.0.1 -p
+
+Enter password: <insira aqui o password informado acima, redhat@123>
 
 USE workshop;
 CREATE TABLE cidade (id INT NOT NULL, nome VARCHAR(50) NOT NULL, PRIMARY KEY (id));
