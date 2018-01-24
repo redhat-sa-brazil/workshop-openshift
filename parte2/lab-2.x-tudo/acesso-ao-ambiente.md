@@ -2,7 +2,7 @@
 
 ![](https://storage.googleapis.com/workshop-openshift/oc-login.gif)
 
-1. Acesse a url: [https://console.paas.rhbrlab.com/console/](https://console.ocp.rhbrlab.com:8443/console/)
+1. Acesse a url: [https://console.paas.rhbrlab.com/console/](https://console.paas.rhbrlab.com/console/)
 2. Faça o login através da opção **Red Hat Single Sign ON**
   * informe as credenciais de acordo com o login designado pelo instrutor
   * altere sua senha no primeiro login 

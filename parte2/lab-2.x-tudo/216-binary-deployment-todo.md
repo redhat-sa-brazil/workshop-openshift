@@ -15,7 +15,8 @@ mkdir -p ~/binary-deployment/deployments && cd ~/binary-deployment
 Para testar essa funcionalidade, vamos baixar o binário da nossa aplicação de exemplo. Clique [nesse link](https://github.com/luszczynski/contador/blob/master/contador.war?raw=true) para iniciar o download e salve na pasta `~/binary-deployment/deployments`. Ou execute o seguinte comando:
 
 ```
-curl https://github.com/luszczynski/contador/blob/master/contador.war?raw=true -o ~/binary-deployment/deployments/contador.war
+curl -L https://github.com/luszczynski/contador/blob/master/contador.war?raw=true \
+ -o ~/binary-deployment/deployments/contador.war
 ```
 
 ![](/assets/show-contador.gif)
@@ -25,7 +26,11 @@ curl https://github.com/luszczynski/contador/blob/master/contador.war?raw=true -
 Agora precisamos falar para o Openshift criar um novo build usando o JBoss EAP e dizendo para ele para não usar o código-fonte e sim o binário da aplicação.
 
 ```
-oc new-build --image-stream=jboss-eap70-openshift --binary=true --name=binary-deployment -n <nome do seu projeto>
+oc new-build \
+ --image-stream=jboss-eap70-openshift \
+ --binary=true \
+ --name=binary-deployment \
+ -n <nome do seu projeto>
 ```
 
 Esse comando irá criar um BuildConfig que nada mais é que um arquivo descritor explicando como o Openshift deve construir a imagem docker. O detalhe nesse caso é o parametro **--binary=true. **Ele instrui que o BuildConfig use o binário ao invés do código-fonte da aplicação.
@@ -41,7 +46,8 @@ oc get bc -n <nome do seu projeto>
 Nosso próximo passo é executar o build que acabamos de criar:
 
 ```
-oc start-build binary-deployment --from-dir=. -n <nome do seu projeto>
+oc start-build binary-deployment \
+ --from-dir=. -n <nome do seu projeto>
 ```
 
 Estamos passando nesse comando qual o diretório que queremos enviar para a imagem do JBoss EAP 7. Nesse caso, é o diretório atual. A imagem do JBoss EAP sabe que deve pegar os arquivos que estão dentro da pasta **deployment** e jogar na pasta do JBoss responsável pelo deployment.
