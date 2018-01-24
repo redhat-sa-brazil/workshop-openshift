@@ -67,7 +67,7 @@ Alguns passos importantes para a instalação:
 
 ![](/parte1/extras/centos-install-networking.png)
 
-### 2.0.7 - Instalar os pré-requisitos para trabalhar com containers
+### 2.0.5 - Instalar os pré-requisitos para trabalhar com containers
 
 Recomendamos acessar o _shell_ da VM usando um _SSH client_ (PuTTY ou Git Bash no caso do windows). 
 
@@ -75,7 +75,7 @@ Para isso abra seu SSH client, informe o IP da VM (pode ser obtido através do c
 
 > Caso necessite, peça ajuda ao instrutor! 
 
-#### 2.0.7.1 Update do S.O (OPCIONAL!)
+#### 2.0.5.1 Update do S.O (OPCIONAL!)
 Antes de começarmos a instalação do ambiente, precisamos garantir que todos os pacotes do sistema estejam atualizados:
 
 ```
@@ -83,13 +83,13 @@ Antes de começarmos a instalação do ambiente, precisamos garantir que todos o
 # systemctl reboot
 ```
 
-#### 2.0.7.2 Instalação dos pacotes mínimos necessários
+#### 2.0.5.2 Instalação dos pacotes mínimos necessários
 
 ```
 # yum install vim wget git bash-completion docker
 ```
 
-#### 2.0.7.3 Preparação do Docker Storage no host
+#### 2.0.5.3 Preparação do Docker Storage no host
 
 Antes de inicializarmos o runtime de containers, precisamos preparar o segundo disco para ser usado como registro local de imagens. Para tal, precisamos descobrir qual o dispositivo é o disco:
 
