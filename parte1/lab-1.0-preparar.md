@@ -67,7 +67,7 @@ Alguns passos importantes para a instalação:
 
 ![](/parte1/extras/centos-install-networking.png)
 
-### 2.0.7 - Instalar os pré-requisitos para hospedar containers (OPCIONAL!)
+### 2.0.7 - Instalar os pré-requisitos para trabalhar com containers
 
 Recomendamos acessar o _shell_ da VM usando um _SSH client_ (PuTTY ou Git Bash no caso do windows). 
 
@@ -75,6 +75,7 @@ Para isso abra seu SSH client, informe o IP da VM (pode ser obtido através do c
 
 > Caso necessite, peça ajuda ao instrutor! 
 
+#### 2.0.7.1 Update do S.O (OPCIONAL!)
 Antes de começarmos a instalação do ambiente, precisamos garantir que todos os pacotes do sistema estejam atualizados:
 
 ```
