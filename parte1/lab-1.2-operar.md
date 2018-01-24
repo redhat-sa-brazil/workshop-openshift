@@ -73,10 +73,12 @@ Containers são essencialmente efêmeros. Entretanto, podemos mapear diretórios
 # docker run -it -v /tmp/:/tmp_from_host:z centos:7
 ```
 > `/tmp`: diretório no FS do Host
+
 > `/tmp_from_host`: volume mapeado dentro do container
+
 > `z`: em sistemas com SELinux habilitado, indica que conteúdo do volume pode ser compartilhado por múltiplos containers
 
-> _nota_: para mais detlahes sobre o volumes no Docker veja: https://docs.docker.com/engine/admin/volumes/volumes/
+> para mais detlahes sobre o volumes no Docker veja: https://docs.docker.com/engine/admin/volumes/volumes/
 
 No exemplo acima, o diretório /tmp/host do container será mapeado para o diretório /tmp no host hospedeiro
 

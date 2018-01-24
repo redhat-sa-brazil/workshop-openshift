@@ -4,7 +4,7 @@
 
 # Tarefas
 
-## Para usuários de estação de trabalho com MS Windows
+## 1.0 Para usuários de estação de trabalho com MS Windows
 
 ### 1.0.1 Cliente SSH
 
@@ -17,9 +17,20 @@ Existem duas opções de _SSH Client_ que recomendamos:
 
  * [**Git Bash**](https://git-scm.com/download/win) (incluso no GIT SCM for Windows) 
 
-## Criando uma VM do zero
+## 2.0 Máquina Virtual
 
-> Caso queira baixar uma VM (VirtualBOX `ova`) pronta [baixe aqui](https://drive.google.com/open?id=16CHefCCaXL9wfhsx6C7jgH11ODO5mFdP) (`~845mb`)
+Durante este workshop utilizaremos utilizaremos uma VM Linux como ambiente base dos laboratórios propostos aqui.
+
+Temos três diferentes opções para obter e utilizar essa VM: 
+ * **Cloud Provider**: ambiente pré configurado pelo Instrutor
+ * **Virtual Box Appliance**: VM pré instalada e fornecida pelo Instrutor
+ > [baixe aqui](https://drive.google.com/open?id=16CHefCCaXL9wfhsx6C7jgH11ODO5mFdP) (`~845mb`) ou peça ao instrutor o arquivo!
+
+ * **VM criada pelo aluno**: VM Criada pelo próprio aluno usando alguma ferramenta de Virtualização
+  * Virtual Box
+  * KVM
+  * VMware Fusion
+  * etc
 
 ### 2.0.1 - Instalar um virtualizador
 
@@ -28,15 +39,8 @@ Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoa
 * [**https://www.virtualbox.org**](https://www.virtualbox.org)
 * [**https://virt-manager.org**](https://virt-manager.org)
 
-### 2.0.2 - Obter imagem de instalação
-
-Nos exercícios desse material vamos usar o **Red Hat Enterprise Linux Server**, mas também podemos usar qualquer outra distribuição derivada, como CentOS ou Fedora.
-
-Para obter uma subscrição gratuita para **uso em desenvolvimento**, basta se inscrever gratuitamente no programa ** Red Hat Developers**. Mais informações em:
-
-* [**https://developers.redhat.com/products/rhel/download/**](https://developers.redhat.com/products/rhel/download/)
-
-### 2.0.3 - Preparar a máquina virtual (VM)
+### 2.0.3 - Criar a máquina virtual (VM)
+Nos exercícios desse material vamos usar o **CentOS**.
 
 Após a instalação do virtualizador e a cópia do ISO do sistema operacional, vamos criar uma máquina virtual nas seguintes características:
 
@@ -63,84 +67,11 @@ Alguns passos importantes para a instalação:
 
 ![](/parte1/extras/centos-install-networking.png)
 
-## Usando um VM pronta através do Vagrant
-### 2.0.5 Obtendo uma assinatura __Red Hat Developer__
-
-Acesse o endereço https://developers.redhat.com
-
-![](/parte1/extras/rhdev-portal-registernewuser.png)
-
-realize o Registro de uma nova Conta
-
-![](/parte1/extras/rhdev-new-account.png)
-
-Após criar sua conta, confirme através do link enviado para o seu email.
-
-Verifique sua subscrição acessando: https://access.redhat.com/management
-Realize o login com sua conta recém criada!
-Clique em Subscriptions. Deve haver uma subscrição `Red Hat Enterprise Linux Developer Suite`
-
-![](/parte1/extras/subscription-active.png)
-
-Ainda nessa página
-
-![](/parte1/extras/myactivesubs.png)
-
-Copie o PooldID da sua subscrição!
-
-![](/parte1/extras/subs-poolid.png)
-
-### 2.0.6 Importando a VM através do Vagrant
-Realize o download do Vagrant para a sua plataforma (Win, Linux ou Mac) acessando https://www.vagrantup.com/downloads.html
-
-Após o Vagrant devidamente instalado:
- * instale o seguinte plugin
-
- ```
- vagrant plugin install vagrant-registration
- vagrant plugin list
- ```
-
- * copie diretório `vagrant-workshop` fornecido pelo instrutor para sua máquina local.
-
-Na console, acesse o diretório `vagrant-workshop` Execute o seguinte comando em uma console:
-
-```
-vagrant box add rhel74-ocp-workshop ./rhel74-ocp-workshop.box
-vagrant box list
-```
-
-Antes de subir a vm com Vagrant, abra o arquivo `Vagrantfile` e altere o seguinte trecho no final:
-
-```
-if Vagrant.has_plugin?('vagrant-registration')
-  config.registration.username = 'seu login no developers.redhat.com'
-  #config.registration.password = '<access.redhat.com password>'
-  config.registration.pools = [ '8a85f98a5ffdXXXXXX15fff7a77e74ca1' ] # PoolID da sua subscrição!!!
-end
-```
-
-Salve o arquivo.
-
-### 2.0.6 Iniciando a VM usando o Vagrant
-inicie a VM com o seguinte comando:
-
-```
-vagrant up
-```
-
-Após alguns minutos a VM deve subir (obseve a saída no terminal)
-
-Acesse a console da VM via `ssh`
-
-```
-vagrant ssh
-sudo -i
-```
-
 ### 2.0.7 - Instalar os pré-requisitos para hospedar containers (OPCIONAL!)
 
-> recomendamos acessar o _shell_ da VM usando um _SSH client_ (PuTTY ou Git Bash no caso do windows). Para isso abra seu SSH client, informe o IP da VM (pode ser obtido através do comando `ip a s` executado dentro da janela da VM) e faça a conexão informando usuário e senha.
+Recomendamos acessar o _shell_ da VM usando um _SSH client_ (PuTTY ou Git Bash no caso do windows). 
+
+Para isso abra seu SSH client, informe o IP da VM (pode ser obtido através do comando `ip a s` executado dentro da janela da VM) e faça a conexão informando usuário e senha.
 
 > Caso necessite, peça ajuda ao instrutor! 
 
@@ -150,23 +81,6 @@ Antes de começarmos a instalação do ambiente, precisamos garantir que todos o
 # yum update -y
 # systemctl reboot
 ```
-
-#### 2.0.7.1 - Registro do RHEL 7 (somente se estiver usando RHEL 7)
-
-Caso tenha algum problema com o auto-registro através do Vagrant, realize o registro manualmente da seguinte forma.
-
- ```
- subscription-manager register --username=rhnuser --password=rhnpasswd
- subscription-manager list --available    Find valid RHEL pool ID
- subscription-manager attach --pool=pool_id
- ```
-
-Adicione os seguintes repositórios para instalar o `docker`
-
- ```
- subscription-manager repos --enable=rhel-7-server-extras-rpms
- subscription-manager repos --enable=rhel-7-server-optional-rpms
- ```
 
 #### 2.0.7.2 Instalação dos pacotes mínimos necessários
 
