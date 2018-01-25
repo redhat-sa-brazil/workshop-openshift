@@ -8,7 +8,9 @@ Nessa demo iremos criar uma imagem base baseado no Httpd e, baseado nela, iremos
 
 #### Preparando o ambiente
 
-Para que essa demo funcione conforme esperado, é necessário liberar a permissão de rodar os containers como root.
+Para que essa demo funcione conforme esperado, é necessário liberar a permissão de rodar os containers como root. 
+
+> peça ao instrutor que conceda, temporáriamente, essa permisssão especial no seu projeto!
 
 ```
 oc adm policy add-scc-to-user anyuid -z default -n myproject
@@ -23,7 +25,9 @@ oc create -f https://raw.githubusercontent.com/luszczynski/openshift-image-strea
 Agora já podemos executar o template
 
 ```
-oc new-app --template=base-image-example --param=GIT_URL=https://github.com/luszczynski/openshift-image-stream-example.git -n myproject
+oc new-app \
+ --template=base-image-example \
+ --param=GIT_URL=https://github.com/luszczynski/openshift-image-stream-example.git
 ```
 
 Espere alguns minutos. Aproveite e tome um café nesse tempo.

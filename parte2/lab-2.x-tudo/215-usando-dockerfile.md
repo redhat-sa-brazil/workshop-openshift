@@ -12,7 +12,7 @@ Vamos criar um Dockerfile com base na [imagem oficial do PHP para Openshift](htt
 
 Abaixo segue o conteúdo do arquivo:
 
-```
+```dockerfile
 FROM registry.access.redhat.com/rhscl/php-70-rhel7
 
 RUN echo "<h1>Meu Dockerfile</h1>" > /opt/app-root/src/index.php
@@ -22,7 +22,7 @@ CMD ["container-entrypoint", "/usr/libexec/s2i/run"]
 
 Salve esse arquivo com nome de **Dockerfile** na raiz do nosso git e execute:
 
-```
+```bash
 git add Dockerfile
 git commit -m "Dockerfile adicionado"
 git push
@@ -32,8 +32,12 @@ git push
 
 Para criar uma aplicação com base no Dockerfile criado, precisamos executar o seguinte comando:
 
-```
-oc new-app --name=dockerfile-app --strategy=docker https://github.com/<seu-usuario>/workshop-php.git -n <nome do seu projeto do openshift
+```bash
+oc new-app \
+ --name=dockerfile-app \
+ --strategy=docker \
+ https://github.com/<seu-usuario>/workshop-php.git \
+ -n <nome do seu projeto do openshift
 ```
 
 Para saber o nome do seu projeto no Openshift, basta executar:

@@ -25,7 +25,7 @@ curl -L https://github.com/luszczynski/contador/blob/master/contador.war?raw=tru
 
 Agora precisamos falar para o Openshift criar um novo build usando o JBoss EAP e dizendo para ele para não usar o código-fonte e sim o binário da aplicação.
 
-```
+```bash
 oc new-build \
  --image-stream=jboss-eap70-openshift \
  --binary=true \

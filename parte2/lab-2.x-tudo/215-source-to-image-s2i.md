@@ -15,7 +15,7 @@ git clone https://github.com/<seu-usuario>/workshop-php.git && cd workshop-php
 
 Crie o arquivo `index.php` com o seguinte conteúdo
 
-```
+```php
 <?php
 echo "<h1>Openshift Workshop v1.0</h1> ";
 echo $_SERVER['SERVER_ADDR'];
@@ -26,7 +26,7 @@ echo $_SERVER['SERVER_ADDR'];
 
 Faça o commit do código para o servidor git.
 
-```
+```bash
 git add index.php
 git commit -am "first commit"
 git push -u origin master

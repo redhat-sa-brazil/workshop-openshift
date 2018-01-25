@@ -40,7 +40,7 @@ Para testarmos o liveness e o readiness vamos criar dois novos contextos na noss
 
 `liveness.php`
 
-```
+```php
 <?php
 $filename = '/tmp/liveness';
 
@@ -54,7 +54,7 @@ if (file_exists($filename)) {
 
 e o`readiness.php`
 
-```
+```php
 <?php
 $filename = '/tmp/readiness';
 
@@ -70,7 +70,7 @@ Os códigos dos dois probes verificam se existe um arquivo no `/tmp` dentro do c
 
 Vamos atualizar nosso repositório
 
-```
+```bash
 git add .
 git commit -m "health check adicionado"
 git push
@@ -105,7 +105,9 @@ oc get dc
 Substitua ele no comando abaixo para o `readiness`:
 
 ```
-oc set probe dc/workshop-php --readiness --get-url=http://:8080/readiness.php
+oc set probe dc/workshop-php \
+ --readiness \
+ --get-url=http://:8080/readiness.php
 ```
 
 ![](/assets/readiness-cmd.gif)
@@ -113,7 +115,10 @@ oc set probe dc/workshop-php --readiness --get-url=http://:8080/readiness.php
 Para o `liveness`:
 
 ```
-oc set probe dc/workshop-php --initial-delay-seconds=20 --liveness --get-url=http://:8080/liveness.php
+oc set probe dc/workshop-php \
+ --initial-delay-seconds=20 \
+ --liveness \
+ --get-url=http://:8080/liveness.php
 ```
 
 ![](/assets/liveness-cmd.gif)

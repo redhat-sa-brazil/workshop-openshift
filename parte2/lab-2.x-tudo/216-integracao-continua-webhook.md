@@ -35,7 +35,7 @@ No `index.php` altere a linha com a versão da aplicação para versão 2.0.
 echo "<h1>Openshift Workshop v2.0</h1>";
 ```
 
-```
+```bash
 git add index.php
 git commit -m "webhook adicionado"
 git push

@@ -18,7 +18,7 @@ O Openshift suporte autoscale por CPU ou memória. Na console, temos somente a o
 
 Vamos gerar uma carga agora na aplicação para ver como ela se comporta. Utilizaremo o [ab \(Apache Benchmark\)](https://httpd.apache.org/docs/2.4/programs/ab.html).
 
-```
+```bash
 ab -n 10000 -c 50 <url da aplicação>
 ```
 

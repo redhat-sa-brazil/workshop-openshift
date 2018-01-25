@@ -90,8 +90,8 @@ E também na tela inicial temos um aviso que o acesso está sendo divido.
 
 Para testarmos que realmente 90% do acesso está indo para versão 1.0 e 10% para v3.0, vamos usar um comando do shell:
 
-```
-while [ true ]; do curl http://workshop-php-testdrive.apps.ocp.rhbrlab.com/; sleep 1; echo; done
+```bash
+while [ true ]; do curl http://workshop-php-testdrive.apps.ocp.rhbrlab.com/; sleep 1.3; echo; done
 ```
 
 Esse comando irá executar um curl na sua aplicaçao em cada 1s.

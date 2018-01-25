@@ -13,29 +13,9 @@ diretório pipeline.
 mkdir pipeline
 ```
 
-Crie o arquivo `buildconfig.yaml Repare que existe um campo que deve ser alterado com o nome do usuário do github.`
+Vamos definir um pipeline simples, crie o arquivo `jenkins-pipeline.groovy ` dentro do diretório `pipeline`
 
-```
-kind: "BuildConfig"
-apiVersion: "v1"
-metadata:
-  name: "workshop-pipeline"
-  annotations:
-    pipeline.alpha.openshift.io/uses: '[{"name": "workshop-php", "kind": "DeploymentConfig"}]'
-spec:
-  source:
-    type: "Git"
-    git:
-      uri: "http://github.com/<seu-usuario-do-github>/workshop-php.git"
-  strategy:
-    type: "JenkinsPipeline"
-    jenkinsPipelineStrategy:
-      jenkinsfilePath: "pipeline/jenkins-pipeline.groovy"
-```
-
-Vamos definir um pipeline simples, crie o arquivo `jenkins-pipeline.groovy `dentro da pasta pipeline
-
-```
+```groovy
  node('maven') {
     stage('build') {
         echo 'building app :)'
@@ -63,9 +43,29 @@ git commit -m "criado jenkinsfile"
 git push origin master
 ```
 
-Pela linha de comando, crie o build config que definimos no passo anterior:
+Pela console, clique em `Add to Project > Import YAML / JSON` e cole o conteúdo abaixo:
 
-`oc create -f buildconfig.yaml`
+> repare que existe um campo que deve ser alterado com o nome do usuário do github.
+
+```yaml
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "workshop-pipeline"
+  annotations:
+    pipeline.alpha.openshift.io/uses: '[{"name": "workshop-php", "kind": "DeploymentConfig"}]'
+spec:
+  source:
+    type: "Git"
+    git:
+      uri: "http://github.com/<seu-usuario-do-github>/workshop-php.git"
+  strategy:
+    type: "JenkinsPipeline"
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: "pipeline/jenkins-pipeline.groovy"
+```
+
+Clique em `Create`
 
 > Observe que logo ao fim da execução deste passo, o Jenkins \(master/slave\) será provisionado automaticamente no projeto em questão.
 

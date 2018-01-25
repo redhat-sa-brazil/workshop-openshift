@@ -8,12 +8,12 @@
 ![](/assets/Selection_165.png)
 
 * Preencha os campos do template com os seguintes valores:
-  * `Database Service Name` com `mysql`
+  * `Database Service Name` com     `mysql`
   * `MySQL Connection Username` com `redhat`
   * `MySQL Connection Password` com `redhat@123`
-  * `MySQL root user Password` com `redhat@123`
-  * `MySQL Database Name com` com `workshop`
-  * `Volume Capacity com` com `1Gi`
+  * `MySQL root user Password` com  `redhat@123`
+  * `MySQL Database Name com` com   `workshop`
+  * `Volume Capacity com` com       `1Gi`
 
 ![](/assets/Selection_166.png)
 
@@ -31,7 +31,7 @@ Vamos mostrar uma lista de cidades cadastradas no banco de dados com essa aplica
 Para isso o primeiro passo será conectar a nossa aplicação já existente neste banco de dados, para isso  
 precisamos adicionar o trecho de código abaixo ao arquivo `index.php` já existente.
 
-```
+```php
 <?php
 echo "<h1>Openshift Workshop v2.0</h1> ";
 echo $_SERVER['SERVER_ADDR'];
@@ -75,7 +75,7 @@ O comando `oc port-forward` mantém o terminal preso enquanto estiver executando
 
 Neste momento temos o MYSQL disponível "localmente", podemos conectar a ele com ferramentas gráficas ou como será demonstrado aqui com o mysql client. Lembre-se de abrir um outro terminal ou colocar o processo do port-forward em background. Importante é que ele deve estar rodando antes de executar o comando abaixo:
 
-```
+```bash
 mysql -u redhat -h 127.0.0.1 -p
 
 Enter password: <insira aqui o password informado acima, redhat@123>

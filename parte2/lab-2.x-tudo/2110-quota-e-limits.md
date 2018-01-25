@@ -53,11 +53,11 @@ Na página de metricas, agora vocês podem ver que existe um novo gráfico indic
 
 Vamos agora executar um processo dentro do container que consuma todo recurso possível de memória e CPU. O comando abaixo faz exatamente essa tarefa:
 
-```
+```bash
 while :; do _+=( $((++__)) ); done
 ```
 
-Use o comando acima com cuidado uma vez que ele pode travar o sistema operacional se utilizado em ambientes sem restrições de recurso.
+> Use o comando acima com cuidado uma vez que ele pode travar o sistema operacional se utilizado em ambientes sem restrições de recurso.
 
 Para executar esse comando dentro do container, vamos primeiro acessar nossa aplicação remotamente com o comando abaixo:
 
