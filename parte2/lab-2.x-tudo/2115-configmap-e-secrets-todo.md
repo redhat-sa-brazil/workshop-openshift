@@ -38,8 +38,11 @@ oc describe configmap config
 
 #### Usando nosso configmap
 
-```
-oc volumes dc/workshop-php --add --mount-path=/tmp/config --configmap-name=config --type=configmap
+```bash
+oc volumes dc/workshop-php \
+ --add --mount-path=/tmp/config \
+ --configmap-name=config \
+ --type=configmap
 ```
 
 Se acessarmos o container, veremos que na pasta `/tmp/config` existe o nosso arquivo properties.
