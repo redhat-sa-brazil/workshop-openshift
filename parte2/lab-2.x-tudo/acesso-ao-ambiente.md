@@ -20,7 +20,7 @@ Neste momento você já estará dentro do seu projeto.
 
 A sua tela será semelhante a essa:
 
-![](/assets/Selection_202.png)Esse nome destacado na imagem acima, é o `Display Name`do seu projeto. Na prática é um nome mais amigável. 
+![](/assets/Selection_202.png)Esse nome destacado na imagem acima, é o `Display Name`do seu projeto. Na prática é um nome mais amigável.
 
 Precisaremos usar o nome do seu projeto \(que não é o display name\) para várias operações nos labs posteriores. Para descobrir esse nome, basta ver um pequeno nome abaixo do display name conforme mostra a imagem abaixo:
 
@@ -30,5 +30,11 @@ Precisaremos usar o nome do seu projeto \(que não é o display name\) para vár
 oc get projects
 ```
 
-![](/assets/oc-get-projects.gif) 
+![](/assets/oc-get-projects.gif)
+
+Se você precisar ver os dados do seu projeto, basta clicar no menu de projetos conforme imagem abaixo:
+
+![](/assets/Selection_204.png)
+
+
 
