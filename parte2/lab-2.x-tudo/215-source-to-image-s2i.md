@@ -42,7 +42,7 @@ Agora que já temos uma aplicação, podemos prosseguir.
 * Selecione o template `PHP` no submenu `Browser Catalog`.
 * Selecione o template `PHP` na versão `7.0`.
 * Preencha o campo `Name` com o valor `workshop-php` 
-* Preencha o campo `Git Repository URL` com o valor `https://github.com/<seu-usuario>/workshop.php.git`
+* Preencha o campo `Git Repository URL` com o valor `https://github.com/<seu-usuario>/workshop-php.git`
 
 Acesse a url gerada e verifique a aplicação em funcionamento. O resultado deve ser algo similar a isso:
 
