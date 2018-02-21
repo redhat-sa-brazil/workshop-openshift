@@ -6,27 +6,22 @@ Com o objetivo é utilizar o pipeline, devemos desabilitar o deploy automático 
 
 ![](https://storage.googleapis.com/workshop-openshift/disable-deploy.png)
 
-Para isso, precisamos criar um `BuildConfig`. Dentro do seu repositório do `workshop-php`, crie o  
-diretório pipeline.
+Para isso, precisamos criar um `BuildConfig.`
 
-```
-mkdir pipeline
-```
-
-Vamos definir um pipeline simples, crie o arquivo `jenkins-pipeline.groovy ` dentro do diretório `pipeline`
+Crie um arquivo chamado `jenkins-pipeline.groovy` dentro do seu repositório do github. Para isso, siga o procedimento, já demonstrado nos labs anteriores, de criação do novo arquivo pela Web Console do Github. O conteúdo do arquivo segue abaixo:
 
 ```groovy
  node('maven') {
     stage('build') {
         echo 'building app :)'
-        openshiftBuild(buildConfig: 'workshop-php', showBuildLogs: 'true')
+        openshiftBuild(buildConfig: 'workshop-ocp', showBuildLogs: 'true')
     }
     stage('verify') {
         echo 'dummy verification....'
     }
     stage('deploy') {
         input 'Manual Approval'
-        openshiftDeploy(deploymentConfig: 'workshop-php')
+        openshiftDeploy(deploymentConfig: 'workshop-ocp')
     }
     stage('promoting to QA') {
        echo 'fake stage...'
@@ -34,6 +29,12 @@ Vamos definir um pipeline simples, crie o arquivo `jenkins-pipeline.groovy ` den
     }
 }
 ```
+
+No final, seu repositório deve estar conforme imagem abaixo:
+
+![](/assets/Selection_282.png)
+
+Você também pode fazer essa passo pela linha de comando do git.
 
 Antes de continuar, precisamos fazer push para o repositório do github:
 
@@ -45,7 +46,7 @@ git push origin master
 
 Pela console, clique em `Add to Project > Import YAML / JSON` e cole o conteúdo abaixo:
 
-> repare que existe um campo que deve ser alterado com o nome do usuário do github.
+> AVISO: Repare que existe um campo que deve ser alterado com o nome do usuário do github.
 
 ```yaml
 kind: "BuildConfig"
@@ -58,12 +59,19 @@ spec:
   source:
     type: "Git"
     git:
-      uri: "http://github.com/<seu-usuario-do-github>/workshop-php.git"
+      uri: "http://github.com/<seu-usuario-do-github>/workshop-ocp.git"
   strategy:
     type: "JenkinsPipeline"
     jenkinsPipelineStrategy:
-      jenkinsfilePath: "pipeline/jenkins-pipeline.groovy"
+      jenkinsfilePath: "jenkins-pipeline.groovy"
+      
 ```
+
+No Openshift 3.7 siga os passos a seguir:
+
+![](/assets/Selection_283.png)
+
+
 
 Clique em `Create`
 
