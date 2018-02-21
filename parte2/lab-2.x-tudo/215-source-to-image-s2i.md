@@ -11,8 +11,6 @@ Crie um repositório no github com o nome `workshop-ocp`
 
 ![](/assets/Selection_239.png)
 
-
-
 Crie o arquivo `index.php` com o seguinte conteúdo
 
 ```php
@@ -31,8 +29,6 @@ Conteúdo do arquivo.![](/assets/Selection_241.png)
 Clique em `commit new file` para criar o arquivo.
 
 ![](/assets/Selection_242.png)
-
-
 
 Os passos mostrados acima também podem ser feitos pela linha de comando conforme abaixo:
 
