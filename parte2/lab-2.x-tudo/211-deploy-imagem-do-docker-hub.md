@@ -46,7 +46,7 @@ Na interface web selecione a opção _**create route.**_
 
 ![](/assets/Selection_229.png)
 
-Command line
+**Command line**
 
 Também podemos usar a linha de comando para criar a nossa rota. Para isso, basta executar:
 
@@ -60,26 +60,26 @@ Para ver detalhes do container que acabamos de criar, basta clicar em cima do ci
 
 ![](/assets/overview.gif)
 
-Detalhes do POD![](/assets/Selection_230.png)
+**Detalhes do POD**![](/assets/Selection_230.png)
 
 1. Ip do POD
 2. Node no qual o POD está executando
 3. Imagem utilizada
 4. Porta exposta pelo POD
 
-Environment
+**Environment**
 
 ![](/assets/Selection_234.png)
 
-Logs do POD
+**Logs do POD**
 
 ![](/assets/Selection_231.png)
 
-Terminal do POD
+**Terminal do POD**
 
 ![](/assets/Selection_232.png)
 
-Eventos do POD
+**Eventos do POD**
 
 ![](/assets/Selection_233.png)
 

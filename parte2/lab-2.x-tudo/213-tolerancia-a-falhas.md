@@ -22,12 +22,16 @@ Quando o círculo estiver colorido de azul significa que o novo foi corretamente
 
 Para testar o comportamento vamos deletar um POD em execução, o intuito é simular uma falha.
 
-![](https://storage.googleapis.com/workshop-openshift/delete-pod.gif)
+![](/assets/delete-pod.gif.gif)
 
 1. Selecione um dos pods, no menu superior direito selecione a opção _Actions_ &gt; _Delete_ e confirme a operação.
 2. Selecione a opção _Overview_ no menu lateral esquerdo e veja que um novo pod será recriado.
 
 > Este comportamento evita aquele caso clássico de precisar ligar para alguém de operações para reiniciar a aplicação em um caso de falha
+
+Quando o POD é deletado, o Openshift o recupera automaticamente como pode ser visto no video abaixo. Nesse exemplo, um POD novo é criado \(cor azul claro\) e outro está sendo finalizado \(cor azul escuro\) mas sempre mantendo a quantidade de 2 instâncias rodando.
+
+![](/assets/deleting.gif)
 
 Também podemos deletar um POD usando a linha de comando:
 
