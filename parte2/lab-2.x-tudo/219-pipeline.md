@@ -86,7 +86,21 @@ No menu lateral esquerdo, selecione a opção `Builds` &gt; `Pipelines` e seleci
 
 Depois clique em `Start pipeline`
 
-![](/assets/Selection_289.png)
+![](/assets/Selection_289.png)Você pode visualizar o log por meio da opção:
+
+![](/assets/Selection_290.png)
+
+Quando você clicar no log, ele te pedirá para logar usando suas credenciais do Openshift.
+
+![](/assets/Selection_291.png)
+
+Aceite as permissões
+
+![](/assets/Selection_292.png)Quando seu pipeline estiver executando, ele ficará semelhante a imagem abaixo:
+
+![](/assets/Selection_293.png)
+
+### 
 
 ### Mais informações
 
