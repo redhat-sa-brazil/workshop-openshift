@@ -2,16 +2,16 @@
 
 #### Criar nova aplicação no github
 
-Usaremos uma aplicação php como exemplo, sinta-se a vontade para usar a sua linguagem de preferência, mas  
+Usaremos uma aplicação php como exemplo, sinta-se à vontade para usar a sua linguagem de preferência, mas  
 tenha em mente que depois conectaremos a um banco de dados e utilizaremos variáveis de ambiente.
 
-Crie um repositório com o nome `workshop-php`
+Crie um repositório no github com o nome `workshop-ocp`
 
-Faça o clone deste novo repositório e crie a página inicial `index.php`
+![](/assets/Selection_237.png)Depois informe o nome do repositorio:
 
-```
-git clone https://github.com/<seu-usuario>/workshop-php.git && cd workshop-php
-```
+![](/assets/Selection_239.png)
+
+
 
 Crie o arquivo `index.php` com o seguinte conteúdo
 
@@ -24,6 +24,24 @@ echo $_SERVER['SERVER_ADDR'];
 
 > Essa linha com o conteudo $\_SERVER é opcional, ela irá mostrar na tela o IP do pod em que está sendo executada.
 
+![](/assets/Selection_240.png)
+
+Conteúdo do arquivo.![](/assets/Selection_241.png)
+
+Clique em `commit new file` para criar o arquivo.
+
+![](/assets/Selection_242.png)
+
+
+
+Os passos mostrados acima também podem ser feitos pela linha de comando conforme abaixo:
+
+Faça o clone deste novo repositório e crie a página inicial `index.php`
+
+```
+git clone https://github.com/<seu-usuario>/workshop-ocp.git && cd workshop-ocp
+```
+
 Faça o commit do código para o servidor git.
 
 ```bash
@@ -32,26 +50,32 @@ git commit -am "first commit"
 git push -u origin master
 ```
 
+No final de tudo, devemos ter um arquivo `index.php` no nosso repositório do github.
+
+![](/assets/Selection_243.png)
+
 Agora que já temos uma aplicação, podemos prosseguir.
 
 #### Deploy utilizando S2I
 
-![](https://storage.googleapis.com/workshop-openshift/s2i-deploy.gif)
+Browse Catalog![](/assets/Selection_245.png)Seleciona PHP
+
+![](/assets/Selection_246.png)![](/assets/s2i-parte2.gif)
 
 * Selecione no menu superior `Add to project`
 * Selecione o template `PHP` no submenu `Browser Catalog`.
 * Selecione o template `PHP` na versão `7.0`.
-* Preencha o campo `Name` com o valor `workshop-php` 
-* Preencha o campo `Git Repository URL` com o valor `https://github.com/<seu-usuario>/workshop-php.git`
+* Preencha o campo `Name` com o valor `workshop-ocp` 
+* Preencha o campo `Git Repository URL` com o valor `https://github.com/<seu-usuario-do-github>/workshop-ocp.git`
 
 Acesse a url gerada e verifique a aplicação em funcionamento. O resultado deve ser algo similar a isso:
 
-![](https://storage.googleapis.com/workshop-openshift/s2i-deploy-final.png)
+![](/assets/Selection_248.png)
 
 Você também pode usar a linha de comando para fazer o S2I.
 
 ```
-oc new-app https://github.com/<seu-usuario>/workshop-php.git -n <nome do seu projeto do openshift>
+oc new-app https://github.com/<seu-usuario>/workshop-ocp.git -n <nome do seu projeto do openshift>
 ```
 
 Nesse caso, o Openshfit irá tentar adivinhar qual a linguagem que você utilizou na sua aplicação.
@@ -60,9 +84,9 @@ Nesse caso, o Openshfit irá tentar adivinhar qual a linguagem que você utilizo
 
 Através da seta para cima na lateral do círculo do pod, clique até escalar a aplicação para 4 pods.
 
-#### ![](https://storage.googleapis.com/workshop-openshift/scale-up-4.png)
+#### ![](/assets/scale-4.gif)
 
-#### Source-to-Image com outras imagens
+#### Source-to-Image com outras imagens \(Opcional\)
 
 Iremos agora utilizar o S2I com um template do Apache HTTPD. Já existe [um repositório](https://github.com/openshift/httpd-ex.git) com um arquivo de exemplo para testarmos essa funcionalidade.
 
