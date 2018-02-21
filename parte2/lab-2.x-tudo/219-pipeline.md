@@ -78,9 +78,15 @@ Clique em `Create`
 
 > Observe que logo ao fim da execução deste passo, o Jenkins \(master/slave\) será provisionado automaticamente no projeto em questão.
 
+![](/assets/Selection_287.png)
+
 No menu lateral esquerdo, selecione a opção `Builds` &gt; `Pipelines` e selecione a opção `Start pipeline`
 
-![](https://storage.googleapis.com/workshop-openshift/start-pipeline.png)
+![](/assets/Menu_288.png)
+
+Depois clique em `Start pipeline`
+
+![](/assets/Selection_289.png)
 
 ### Mais informações
 
