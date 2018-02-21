@@ -54,9 +54,15 @@ oc cluster up \
   --logging
 ```
 
+#### 2.1.1.1.1 Acessando a Web Console
 
+Se os passos anteriores foram executados com sucesso, você terá uma tela com a seguinte informação:
 
+![](/assets/Selection_226.png)
 
+1. Esse é a url de acesso para a Web Console
+2. Suas credenciais para acesso ao Openshift
+3. Usuário com privilégio elevado para tarefas administrativas do cluster
 
 ### 2.1.1.2 Acesso ao ambiente OpenShift Nuvem
 
