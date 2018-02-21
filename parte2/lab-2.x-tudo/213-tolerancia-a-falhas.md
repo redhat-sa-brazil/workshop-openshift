@@ -55,5 +55,7 @@ Agora podemos apagar essa aplicação já que não a utilizaremos mais. O comand
 oc delete all -l app=workshop-openshift -n <nome do seu projeto do openshift>
 ```
 
-![](/assets/Selection_086.png)
+![](/assets/Selection_086.png)Ao fim desse lab, sua tela do Openshift deve estar conforme imagem abaixo:
+
+![](/assets/Selection_236.png)
 
