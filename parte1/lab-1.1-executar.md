@@ -39,23 +39,33 @@ Só existirão resultados que tenham mais que 10 estrelas.
 
 ### 1.1.3 - Baixando Imagens dos Registries
 
-Além de nomes, imagens possuem _tags_ \(sufixo separado por ':'\) que podem identificar versões ou variações de uma imagem específica. Para baixar uma imagem para o repositório local de imagens, usa-se:
+Além de nome, imagens possuem _tags_ \(sufixo separado por ':'\) que podem identificar versões ou variações de uma imagem específica. Para baixar uma imagem para o storage local de imagens, usa-se:
 
 ```
 # docker pull centos:7
 ```
 
-![](/assets/gustavo@localhost: ~_018.png)
+![](/assets/Selection_216.png)
 
 É possível também baixar imagens de outros registries quando especificamos isso na linha de comando:
 
-No exemplo abaixo utilizaremos o registry oficial da Red Hat:
-> _nota_: para acessar o registry da Red Hat é ncessário baixar o certificado SSL e incluir na lista de certificados do **Docker Engine** (`/etc/docker/certs.d/`). Para isso instale o seguinte pacote:
-```
-yum install python-rhsm-certificates
-``` 
+No exemplo abaixo utilizaremos o registry oficial da Red Hat.
 
-Faça o pull da imagem `rhel-atomic` por exemplo:
+```
+docker pull registry.access.redhat.com/rhel-atomic
+```
+
+Caso você encontre o erro abaixo:
+
+![](/assets/Selection_214.png)
+
+Ele acontece porque o registry da Red Hat exige certificado SSL. Para resolver isso, instale o seguinte pacote:
+
+```
+yum install python-rhsm-certificates -y
+```
+
+Agora faça novamente o pull da imagem `rhel-atomic`:
 
 ```
 docker pull registry.access.redhat.com/rhel-atomic
@@ -71,7 +81,7 @@ Para verificar quais imagens estão disponíveis localmente, usa-se:
 # docker images
 ```
 
-![](/assets/gustavo@localhost: ~_019.png)
+![](/assets/Selection_215.png)
 
 ### 1.1.5 - Removendo Imagens Locais
 
@@ -99,7 +109,7 @@ A execução de um container significa processar os metadados da imagem e criar 
 # docker run -it centos:7 /bin/bash
 ```
 
-![](/assets/@ea0db5938e36:-_022.png)
+![](/assets/Selection_217.png)
 
 No exemplo anterior você deve ter percebido que além de iniciar o container você entrou no isolamento. Para sair usa-se a sequência _CTRL+P+Q_. Para iniciar o container de forma _detached_, usa-se:
 
@@ -113,7 +123,7 @@ Caso queira entrar em um container já em execução, para fazer _attach_ no pro
 # docker attach <nome/ID>
 ```
 
-![](/assets/docker attach c548bf3b3d4b9b5d68c8f3abfcb78e602bbce246e88c3d6fdfbbc3cc4c692b0_023.png)
+![](/assets/Selection_218.png)
 
 ### 1.1.7 - Executando imagem do Wordpress
 
@@ -125,7 +135,9 @@ docker run --rm -p 8080:80 wordpress
 
 O parametro -p exporta a porta interna do container \(80\) para a nossa máquina na porta 8080. Esse parâmetro será explicado melhor nos próximos exercícios.![](/assets/wordpress.gif)Agora podemos abrir nosso browser na página: [http://localhost:8080](http://localhost:8080)
 
-> _nota_: caso esteja usando uma VM acesse a URL utilizando o endereço IP da sua VM. Execute o comando `ip a s` dentro do shel da VM para saber o IP da rede interna do VirtualBox.
+> _nota_: caso esteja usando uma VM local acesse a URL utilizando o endereço IP da sua VM. Execute o comando `ip a s` dentro do shel da VM para saber o IP da rede interna do VirtualBox.
+>
+> Se estiver usando uma VM na nuvem, use seu ip público para acessar o serviço.
 
 ![](/assets/Selection_047.png)
 

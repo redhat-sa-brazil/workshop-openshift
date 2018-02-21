@@ -12,21 +12,25 @@ Instale um cliente SSH para acessar o _shell_ da VM que será utilizada durante 
 
 Existem duas opções de _SSH Client_ que recomendamos:
 
- * [**PutTTY**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
- > baixe o arquivo `putty-64bit-0.70-installer.msi`
+* [**PutTTY**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
- * [**Git Bash**](https://git-scm.com/download/win) (incluso no GIT SCM for Windows) 
+  > baixe o arquivo `putty-64bit-0.70-installer.msi`
+
+* [**Git Bash**](https://git-scm.com/download/win) \(incluso no GIT SCM for Windows\)
 
 ## 2.0 Máquina Virtual
 
 Durante este workshop utilizaremos utilizaremos uma VM Linux como ambiente base dos laboratórios propostos aqui.
 
-Temos três diferentes opções para obter e utilizar essa VM: 
- * **Cloud Provider**: ambiente pré configurado pelo Instrutor
- * **Virtual Box Appliance**: VM pré instalada e fornecida pelo Instrutor
- > [baixe aqui](https://drive.google.com/open?id=16CHefCCaXL9wfhsx6C7jgH11ODO5mFdP) (`~845mb`) ou peça ao instrutor o arquivo!
+Temos três diferentes opções para obter e utilizar essa VM:
 
- * **VM criada pelo aluno**: VM Criada pelo próprio aluno usando alguma ferramenta de Virtualização
+* **Cloud Provider**: ambiente pré configurado pelo Instrutor
+* **Virtual Box Appliance**: VM pré instalada e fornecida pelo Instrutor
+
+  > [baixe aqui](https://drive.google.com/open?id=16CHefCCaXL9wfhsx6C7jgH11ODO5mFdP) \(`~845mb`\) ou peça ao instrutor o arquivo!
+
+* **VM criada pelo aluno**: VM Criada pelo próprio aluno usando alguma ferramenta de Virtualização
+
   * Virtual Box
   * KVM
   * VMware Fusion
@@ -39,7 +43,8 @@ Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoa
 * [**https://www.virtualbox.org**](https://www.virtualbox.org)
 * [**https://virt-manager.org**](https://virt-manager.org)
 
-### 2.0.3 - Criar a máquina virtual (VM)
+### 2.0.3 - Criar a máquina virtual \(VM\)
+
 Nos exercícios desse material vamos usar o **CentOS**.
 
 Após a instalação do virtualizador e a cópia do ISO do sistema operacional, vamos criar uma máquina virtual nas seguintes características:
@@ -51,7 +56,7 @@ Após a instalação do virtualizador e a cópia do ISO do sistema operacional, 
 * **SO**: Red Hat 64bits
 * **BOOT**: ISO \(apontar pro caminho correto\)
 
-### 2.0.4 - Instalação do Sistema Operacional (SO)
+### 2.0.4 - Instalação do Sistema Operacional \(SO\)
 
 Alguns passos importantes para a instalação:
 
@@ -69,13 +74,14 @@ Alguns passos importantes para a instalação:
 
 ### 2.0.5 - Instalar os pré-requisitos para trabalhar com containers
 
-Recomendamos acessar o _shell_ da VM usando um _SSH client_ (PuTTY ou Git Bash no caso do windows). 
+Recomendamos acessar o _shell_ da VM usando um _SSH client_ \(PuTTY ou Git Bash no caso do windows\).
 
-Para isso abra seu SSH client, informe o IP da VM (pode ser obtido através do comando `ip a s` executado dentro da janela da VM) e faça a conexão informando usuário e senha.
+Para isso abra seu SSH client, informe o IP da VM \(pode ser obtido através do comando `ip a s` executado dentro da janela da VM\) e faça a conexão informando usuário e senha.
 
-> Caso necessite, peça ajuda ao instrutor! 
+> Caso necessite, peça ajuda ao instrutor!
 
-#### 2.0.5.1 Update do S.O (OPCIONAL!)
+#### 2.0.5.1 Update do S.O \(OPCIONAL!\)
+
 Antes de começarmos a instalação do ambiente, precisamos garantir que todos os pacotes do sistema estejam atualizados:
 
 ```
@@ -97,7 +103,7 @@ Antes de inicializarmos o runtime de containers, precisamos preparar o segundo d
 # lsblk
 ```
 
-Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o seguinte conteúdo (adaptando o `vdb` ou `sdb` para o dispositivo em questão):
+Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o seguinte conteúdo \(adaptando o `vdb` ou `sdb` para o dispositivo em questão\):
 
 ```
 STORAGE_DRIVER="devicemapper"
@@ -123,3 +129,6 @@ Caso queira confirmar que tudo está certo, execute:
 ```
 # docker run hello-world
 ```
+
+
+
