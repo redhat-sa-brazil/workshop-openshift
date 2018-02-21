@@ -1,6 +1,9 @@
-### Acesso ao ambiente OpenShift
+### Acesso ao ambiente Openshift Local
 
-![](https://storage.googleapis.com/workshop-openshift/oc-login.gif)
+Siga os passos abaixo caso o instrutor te solicite uma instalação local do Openshift na sua VM.
+
+1. 
+### Acesso ao ambiente OpenShift Nuvem
 
 1. Acesse a url: [https://console.paas.rhbrlab.com/console/](https://console.paas.rhbrlab.com/console/)
 2. Faça o login através da opção **Red Hat Single Sign ON**
@@ -9,20 +12,15 @@
 
 1. * informe as credenciais de acordo com o login designado pelo instrutor
    * altere sua senha no primeiro login 
+2. No menu superior direito clique no ícone de ajuda e selecione a opção "**Command Line Tools**"
 
-3. No menu superior direito clique no ícone de ajuda e selecione a opção "**Command Line Tools**"
+1. Copie o comando gerado "`oc login..`.". \(clique no botão no final do campo\) O seu token de acesso já estará nessa string.
 
-
-
-4. Copie o comando gerado "`oc login..`.". \(clique no botão no final do campo\) O seu token de acesso já estará nessa string.
-
-5. Cole a linha de comando no seu terminal conforme exemplo abaixo
+2. Cole a linha de comando no seu terminal conforme exemplo abaixo
 
 ```
 oc login https://console.paas.rhbrlab.com --token=fkjaflowruwwoeuwourwori....................
 ```
-
-
 
 **No fim do procedimento deverá aparecer a mensagem "Login success".**
 
