@@ -9,7 +9,7 @@ Vamos preparar nossa aplicação para o autoscale.
 O Openshift suporte autoscale por CPU ou memória. Na console, temos somente a opção por CPU e portanto usaremos ela nessa etapa.
 
 1. Selecione no menu vertical esquerdo a opção **Applications** -&gt; **Deployments**
-2. Na tabela a seguir, clique em **workshop-php**
+2. Na tabela a seguir, clique em **workshop-ocp**
 3. No menu lateral superior, clique em **Actions** -&gt; **Add Autoscaler**
 
 ![](/assets/autoscale.gif)
