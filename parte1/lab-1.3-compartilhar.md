@@ -20,12 +20,12 @@ Além de consumir imagens já prontas, podemos construir nossas próprias imagen
 Para essa atividades, vamos criar os seguintes diretórios:
 
 ```
-# mkdir -p ~/workshop-openshift/lab1.3/src
+mkdir -p ~/workshop-openshift/lab1.3/src && cd ~/workshop-openshift/lab1.3/src
 ```
 
 No subdiretório `~/workshop-openshift/lab1.3/src`, vamos adicionar dois arquivos, `app.py` e `requirements.txt`, com os seguintes conteúdos \(respectivamente\):
 
-```python
+```py
 #! /usr/bin/env python
 
 from flask import Flask
@@ -42,13 +42,44 @@ if __name__ == '__main__':
 
 e
 
+```
+click==6.7
+Flask==0.12.2
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+```
+
+Para agilizar a criação dos arquivos, basta executar os comandos abaixo:
+
 ```python
+cat <<EOF > ~/workshop-openshift/lab1.3/src/app.py
+#! /usr/bin/env python
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return "Hello, world!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port='8080')
+EOF
+```
+
+e
+
+```python
+cat <<EOF > ~/workshop-openshift/lab1.3/src/requirements.txt
 click==6.7
 Flask==0.12.2
 itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
 Werkzeug==0.12.2
+EOF
 ```
 
 Na raiz do diretório `~/workshop-openshift/lab1.3/`, vamos adicionar um arquivo de texto com nome `Dockerfile` com o seguinte conteúdo:
@@ -72,6 +103,29 @@ USER 12345
 CMD ["python3", "/var/www/app.py"]
 ```
 
+Para agilizar a criação do arquivos, podemos utilizar:
+
+```
+cat <<EOF > ~/workshop-openshift/lab1.3/Dockerfile
+FROM fedora:27
+
+LABEL maintainer="dvercill@redhat.com"
+LABEL version="1.0"
+
+RUN mkdir /var/www
+
+ADD src/. /var/www
+
+RUN pip3 install -r /var/www/requirements.txt
+
+EXPOSE 8080
+
+USER 12345
+
+CMD ["python3", "/var/www/app.py"]
+EOF
+```
+
 Para iniciarmos o processo de construção da nova imagem, usa-se:
 
 ```
@@ -79,17 +133,21 @@ Para iniciarmos o processo de construção da nova imagem, usa-se:
 # docker build -t workshop-openshift .
 ```
 
+![](/assets/Selection_222.png)
+
 Verifique a sua imagem nova no registro local:
 
 ```
 # docker images | grep workshop-openshift
 ```
 
+![](/assets/Selection_223.png)Podemos ver que é a nossa imagem que foi construida recentemente conforme destacado na foto acima.
+
 ### 1.3.2 - Publicar Imagens no Registry
 
 Para publicar uma imagem em um registro remoto, muitas das vezes é necessário autenticação. Para tal, usamos:
 
->_note_: caso não possua uma conta no Docker Hub, acesse https://hub.docker.com/register e crie um conta pessoal.
+> _note_: caso não possua uma conta no Docker Hub, acesse [https://hub.docker.com/register](https://hub.docker.com/register) e crie um conta pessoal.
 
 ```
 # docker login docker.io
