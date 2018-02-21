@@ -11,6 +11,7 @@ Para conseguirmos executar os próximos exercícios precisamos de um ambiente co
 * [**OpenShift Origin Minishift**](https://www.openshift.org/minishift/): _Solução que permite rodar um ambiente local de OpenShift \(upstream\) em containers._
 * [**Red Hat Container Development Kit \(CDK\)**](https://developers.redhat.com/products/cdk/overview/): _Equivalente ao anterior mas para a versão suportada do OpenShift._
 * [**Red Hat OpenShift Online**](https://www.openshift.com/): _Oferta de cloud PaaS pública da Red Hat, com "free tier"._
+* oc cluster up: linha de comando completa para subir um cluster inteiro no seu laptop.
 
 Consulte o instrutor sobre qual opção usar!
 
