@@ -5,20 +5,32 @@ um webhook, dessa forma o servidor git avisará o Openshift sempre que um commit
 
 #### Configuração webhook
 
-![](https://storage.googleapis.com/workshop-openshift/webhook.gif)
+Acesse a parte de builds.
 
-No _Openshift_:
+![](/assets/Menu_261.png)
 
-* Selecione `Builds` &gt; `Build`
-* Selecione `workshop-php`
-* Selecione a aba `Configuration` e clique em copy no campo `Github Webhook URL`
+Depois selecione `workshop-ocp`
 
-![](/assets/Selection_087.png)
+![](/assets/Selection_262.png)
+
+Clique em `Configuration` e copie o link clicando no icone a direita
+
+![](/assets/Selection_264.png)
+
+
+
+
 
 No _Github.com_:
 
 * Selecione `Settings` no menu horizontal
+
+![](/assets/Selection_258.png)
+
 * Selecione o `Webhooks` no menu lateral esquerdo 
+
+![](/assets/Selection_259.png)
+
 * Selecione `Add Webhooks`, cole a URL copiada no campo `Payload URL`, no campo `Content Type` selecione a opção `application/json`
 * Clique em `Disable SSL verification`
 * Finalize no botão `Add webhook`
