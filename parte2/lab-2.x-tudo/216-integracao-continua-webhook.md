@@ -17,10 +17,6 @@ Clique em `Configuration` e copie o link clicando no icone a direita
 
 ![](/assets/Selection_264.png)
 
-
-
-
-
 No _Github.com_:
 
 * Selecione `Settings` no menu horizontal
@@ -41,13 +37,26 @@ No _Github.com_:
 
 Para fazermos uma alteração na aplicação, vamos alterar a versão na página inicial da aplicação.
 
-No `index.php` altere a linha com a versão da aplicação para versão 2.0.
+Clique no `Index.php`
+
+![](/assets/Selection_265.png)Depois clique no lapis para editar
+
+![](/assets/Selection_266.png)No `index.php` altere a linha com a versão da aplicação para versão 2.0.
+
+![](/assets/Selection_268.png)
 
 ```
 echo "<h1>Openshift Workshop v2.0</h1>";
 ```
 
+Clique em `Commit changes`
+
+![](/assets/Selection_269.png)
+
+Ou use a linha de comando do git para fazer essa alteraçao:
+
 ```bash
+
 git add index.php
 git commit -m "webhook adicionado"
 git push
