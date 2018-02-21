@@ -1,9 +1,9 @@
 ### Persistindo dados em um banco de dados
 
-#### Deploy de um MYSQL persistente através de um template
+#### Deploy de um MYSQL persistente através de um template no Openshift 3.6
 
 * Selecione no menu super "Add to project"
-* Selecione a sub categoria "Data Stores" &gt; "MySQL \(Persistent\) 
+* Selecione a sub categoria "Data Stores" &gt; "MySQL \(Persistent\)"
 
 ![](/assets/Selection_165.png)
 
@@ -25,7 +25,27 @@ O resultado deve ser similar a este
 
 ![](https://storage.googleapis.com/workshop-openshift/mysql-storage.png)
 
-#### Altere a aplicação para apontar para o banco de dados persistente
+#### Deploy de um MYSQL persistente através de um template no Openshift 3.7
+
+Acesse o catalogo
+
+![](/assets/Selection_270.png)
+
+Depois selecione o mysql
+
+![](/assets/Selection_271.png)Agora preencha as informações conforme abaixo:
+
+![](/assets/Selection_272.png)E
+
+![](/assets/Selection_274.png)A tela seguinte será:
+
+![](/assets/Selection_275.png)
+
+O resultado final, será o container do mysql rodando no seu projeto:
+
+![](/assets/Selection_276.png)
+
+#### Alteração da aplicação para apontar para o banco de dados persistente
 
 Vamos mostrar uma lista de cidades cadastradas no banco de dados com essa aplicação.  
 Para isso o primeiro passo será conectar a nossa aplicação já existente neste banco de dados, para isso  
@@ -55,7 +75,7 @@ $conn->close();
 
 Como a tabela que está sendo consultada ainda não existe você estará vendo que existem zero cidades cadastradas neste momento.
 
-![](https://storage.googleapis.com/workshop-openshift/app-zero-result.png)
+![](/assets/Selection_277.png)
 
 #### Popule o banco de dados a partir da sua máquina local
 
@@ -69,9 +89,16 @@ oc get pods
 oc port-forward <pod id> 3306:3306
 ```
 
-O comando `oc port-forward` mantém o terminal preso enquanto estiver executando. Para continuar com os próximos passos, será necessário abrir um segundo terminal no nosso servidor.
+Caso você esteja usando um cluster somente seu, não há necessidade de logar conforme mencionado acima. Basta executar o comando direto:
 
-![](https://storage.googleapis.com/workshop-openshift/port-forward.png)
+```
+oc get pods 
+oc port-forward <pod id> 3306:3306
+```
+
+![](/assets/Selection_279.png)
+
+O comando `oc port-forward` mantém o terminal preso enquanto estiver executando. Para continuar com os próximos passos, será necessário abrir um segundo terminal no nosso servidor.
 
 Neste momento temos o MYSQL disponível "localmente", podemos conectar a ele com ferramentas gráficas ou como será demonstrado aqui com o mysql client. Lembre-se de abrir um outro terminal ou colocar o processo do port-forward em background. Importante é que ele deve estar rodando antes de executar o comando abaixo:
 
@@ -88,9 +115,13 @@ INSERT INTO cidade (id,nome) VALUES(3,"Recife");
 SELECT * FROM cidade;
 ```
 
+A saída do comando deve ser conforme abaixo:
+
+![](/assets/Selection_280.png)
+
 Ao acessar novamente a interface de nossas aplicação a mesma deverá estar mostrando a lista de cidades incluídas neste passo.
 
-![](https://storage.googleapis.com/workshop-openshift/app-with-results.png)
+![](/assets/Selection_281.png)
 
 Assim que todos os exercícios tiverem terminados, podemos parar o port-forward. Para isso, basta acessar o terminal em questão e executar um Ctrl + C.
 
