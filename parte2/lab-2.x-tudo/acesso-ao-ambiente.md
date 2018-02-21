@@ -17,7 +17,8 @@ oc cluster up \
   --host-config-dir=/var/lib/origin/openshift.local.config \
   --host-pv-dir=/var/lib/origin/openshift.local.pv \
   --metrics \
-  --logging
+  --logging \
+  --use-existing-config
 ```
 
 Altera o valor do parametro `--public-hostname` para o seu ip público caso esteja executando sua VM na Cloud.
@@ -51,7 +52,8 @@ oc cluster up \
   --host-config-dir=/var/lib/origin/openshift.local.config \
   --host-pv-dir=/var/lib/origin/openshift.local.pv \
   --metrics \
-  --logging
+  --logging \
+  --use-existing-config
 ```
 
 #### 2.1.1.1.1 Acessando a Web Console
