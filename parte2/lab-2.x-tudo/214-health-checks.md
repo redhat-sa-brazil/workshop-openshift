@@ -14,21 +14,7 @@ O liveness pode ser verificado de 3 possíveis formas:
 
 #### Readiness
 
-O readiness define quando que o container está pronto para receber requisições. Caso a verificação do readiness falhe nenhuma requisição será direcionado para este container até que a verificação seja satisfeita.
-
-#### Configuração no Openshift
-
-![](https://storage.googleapis.com/workshop-openshift/ocp-health-checks.gif)
-
-1. Selecione no menu vertical esquerdo a opção **Applications** -&gt; **Deployments &gt; workshop-php**
-2. Selecione **Actions &gt; Edit Health Checks** no canto superior direito da GUI.
-3. Selecione Add Readiness Probe
-4. Selecione Add Liveness Probe
-5. Selecione Save
-
-Os passos acima, servem para ilustrar como é feita a configuração do liveness e readiness. Elas não precisam ser executadas agora. Avance para o passo **Preparando a aplicação**
-
-O readiness também pode ser verificado de 3 possíveis formas:
+O readiness define quando que o container está pronto para receber requisições. Caso a verificação do readiness falhe nenhuma requisição será direcionado para este container até que a verificação seja satisfeita. Os mesmos 3 tipos de testes mencionados no liveness também se aplicam para o readiness.
 
 * Executando um handshake de portas
 * Executando alguns dos verbos HTTP \(GET, POST, PUT, DELETE, etc\) em um contexto da aplicação
@@ -36,7 +22,7 @@ O readiness também pode ser verificado de 3 possíveis formas:
 
 #### Preparando a aplicação
 
-Para testarmos o liveness e o readiness vamos criar dois novos contextos na nossa aplicação. Para isso, crie os seguinte arquivos na raiz do seu repositório git:
+Para testarmos o liveness e o readiness vamos criar dois novos contextos na nossa aplicação. Segue o conteúdo dos dois arquivos abaixo:
 
 `liveness.php`
 
@@ -66,9 +52,15 @@ if (file_exists($filename)) {
 ?>
 ```
 
+Você pode criar os dois arquivos pela console do github conforme já fizemos em outros labs.
+
+O resultado final do repositório deve estar conforme imagem abaixo:
+
+![](/assets/Selection_254.png)
+
 Os códigos dos dois probes verificam se existe um arquivo no `/tmp` dentro do container. No caso do `liveness.php`ele verifica se existe um arquivo chamado `/tmp/liveness`. Caso exista, ele retorna status 500. O mesmo procedimento é executado também no `readiness.php com a diferença que ele busca o arquivo /tmp/readiness.`
 
-Vamos atualizar nosso repositório
+Também podemos atualizar nosso repositório pela linha de comando do git.
 
 ```bash
 git add .
@@ -78,10 +70,10 @@ git push
 
 #### Atualizando nosso container
 
-O Openshift não tem como saber que nosso código foi alterado pois não configuramos os `webhooks`. Isso será feito na próxima lição. Enquanto isso, vamos criar um novo build da nossa aplicação de maneira manual.
+O Openshift não tem como saber que nosso código foi alterado no repositório github pois não configuramos os `webhooks`. Isso será feito na próxima lição. Enquanto isso, vamos criar um novo build da nossa aplicação de maneira manual.
 
 1. Selecione no menu vertical esquerdo a opção **Builds** -&gt; **Builds**
-2. Clique no **workshop-php **na tabela apresentada
+2. Clique no **workshop-ocp **na tabela apresentada
 3. No menu superior direito, clique em **Start Build**
 
 ![](/assets/new-build.gif)
@@ -92,9 +84,23 @@ Caso esteja tudo certo, você verá um **Ok** na tela.
 
 ![](/assets/live-read.gif)
 
-#### Configurando o liveness e readiness no Openshift
 
-Agora vamos informar o Openshift para monitorar esses dois contextos. Isso pode ser feito pela linha de comando.
+
+
+
+
+
+#### Configuração no Openshift
+
+Precisamos agora informar o Openshift para monitorar esses dois contextos novos da aplicação. Precisamos abrir o deployment da aplicação: ![](/assets/dc-1parte.gif)E logo em seguida, edite o health check
+
+![](/assets/Selection_253.png)Clique em `add liveness` e `add readiness`
+
+![](/assets/Selection_255.png)Abaixo segue a configuração do readiness
+
+![](/assets/Selection_256.png)E o liveness![](/assets/Selection_257.png)
+
+Também podemos configurar o `liveness`e `readiness` por meio da linha de comando.
 
 Antes, veja qual o nome do deploymentconfig usando o comando:
 
@@ -105,7 +111,7 @@ oc get dc
 Substitua ele no comando abaixo para o `readiness`:
 
 ```
-oc set probe dc/workshop-php \
+oc set probe dc/workshop-ocp \
  --readiness \
  --get-url=http://:8080/readiness.php
 ```
@@ -115,7 +121,7 @@ oc set probe dc/workshop-php \
 Para o `liveness`:
 
 ```
-oc set probe dc/workshop-php \
+oc set probe dc/workshop-ocp \
  --initial-delay-seconds=20 \
  --liveness \
  --get-url=http://:8080/liveness.php
