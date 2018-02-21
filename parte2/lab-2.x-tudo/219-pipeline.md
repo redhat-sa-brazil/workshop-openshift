@@ -54,7 +54,7 @@ apiVersion: "v1"
 metadata:
   name: "workshop-pipeline"
   annotations:
-    pipeline.alpha.openshift.io/uses: '[{"name": "workshop-php", "kind": "DeploymentConfig"}]'
+    pipeline.alpha.openshift.io/uses: '[{"name": "workshop-ocp", "kind": "DeploymentConfig"}]'
 spec:
   source:
     type: "Git"
@@ -64,14 +64,15 @@ spec:
     type: "JenkinsPipeline"
     jenkinsPipelineStrategy:
       jenkinsfilePath: "jenkins-pipeline.groovy"
-      
 ```
 
 No Openshift 3.7 siga os passos a seguir:
 
 ![](/assets/Selection_283.png)
 
+Depois cole o conteúdo do arquivo e altere o nome do usuário do github.
 
+![](/assets/Selection_285.png)
 
 Clique em `Create`
 
