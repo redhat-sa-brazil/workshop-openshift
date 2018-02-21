@@ -100,7 +100,13 @@ Aceite as permissões
 
 ![](/assets/Selection_293.png)
 
-### 
+### Limpeza do ambiente
+
+Depois de ter finalizado o seu pipeline, limpe seu ambiente rodando o comando:
+
+```
+oc delete all -l app=jenkins-persistent
+```
 
 ### Mais informações
 
