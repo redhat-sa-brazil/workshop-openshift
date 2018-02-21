@@ -28,7 +28,7 @@ O Openshift permite que você limite a quantidade de recursos que serão disponi
 Podemos limitar a quantidade de CPU e memória que nossa aplicação irá consumir. Para isso, precisamos acessar:
 
 1. Selecione no menu vertical esquerdo a opção **Application** -&gt; **Deployments**
-2. Na tabela a seguir, clique em **workshop-php**
+2. Na tabela a seguir, clique em **workshop-ocp**
 3. No menu lateral superior, clique em **Actions** -&gt; **Edit Resource Limits**
 4. Preencha os valors conforme abaixo
 
@@ -57,7 +57,7 @@ Vamos agora executar um processo dentro do container que consuma todo recurso po
 while :; do _+=( $((++__)) ); done
 ```
 
-> Use o comando acima com cuidado uma vez que ele pode travar o sistema operacional se utilizado em ambientes sem restrições de recurso.
+> AVISO: Use o comando acima com cuidado uma vez que ele pode travar o sistema operacional se utilizado em ambientes sem restrições de recurso.
 
 Para executar esse comando dentro do container, vamos primeiro acessar nossa aplicação remotamente com o comando abaixo:
 
@@ -69,5 +69,19 @@ oc rsh <nome do pod>
 
 #### Acompanhando o consumo de recursos
 
-Podemos acompanhar o uso de recursos da aplicação pela Web Console.
+Podemos acompanhar o uso de recursos da aplicação pela Web Console ou pela linha de comando por meio do `docker stats`.
+
+Primeiro vamos achar qual é o nosso container. Para isso, executamos:
+
+```
+docker ps
+```
+
+![](/assets/Selection_294.png)Agora que achamos nossa aplicação, basta executar:
+
+```
+docker stats <id do container>
+```
+
+![](/assets/Selection_295.png)O uso de CPU e memória não devem passar do que limitamos no início desse lab.
 
