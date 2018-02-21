@@ -41,6 +41,12 @@ oc delete po <nome do pod>
 
 #### ![](/assets/delete-pod.gif)
 
+Na tela de monitoramento, também é refletido que um container foi eliminado e outro foi criado para substituir o antigo. Veja:
+
+![](/assets/Selection_235.png)
+
+Repare que o ID do container mudou pois foi realizada uma nova criação de POD.
+
 #### Limpeza do ambiente
 
 Agora podemos apagar essa aplicação já que não a utilizaremos mais. O comando abaixo executa essa limpeza:
