@@ -5,13 +5,17 @@
 * Mapear volumes locais aos containers
 * Mapear rede aos containers
 
-Para as tarefas seguintes execute alguns containers conforme comandos abaixo:
+Para as tarefas seguintes execute o comando abaixo:
 
 ```
 docker run -d busybox /bin/sh -c "while true; do echo Hello from Linux container [\$HOSTNAME];sleep 1;done"
 docker run -d busybox /bin/sh -c "while true; do echo Hello from Linux container [\$HOSTNAME];sleep 2;done"
 docker run -d busybox /bin/sh -c "while true; do echo Hello from Linux container [\$HOSTNAME];sleep 3;done"
 ```
+
+Ou se preferir, execute tudo em um único comando:
+
+    for i in `seq 3`; do docker run -d busybox /bin/sh -c "while true; do echo Hello from Linux container [\$HOSTNAME];sleep $i;done"; done
 
 # Tarefas
 
@@ -23,7 +27,7 @@ Para buscar mais informações sobre os containers em execução, usa-se:
 # docker ps
 ```
 
-![](/assets/Selection_025.png)
+![](/assets/Selection_219.png)
 
 No exemplo anterior não são listados containers terminados. Para visualizar a listagem completa, usa-se:
 
@@ -49,11 +53,13 @@ Também podemos inspecionar os metadados do container, ou de uma imagem, atravé
 
 ![](/assets/gustavo@localhost: ~_028.png)
 
-Tente obter o endereço IP de um conatiner usando o comando abaixo:
+Tente obter o endereço IP de um container usando o comando abaixo:
 
 ```
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' <id do container>
 ```
+
+![](/assets/Selection_220.png)
 
 ### 1.2.2 - Execução Ad-Hoc
 
@@ -72,13 +78,14 @@ Containers são essencialmente efêmeros. Entretanto, podemos mapear diretórios
 ```
 # docker run -it -v /tmp/:/tmp_from_host:z centos:7
 ```
+
 > `/tmp`: diretório no FS do Host
-
+>
 > `/tmp_from_host`: volume mapeado dentro do container
-
+>
 > `z`: em sistemas com SELinux habilitado, indica que conteúdo do volume pode ser compartilhado por múltiplos containers
-
-> para mais detlahes sobre o volumes no Docker veja: https://docs.docker.com/engine/admin/volumes/volumes/
+>
+> para mais detlahes sobre o volumes no Docker veja: [https://docs.docker.com/engine/admin/volumes/volumes/](https://docs.docker.com/engine/admin/volumes/volumes/)
 
 No exemplo acima, o diretório /tmp/host do container será mapeado para o diretório /tmp no host hospedeiro
 
@@ -90,7 +97,7 @@ Por padrão, os containers utilizam de redes privadas locais no host hospedeiro.
 # docker run -it -p 8080:80 httpd
 ```
 
-No exemplo acima, a porta 80 do container (httpd) será exposta na porta 8080 do host hospedeiro
+No exemplo acima, a porta 80 do container \(httpd\) será exposta na porta 8080 do host hospedeiro
 
 para se certificar disso use o comando abaixo:
 
@@ -98,7 +105,7 @@ para se certificar disso use o comando abaixo:
 docker port <id do conatiner httpd>
 ```
 
-execute o teste abaixo tentando acessr a porta `8080` a partir do host (fora do container):
+execute o teste abaixo tentando acessr a porta `8080` a partir do host \(fora do container\):
 
 ```
 curl http://localhost:8080
@@ -108,6 +115,20 @@ Ao invés de mapear manualmente, podemos usar portas aleatórias:
 
 ```
 # docker run -it -P httpd
+```
+
+### 1.2.5 Monitorando o uso de recursos do container
+
+Para monitorar a quantidade de recursos que um container está consumindo em um host, podemos executar o comando
+
+```
+docker stats
+```
+
+![](/assets/Selection_221.png)E podemos visualizar somente de um container rodando o comando
+
+```
+docker stats <id do container>
 ```
 
 
