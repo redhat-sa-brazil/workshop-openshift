@@ -105,7 +105,7 @@ Aceite as permissões
 Depois de ter finalizado o seu pipeline, limpe seu ambiente rodando o comando:
 
 ```
-oc delete all -l app=jenkins-persistent
+oc delete all -l app=jenkins-persistent && oc delete bc workshop-pipeline
 ```
 
 ### Mais informações
