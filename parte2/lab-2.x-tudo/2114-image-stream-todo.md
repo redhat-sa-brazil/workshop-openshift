@@ -10,7 +10,13 @@ Nessa demo iremos criar uma imagem base baseado no Httpd e, baseado nela, iremos
 
 Para que essa demo funcione conforme esperado, é necessário liberar a permissão de rodar os containers como root.
 
-> peça ao instrutor que conceda, temporáriamente, essa permisssão especial no seu projeto!
+> Caso esteja utilizando um cluster compartilhado, peça ao instrutor que conceda, temporáriamente, essa permisssão especial no seu projeto!
+>
+> Se estiver usando o seu próprio cluster \(oc cluster up\), logue como usuário system:admin para poder liberar as permissões nos próximos comandos.:
+>
+> ```
+> oc login -u system:admin
+> ```
 
 ```
 oc adm policy add-scc-to-user anyuid -z default -n myproject
