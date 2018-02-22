@@ -68,6 +68,20 @@ Um novo build será executado assim que for clicado em `Create`
 
 ![](/assets/Selection_298.png)
 
+Caso você encontre o erro abaixo durante o build:
+
+![](/assets/Captura de tela de 2018-02-22 14-15-01.png)Instale o pacote abaixo:
+
+```
+yum install python-rhsm-certificates -y
+```
+
+E execute novamente o build clicando em
+
+1. `Builds` -&gt; `Builds`
+2. Clique em `Workshop ocp`
+3. No canto direito clique em `Start Build`
+
 Assim que finalizado o build, acesse a url gerada e verifique a aplicação em funcionamento. O resultado deve ser algo similar a isso:
 
 ![](/assets/Selection_248.png)
