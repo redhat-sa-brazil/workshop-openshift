@@ -8,7 +8,7 @@ Nessa demo iremos criar uma imagem base baseado no Httpd e, baseado nela, iremos
 
 #### Preparando o ambiente
 
-Para que essa demo funcione conforme esperado, é necessário liberar a permissão de rodar os containers como root. 
+Para que essa demo funcione conforme esperado, é necessário liberar a permissão de rodar os containers como root.
 
 > peça ao instrutor que conceda, temporáriamente, essa permisssão especial no seu projeto!
 
@@ -54,5 +54,13 @@ Para atualizar a base image, precisamos criar um novo build.
 
 Repare que após o build **httpd-base** o Openshift inicia o build das aplicações **app-a** e **app-b** automaticamente. Ou seja, ele está reconstruindo essas aplicações pois elas dependem da imagem base.
 
-![](/assets/Selection_043.png)
+#### ![](/assets/Selection_043.png)Limpeza do nosso ambiente
+
+Depois te finalizado esse lab, vamos limpar os containers.
+
+```
+oc delete all -l app=app-a && oc delete all -l app=app-b
+```
+
+
 
