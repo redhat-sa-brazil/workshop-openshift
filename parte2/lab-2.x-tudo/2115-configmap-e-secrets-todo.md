@@ -39,7 +39,7 @@ oc describe configmap config
 #### Usando nosso configmap
 
 ```bash
-oc volumes dc/workshop-php \
+oc volumes dc/workshop-ocp \
  --add --mount-path=/tmp/config \
  --configmap-name=config \
  --type=configmap
