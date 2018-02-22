@@ -95,7 +95,7 @@ Antes de começarmos a instalação do ambiente, precisamos garantir que todos o
 # yum install vim wget git bash-completion docker
 ```
 
-#### 2.0.5.3 Preparação do Docker Storage no host
+#### 2.0.5.3 Preparação do Docker Storage no host \(OPCIONAL!\)
 
 Antes de inicializarmos o runtime de containers, precisamos preparar o segundo disco para ser usado como registro local de imagens. Para tal, precisamos descobrir qual o dispositivo é o disco:
 
@@ -116,6 +116,8 @@ Depois precisamos executar o utilitário para criar e configurar o storage do do
 ```
 # docker-storage-setup
 ```
+
+#### 2.0.5.4 Habilitando o Deamon do Docker Engine no host \(OPCIONAL!\)
 
 Para finalizar, configuramos o Systemd para habilitar e inicializar o runtime:
 
