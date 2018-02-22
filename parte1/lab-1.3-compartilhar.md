@@ -37,7 +37,7 @@ def hello_world():
     return "Hello, world!"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='8080')
+    app.run(host='0.0.0.0', port=8080)
 ```
 
 e
@@ -65,7 +65,7 @@ def hello_world():
     return "Hello, world!"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='8080')
+    app.run(host='0.0.0.0', port=8080)
 EOF
 ```
 
@@ -134,6 +134,16 @@ Para iniciarmos o processo de construção da nova imagem, usa-se:
 ```
 
 ![](/assets/Selection_222.png)
+
+Valide se sua imagem está funcionando corretamente por meio do comando:
+
+```
+docker run --rm workshop-openshift
+```
+
+A saída desse comando é algo como:
+
+![](/assets/Selection_297.png)
 
 Verifique a sua imagem nova no registro local:
 
