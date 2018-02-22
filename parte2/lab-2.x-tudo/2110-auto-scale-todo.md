@@ -16,6 +16,12 @@ O Openshift suporte autoscale por CPU ou memória. Na console, temos somente a o
 
 #### Estressando a aplicação
 
+Para utilizar o nosso próximo comando, precisamos instalar uma nova ferramenta.
+
+```
+yum install httpd-tools -y
+```
+
 Vamos gerar uma carga agora na aplicação para ver como ela se comporta. Utilizaremo o [ab \(Apache Benchmark\)](https://httpd.apache.org/docs/2.4/programs/ab.html).
 
 ```bash
