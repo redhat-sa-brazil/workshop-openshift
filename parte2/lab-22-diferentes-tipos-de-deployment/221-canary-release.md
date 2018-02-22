@@ -47,7 +47,7 @@ Selecione no menu superior `Add to project`
 * Selecione o template `PHP` no submenu `Browser Catalog`.
 * Selecione o template `PHP` na versão `7.0`.
 * Preencha o campo `Name` com o valor `workshop-php-v3` 
-* Preencha o campo `Git Repository URL` com o valor `https://github.com/<seu-usuario>/workshop-php.git`
+* Preencha o campo `Git Repository URL` com o valor `https://github.com/<seu-usuario>/workshop-ocp.git`
 * Clique em `Show advanced options`
 * Preencha o campo `Git Reference` com o valor **v3.0**
 * Desça a página toda e clique em `Create`
