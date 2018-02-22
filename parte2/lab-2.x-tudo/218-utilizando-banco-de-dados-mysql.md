@@ -89,7 +89,7 @@ oc get pods
 oc port-forward <pod id> 3306:3306
 ```
 
-Caso você esteja usando um cluster somente seu, não há necessidade de logar conforme mencionado acima. Basta executar o comando direto:
+Caso você esteja usando um cluster somente seu \(oc cluster up\), não há necessidade de logar conforme mencionado acima. Basta executar o comando direto:
 
 ```
 oc get pods 
