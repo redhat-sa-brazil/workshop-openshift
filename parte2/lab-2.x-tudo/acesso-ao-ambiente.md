@@ -17,7 +17,6 @@ oc cluster up \
   --host-config-dir=/var/lib/origin/openshift.local.config \
   --host-pv-dir=/var/lib/origin/openshift.local.pv \
   --metrics \
-  --logging \
   --use-existing-config
 ```
 
@@ -52,8 +51,36 @@ oc cluster up \
   --host-config-dir=/var/lib/origin/openshift.local.config \
   --host-pv-dir=/var/lib/origin/openshift.local.pv \
   --metrics \
-  --logging \
   --use-existing-config
+```
+
+Nessa versão do cluster up existe um bug nas métricas. Para corrigi-lo, crie um playbook:
+
+```
+cat <<EOF > fix.yml
+- name: Fix Metrics
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: OpenShift Login
+      shell: oc login -u system:admin --insecure-skip-tls-verify
+      
+    - name: Get Metrics Error Pod
+      shell: oc get pods -n openshift-infra | grep Error | head -n1 | cut -d' ' -f1
+      register: metrics_pod
+      until: metrics_pod.stdout != ""
+      retries: 20
+      delay: 30
+
+    - name: Fix Metrics Deployment
+      shell: oc debug {{ metrics_pod.stdout }} -n openshift-infra -- /usr/bin/bash -c "sed -i 's/- include: validate_hostnames.yml/#- include: validate_hostnames.yml/' /usr/share/ansible/openshift-ansible/playbooks/common/openshift-cluster/std_include.yml && ansible-playbook -i /tmp/inventory playbooks/byo/openshift-cluster/openshift-metrics.yml"
+EOF
+```
+
+E execute-o:
+
+```
+ansible-playbook fix.yml
 ```
 
 #### 2.1.1.1.1 Acessando a Web Console
@@ -65,6 +92,8 @@ Se os passos anteriores foram executados com sucesso, você terá uma tela com a
 1. Esse é a url de acesso para a Web Console
 2. Suas credenciais para acesso ao Openshift
 3. Usuário com privilégio elevado para tarefas administrativas do cluster
+
+
 
 ### 2.1.1.2 Acesso ao ambiente OpenShift Nuvem
 
