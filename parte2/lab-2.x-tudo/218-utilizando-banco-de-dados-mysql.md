@@ -100,6 +100,12 @@ oc port-forward <pod id> 3306:3306
 
 O comando `oc port-forward` mantém o terminal preso enquanto estiver executando. Para continuar com os próximos passos, será necessário abrir um segundo terminal no nosso servidor.
 
+Para executar os passos seguintes, é necessário instalar o mysql. Para isso, rode:
+
+```
+yum install mysql -y
+```
+
 Neste momento temos o MYSQL disponível "localmente", podemos conectar a ele com ferramentas gráficas ou como será demonstrado aqui com o mysql client. Lembre-se de abrir um outro terminal ou colocar o processo do port-forward em background. Importante é que ele deve estar rodando antes de executar o comando abaixo:
 
 ```bash
