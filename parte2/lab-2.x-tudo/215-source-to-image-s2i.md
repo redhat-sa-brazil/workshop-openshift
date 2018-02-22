@@ -64,7 +64,11 @@ Browse Catalog![](/assets/Selection_245.png)Seleciona PHP
 * Preencha o campo `Name` com o valor `workshop-ocp` 
 * Preencha o campo `Git Repository URL` com o valor `https://github.com/<seu-usuario-do-github>/workshop-ocp.git`
 
-Acesse a url gerada e verifique a aplicação em funcionamento. O resultado deve ser algo similar a isso:
+Um novo build será executado assim que for clicado em `Create`
+
+![](/assets/Selection_298.png)
+
+Assim que finalizado o build, acesse a url gerada e verifique a aplicação em funcionamento. O resultado deve ser algo similar a isso:
 
 ![](/assets/Selection_248.png)
 
