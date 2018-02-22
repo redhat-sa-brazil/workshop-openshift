@@ -64,7 +64,7 @@ cat <<EOF > fix.yml
   tasks:
     - name: OpenShift Login
       shell: oc login -u system:admin --insecure-skip-tls-verify
-      
+
     - name: Get Metrics Error Pod
       shell: oc get pods -n openshift-infra | grep Error | head -n1 | cut -d' ' -f1
       register: metrics_pod
@@ -73,7 +73,8 @@ cat <<EOF > fix.yml
       delay: 30
 
     - name: Fix Metrics Deployment
-      shell: oc debug {{ metrics_pod.stdout }} -n openshift-infra -- /usr/bin/bash -c "sed -i 's/- include: validate_hostnames.yml/#- include: validate_hostnames.yml/' /usr/share/ansible/openshift-ansible/playbooks/common/openshift-cluster/std_include.yml && ansible-playbook -i /tmp/inventory playbooks/byo/openshift-cluster/openshift-metrics.yml"
+      shell: >
+        oc debug "{{ metrics_pod.stdout }}" -n openshift-infra -- /usr/bin/bash -c "sed -i 's/- include: validate_hostnames.yml/#- include: validate_hostnames.yml/' /usr/share/ansible/openshift-ansible/playbooks/common/openshift-cluster/std_include.yml &&  ansible-playbook -i /tmp/inventory playbooks/byo/openshift-cluster/openshift-metrics.yml"
 EOF
 ```
 
@@ -92,8 +93,6 @@ Se os passos anteriores foram executados com sucesso, você terá uma tela com a
 1. Esse é a url de acesso para a Web Console
 2. Suas credenciais para acesso ao Openshift
 3. Usuário com privilégio elevado para tarefas administrativas do cluster
-
-
 
 ### 2.1.1.2 Acesso ao ambiente OpenShift Nuvem
 
