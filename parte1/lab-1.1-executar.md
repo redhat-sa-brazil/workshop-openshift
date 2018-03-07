@@ -12,7 +12,7 @@
 Para buscarmos informações sobre o ambiente local, usa-se:
 
 ```
-# docker info
+docker info
 ```
 
 ![](/assets/gustavo@localhost: ~_016.png)
@@ -22,7 +22,7 @@ Para buscarmos informações sobre o ambiente local, usa-se:
 Toda instalação do runtime Docker acompanha configuração dos Registries mais comuns. Para buscar novas imagens nos Registries configurados, usa-se:
 
 ```
-# docker search centos
+docker search centos
 ```
 
 Nesse caso, ele irá buscar as imagens do centos no Dockerhub que já vem pré-configurado com o Docker.![](/assets/gustavo@localhost: ~_017.png)Você também pode filtrar pelo número de estrelas \(stars\) que um repo possui.
@@ -42,7 +42,7 @@ Só existirão resultados que tenham mais que 10 estrelas.
 Além de nome, imagens possuem _tags_ \(sufixo separado por ':'\) que podem identificar versões ou variações de uma imagem específica. Para baixar uma imagem para o storage local de imagens, usa-se:
 
 ```
-# docker pull centos:7
+docker pull centos:7
 ```
 
 ![](/assets/Selection_216.png)
@@ -78,7 +78,7 @@ docker pull registry.access.redhat.com/rhel-atomic
 Para verificar quais imagens estão disponíveis localmente, usa-se:
 
 ```
-# docker images
+docker images
 ```
 
 ![](/assets/Selection_215.png)
@@ -88,10 +88,20 @@ Para verificar quais imagens estão disponíveis localmente, usa-se:
 Para remover as imagens, ou tags, do repositório local, usa-se:
 
 ```
-# docker rmi <ID/tag>
+docker rmi <ID/tag>
 ```
 
-![](/assets/gustavo@localhost: ~_021.png)Caso a imagem já esteja sendo utilizada por um container. o Docker não irá executar essa ação e retornará um erro informando qual o id do container que está utilizando a imagem que desejamos apagar.
+Vamos remover a imagem do rhel atomic baixada no lab anterior:
+
+```
+docker images | grep rhel-atomic
+```
+
+![](/assets/Selection_303.png)Agora que temos o ID da imagem, podemos apagá-la:
+
+![](/assets/Selection_304.png)
+
+Caso a imagem já esteja sendo utilizada por um container. o Docker não irá executar essa ação e retornará um erro informando qual o id do container que está utilizando a imagem que desejamos apagar.
 
 ![](/assets/Selection_083.png)Para resolver, basta remover o container que está causando problemas para a gente.
 
@@ -106,7 +116,7 @@ docker rm <id do container>
 A execução de um container significa processar os metadados da imagem e criar um ou mais processos a partir dos dados armazenados. Para tal, usa-se:
 
 ```
-# docker run -it centos:7 /bin/bash
+docker run -it centos:7 /bin/bash
 ```
 
 ![](/assets/Selection_217.png)
