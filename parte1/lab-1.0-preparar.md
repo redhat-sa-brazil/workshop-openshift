@@ -132,5 +132,20 @@ Caso queira confirmar que tudo está certo, execute:
 # docker run hello-world
 ```
 
+## 3.0 Para usuários com seu próprio cluster \(oc cluster up\)
+
+Acesse a sua instância conforme explicado pelo seu instrutor e, logo após, com usuário `root` execute:
+
+```
+yum install vim wget git bash-completion docker -y
+```
+
+E adicione o docker no boot:
+
+```
+systemctl enable docker
+systemctl start docker
+```
+
 
 
