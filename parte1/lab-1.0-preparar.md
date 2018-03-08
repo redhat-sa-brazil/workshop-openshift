@@ -4,6 +4,8 @@
 
 # Tarefas
 
+Consulte o instrutor para saber qual das opções abaixo você deve seguir.
+
 ## 1.0 Para usuários de estação de trabalho com MS Windows
 
 ### 1.0.1 Cliente SSH
