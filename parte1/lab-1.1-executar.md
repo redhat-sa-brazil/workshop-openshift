@@ -19,13 +19,19 @@ docker info
 
 ### 1.1.2 - Buscando Imagens dos Registries
 
-Toda instalação do runtime Docker acompanha configuração dos Registries mais comuns. Para buscar novas imagens nos Registries configurados, usa-se:
+Toda instalação do runtime Docker acompanha configuração dos Registries mais comuns. Podemos ver isso por meio do comando `docker info`.
+
+
+
+Por padrão, o registry `docker.io` já vem configurado como podemos ver na imagem acima.
+
+Para buscar novas imagens nos Registries configurados, usa-se:
 
 ```
 docker search centos
 ```
 
-Nesse caso, ele irá buscar as imagens do centos no Dockerhub que já vem pré-configurado com o Docker.![](/assets/gustavo@localhost: ~_017.png)Você também pode filtrar pelo número de estrelas \(stars\) que um repo possui.
+Nesse caso, ele irá buscar as imagens do centos no Dockerhub \(docker.io\) que já vem pré-configurado com o Docker.![](/assets/gustavo@localhost: ~_017.png)Você também pode filtrar pelo número de estrelas \(stars\) que um repo possui.
 
 Para isso basta passar o parametro --filter
 
@@ -35,7 +41,7 @@ docker search centos --filter=stars=10
 
 ![](/assets/Selection_081.png)
 
-Só existirão resultados que tenham mais que 10 estrelas.
+No cenário acima, só existirão resultados que tenham mais que 10 estrelas.
 
 ### 1.1.3 - Baixando Imagens dos Registries
 
@@ -45,7 +51,13 @@ Além de nome, imagens possuem _tags_ \(sufixo separado por ':'\) que podem iden
 docker pull centos:7
 ```
 
-![](/assets/Selection_216.png)
+![](/assets/Selection_216.png)O comando acima é equivalente a:
+
+```
+docker pull docker.io/centos:7
+```
+
+> INFO: Quando não especificamos qual registry queremos usar, o docker irá utilizar o que está configurado no arquivo /etc/sysconfig/docker. Quando instalado pela primeira vez, o padrão é o docker.io.
 
 É possível também baixar imagens de outros registries quando especificamos isso na linha de comando:
 
