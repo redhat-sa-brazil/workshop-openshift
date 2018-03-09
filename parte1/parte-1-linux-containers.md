@@ -37,7 +37,9 @@ Os **containers são entidades efêmeras por natureza**, baseadas em imagens imu
 
 Como mecanismo de otimização, de espaço e de performance, essas imagens são construídas em **camadas sobrepostas, também imutáveis**. Dessa forma conseguimos aproveitar camadas comuns entre as diferentes imagens, **poupando espaço de armazenamento e melhorando a performance**.
 
-## Onde essas imagens ficam armazenadas?
+Apesar da possibilidade de escrita de dados na última camada conforme mostrado no desenho acima, todos os dados são perdidos após a finalização do container.
+
+## Onde as imagens ficam armazenadas?
 
 Existem dois tipos de repositórios, ou registros, importantes para armazenamento das imagens de containers: **registro local \(ou storage local\)** e **registros remotos \(públicos/privados\)**.
 
