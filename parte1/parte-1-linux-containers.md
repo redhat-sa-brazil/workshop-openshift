@@ -29,7 +29,7 @@ Além do Docker, existem também outras soluções de containers no mercado:
 
 Com o surgimento de novas tecnologias de containers e com uma grande demanda por parte do mercado por esse tipo de ferramenta, foi criado uma especificação que norteia e direciona como os containers e imagens devem ser executados/criados. A [OCI](https://www.opencontainers.org/) \(Open Container Iniciative\) foi criada em 2015 e se propõe a criar uma padrão de mercado para runtime e images. Grandes empresas como Google, Red Hat, Intel e Amazon apoiam essa iniciativa.
 
-## Como as imagens funcionam?
+## O que são imagens e como funcionam?
 
 Os **containers são entidades efêmeras por natureza**, baseadas em imagens imutáveis. Estas armazenam informações de **metadados \(informações e parâmetros\) **e os **dados \(executáveis, bibliotecas e arquivos\)** que serão usados com o container.
 
