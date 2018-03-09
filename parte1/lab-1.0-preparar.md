@@ -6,7 +6,7 @@
 
 Você tem 3 opções disponíveis para a execução dos laboratórios . Consulte o instrutor para saber qual das opções abaixo você deve seguir.
 
-## Para usuários de estação de trabalho com MS Windows
+## 1.0 Para usuários de estação de trabalho com MS Windows
 
 ### 1.0.1 Cliente SSH
 
