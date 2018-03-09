@@ -43,7 +43,7 @@ Apesar da possibilidade de escrita de dados na última camada conforme mostrado 
 
 Existem dois tipos de repositórios, ou registros, importantes para armazenamento das imagens de containers: **registro local \(ou storage local\)** e **registros remotos \(públicos/privados\)**.
 
-O **registro local é um espaço de armazenamento especial que reside no mesmo host que executa os containers**. Esse é usado para armazenas as imagens que serão usadas para executar containers nessa máquina, servindo como uma camada de cache. Esse é o primeiro repositório a ser consultado em busca de imagens.
+O **storage local é um espaço de armazenamento especial que reside no mesmo host que executa os containers**. Esse é usado para armazenas as imagens que serão usadas para executar containers nessa máquina, servindo como uma camada de cache. Esse é o primeiro repositório a ser consultado em busca de imagens.
 
 Os **registros remotos são servidores, públicos ou privados, responsáveis por compartilhar imagens construidas por entidades e/ou usuários**. Estes registros podem permitir não só o acesso para download de imagens, mas também envio de imagens novas por usuários autenticados/autorizados. Dentre os mais famosos temos:
 
@@ -51,5 +51,5 @@ Os **registros remotos são servidores, públicos ou privados, responsáveis por
 * [**https://registry.access.redhat.com**](https://registry.access.redhat.com)
 * [**https://registry.fedoraproject.org**](https://registry.fedoraproject.org)
 
-
+Geralmente os registros remotos são executados na **porta 5000.**
 
