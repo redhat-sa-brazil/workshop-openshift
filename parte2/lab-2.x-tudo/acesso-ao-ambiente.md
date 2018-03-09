@@ -96,6 +96,8 @@ Se os passos anteriores foram executados com sucesso, você terá uma tela com a
 
 ### 2.1.1.2 Acesso ao ambiente OpenShift Nuvem
 
+Antes de executar os passos abaixo, consulte seu instrutor para saber se é necessário realizar esse item 2.1.1.2.
+
 1. Acesse a url: [https://console.paas.rhbrlab.com/console/](https://console.paas.rhbrlab.com/console/)
 
 2. Faça o login através da opção **Red Hat Single Sign ON**
