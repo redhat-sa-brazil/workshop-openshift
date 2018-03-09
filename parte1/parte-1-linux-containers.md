@@ -14,6 +14,8 @@ Ao contrário da tecnologia de virtualização que encapsula um sistema operacio
 
 * **SELinux:** _Fornece uma separação segura, pois impede que os processos raiz dentro do container interfiram com outros processos globais._
 
+* **Linux Capabilities: **Permite a limitação dos privilégios disponíveis a processos que rodam como root em pequenos grupos de privilégios. Dese modo, um processo rodando com privilégios de root pode ser limitado a obter apenas as permissões mínimas que ele precisa para executar suas tarefas.
+
 Apesar de ser uma tecnologia antiga, os containers ganharam mais popularidade hoje em dia principalmente pela sua **portabilidade**. Soluções como [Docker](https://www.docker.com/) ficaram realmente atrativas quando permitiram que um container pudesse ser compartilhado entre infraestruturas heterogêneas. Isso foi possível graças a criação do conceito de imagem, que será nosso próximo tópico nesse guia.
 
 Apesar da grande quantidade de informações que dizem ser possível a portabilidade de containers entre diferentes sistemas operacionais, ela não é sempre obtida na prática. Existem situações que podem não funcionar conforme esperado quando executamos, por exemplo, um container com Ubuntu em um servidor hospedeiro rodando CentOS. Além disso, precisamos garantir que a [mesma versão do Docker esteja rodando nos servidores](https://www.infoworld.com/article/3223073/containers/what-does-container-portability-really-mean.html) e até mesmo o tempo de vida da imagem pode influenciar nesse equação. Vale sempre lembrar que, [container é linux](https://www.redhat.com/en/blog/containers-are-linux) e sua execução depende das bibliotecas e principalmente do kernel do host.
