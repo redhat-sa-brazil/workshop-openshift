@@ -27,7 +27,7 @@ Além do Docker, existem também outras soluções de containers no mercado:
 * [RKT](https://coreos.com/rkt/) - CoreOS
 * [LXD](https://www.ubuntu.com/containers/lxd) - Canonical
 
-Com o surgimento de novas tecnologias de containers e com uma grande demanda por parte do mercado por esse tipo de ferramenta, foi criado uma especificação que norteia e direciona como os containers e imagens devem ser executados/criados. A [OCI](https://www.opencontainers.org/) \(Open Container Iniciative\) foi criada em 2015 e se propõe a cria uma padrão de mercado para runtime e images. Grandes empresas como Google, Red Hat, Intel e Amazon apoiam essa iniciativa.
+Com o surgimento de novas tecnologias de containers e com uma grande demanda por parte do mercado por esse tipo de ferramenta, foi criado uma especificação que norteia e direciona como os containers e imagens devem ser executados/criados. A [OCI](https://www.opencontainers.org/) \(Open Container Iniciative\) foi criada em 2015 e se propõe a criar uma padrão de mercado para runtime e images. Grandes empresas como Google, Red Hat, Intel e Amazon apoiam essa iniciativa.
 
 ## Como as imagens funcionam?
 
