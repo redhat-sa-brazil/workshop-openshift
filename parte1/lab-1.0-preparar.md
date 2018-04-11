@@ -139,7 +139,7 @@ Caso queira confirmar que tudo está certo, execute:
 Acesse a sua instância conforme explicado pelo seu instrutor e, logo após, com usuário `root` execute:
 
 ```
-yum install vim wget git bash-completion docker ansible -y
+yum install vim wget git bash-completion docker-1.12.6 ansible -y
 ```
 
 > INFO: Caso você não esteja como root, basta executar o comando abaixo. Qualquer problema chame o instrutor.
