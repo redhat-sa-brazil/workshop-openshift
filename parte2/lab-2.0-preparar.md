@@ -20,7 +20,7 @@ Consulte o instrutor sobre qual opção usar!
 Além do acesso ao ambiente, precisamos também** instalar alguns componentes adicionais na nossa máquina virtual** criada na parte 1 desse material. Basicamente vamos instalar o cliente CLI do OpenShift e do Git:
 
 ```
-# yum install centos-release-openshift-origin
+# yum install centos-release-openshift-origin37
 # yum install origin-clients git
 ```
 
