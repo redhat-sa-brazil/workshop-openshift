@@ -5,7 +5,7 @@ Siga os passos abaixo caso o instrutor te solicite uma instalação local do Ope
 * Garanta que os pacotes necessários estão instalados
 
 ```
-yum install centos-release-openshift-origin origin-clients git ansible -y
+yum install centos-release-openshift-origin37 origin-clients git ansible -y
 ```
 
 * Executem o comando abaixo:
@@ -17,6 +17,7 @@ oc cluster up \
   --host-config-dir=/var/lib/origin/openshift.local.config \
   --host-pv-dir=/var/lib/origin/openshift.local.pv \
   --metrics \
+  --version=v3.7.0 \
   --use-existing-config
 ```
 
@@ -51,6 +52,7 @@ oc cluster up \
   --host-config-dir=/var/lib/origin/openshift.local.config \
   --host-pv-dir=/var/lib/origin/openshift.local.pv \
   --metrics \
+  --version=v3.7.0 \
   --use-existing-config
 ```
 
