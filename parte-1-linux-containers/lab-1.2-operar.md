@@ -31,7 +31,7 @@ Para buscar mais informações sobre os containers em execução, usa-se:
 # docker ps
 ```
 
-![](../.gitbook/assets/selection_219.png)
+![](../extras/selection_219.png)
 
 No exemplo anterior não são listados containers terminados. Para visualizar a listagem completa, usa-se:
 
@@ -39,7 +39,7 @@ No exemplo anterior não são listados containers terminados. Para visualizar a 
 # docker ps -a
 ```
 
-![](../.gitbook/assets/selection_026.png)
+![](../extras/selection_026.png)
 
 Para visualizar os processos em execução dentro de um container, usamos:
 
@@ -47,7 +47,7 @@ Para visualizar os processos em execução dentro de um container, usamos:
 # docker top <id/nome>
 ```
 
-![](../.gitbook/assets/selection_027.png)
+![](../extras/selection_027.png)
 
 Também podemos inspecionar os metadados do container, ou de uma imagem, através de:
 
@@ -55,7 +55,7 @@ Também podemos inspecionar os metadados do container, ou de uma imagem, atravé
 # docker inspect <id/nome/tag>
 ```
 
-![](../.gitbook/assets/gustavo-localhost-_028.png)
+![](../extras/gustavo-localhost-_028.png)
 
 Tente obter o endereço IP de um container usando o comando abaixo:
 
@@ -63,7 +63,7 @@ Tente obter o endereço IP de um container usando o comando abaixo:
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' <id do container>
 ```
 
-![](../.gitbook/assets/selection_220.png)
+![](../extras/selection_220.png)
 
 ### 1.2.2 - Execução Ad-Hoc
 
@@ -73,7 +73,7 @@ Também podemos conectar em um container em execução e executar processos adic
 # docker exec -it <container-id> /bin/sh
 ```
 
-![](../.gitbook/assets/selection_029.png)
+![](../extras/selection_029.png)
 
 ### 1.2.3 - Adicionando Persistência através de Volumes
 
@@ -129,7 +129,7 @@ Para monitorar a quantidade de recursos que um container está consumindo em um 
 docker stats
 ```
 
-![](../.gitbook/assets/selection_221.png)
+![](../extras/selection_221.png)
 
 E podemos visualizar somente de um container rodando o comando
 

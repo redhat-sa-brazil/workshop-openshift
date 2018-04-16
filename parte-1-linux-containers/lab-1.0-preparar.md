@@ -65,15 +65,15 @@ Alguns passos importantes para a instalação:
 
 * **Tenha certeza que somente um dos discos foi usado para instalar o sistema operacional!**
 
-![](../.gitbook/assets/centos-install-disks.png)
+![](../extras/centos-install-disks.png)
 
 * **Não instale nada além dos pacotes mínimos!**
 
-![](../.gitbook/assets/centos-install-packages.png)
+![](../extras/centos-install-packages.png)
 
 * **Não esqueça de dar um hostname e configurar a rede!**
 
-![](../.gitbook/assets/centos-install-networking.png)
+![](../extras/centos-install-networking.png)
 
 #### 2.0.5 - Instalar os pré-requisitos para trabalhar com containers
 

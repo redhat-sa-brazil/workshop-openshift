@@ -4,7 +4,7 @@
 
 A tecnologia de container Linux é, na verdade, um conjunto de capacidades que permitem o isolamento e contenção de aplicações. Apesar da recente exposição do termo, **essa é uma tecnologia que vem sendo aprimorada desde o UNIX, com o chroot, ou do BSD, com o Jails**.
 
-![](../.gitbook/assets/virtualization-vs-containers.png)
+![](../extras/virtualization-vs-containers.png)
 
 Ao contrário da tecnologia de virtualização que encapsula um sistema operacional completo em cima de um hardware virtual para usar como casulo para aplicações, **containers usam de funcionalidades nativas do kernel Linux para garantir isolamento e contenção das aplicações**:
 
@@ -30,7 +30,7 @@ Com o surgimento de novas tecnologias de containers e com uma grande demanda por
 
 Os **containers são entidades efêmeras por natureza**, baseadas em imagens imutáveis. Estas armazenam informações de **metadados \(informações e parâmetros\) **e os **dados \(executáveis, bibliotecas e arquivos\)** que serão usados com o container.
 
-![](../.gitbook/assets/docker-layered-filesystem.png)
+![](../extras/docker-layered-filesystem.png)
 
 Como mecanismo de otimização, de espaço e de performance, essas imagens são construídas em **camadas sobrepostas, também imutáveis**. Dessa forma conseguimos aproveitar camadas comuns entre as diferentes imagens, **poupando espaço de armazenamento e melhorando a performance**.
 
