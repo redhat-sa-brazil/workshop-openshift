@@ -6,7 +6,7 @@
   * [Lab 1.1 - Executar](parte-1-linux-containers/lab-1.1-executar.md)
   * [Lab 1.2 - Operar](parte-1-linux-containers/lab-1.2-operar.md)
   * [Lab 1.3 - Compartilhar](parte-1-linux-containers/lab-1.3-compartilhar.md)
-* [Parte 2 - OpenShift para devs](parte-2-openshift-para-devs/README.md)
+* [Parte 2 - Plataforma OpenShift](parte-2-plataforma-openshift/README.md)
   * [Lab 2.0 - Preparar](parte-2-openshift-para-devs/lab-2.0-preparar.md)
   * [Lab 2.1 - Show me the Code](parte-2-openshift-para-devs/lab-2.1-show-me-the-code/README.md)
     * [2.1.1 - Acesso ao ambiente](parte-2-openshift-para-devs/lab-2.1-show-me-the-code/2.1.1-acesso-ao-ambiente.md)
