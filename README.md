@@ -19,16 +19,15 @@ Este trabalho está licenciado sob a [**Licença Atribuição-NãoComercial-Comp
 Para conseguir aproveitar o material, nossa recomendação é:
 
 * _Reserve entre **4-8 horas** para discussão dos assuntos e execução das atividades._
-* _Acesso à** Internet é indispensável**._
+* _Acesso à **Internet é indispensável**._
 
 ## Por onde começar?
 
 Esse material é dividido em 3 partes:
 
-* [**Parte 1 - Linux Containers:**](parte-1-linux-containers/) _Material dedicado à discussão introdutória sobre a tecnologia de containers Linux._
-* [**Parte 2 - Plataforma OpenShift**](parte-2-openshift-para-devs/)**:** _Material dedicado à discussão sobre a plataforma de containers OpenShift, principalmente pela perspectiva do usuário final._
+* [**Parte 1 - Linux Containers:**](parte-1-containers/) _Material dedicado à discussão introdutória sobre a tecnologia de containers Linux._
+* [**Parte 2 - Plataforma OpenShift**](parte-2-openshift/)**:** _Material dedicado à discussão sobre a plataforma de containers OpenShift, principalmente pela perspectiva do usuário final._
 
 ## Posso contribuir?
 
 **Aceitamos contribuições de todas as formas!** Você pode fazer uso da funcionalidade de "Issues" direto do repositório fonte no [**Github**](https://github.com/redhat-sa-brazil/workshop-openshift). Uma outra alternativa é através das funcionalidades de colaboração do próprio [**GitBook**](https://redhat-sa-brazil.gitbooks.io/workshop-openshift). Fique a vontade de usar qualquer um dos dois!
-
