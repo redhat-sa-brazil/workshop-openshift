@@ -96,20 +96,18 @@ Antes de começarmos a instalação do ambiente, precisamos garantir que todos o
 # yum install vim wget git bash-completion docker
 ```
 
-**2.0.5.3 Preparação do Docker Storage no host \(OPCIONAL!\)**
+**2.0.5.3 Preparação do Docker Storage no host**
 
-Antes de inicializarmos o runtime de containers, precisamos preparar o segundo disco para ser usado como registro local de imagens. Para tal, precisamos descobrir qual o dispositivo é o disco:
+Antes de inicializarmos o runtime de containers, precisamos preparar o storage usado pelo registro local de imagens. Para tal, precisamos descobrir se temos um disco adicional:
 
 ```text
 # lsblk
 ```
 
-Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o seguinte conteúdo \(adaptando o `vdb` ou `sdb` para o dispositivo em questão\):
+Caso não exista discos adicionais, precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup` e garantir o seguinte conteúdo:
 
 ```text
-STORAGE_DRIVER="devicemapper"
-DEVS="sdb"
-VG="docker"
+STORAGE_DRIVER="overlay2"
 ```
 
 Depois precisamos executar o utilitário para criar e configurar o storage do docker. Execute a linha de comando abaixo:
@@ -138,7 +136,7 @@ Caso queira confirmar que tudo está certo, execute:
 Acesse a sua instância conforme explicado pelo seu instrutor e, logo após, com usuário `root` execute:
 
 ```text
-yum install vim wget git bash-completion docker-1.12.6 ansible -y
+yum install vim wget git bash-completion docker ansible -y
 ```
 
 > INFO: Caso você não esteja como root, basta executar o comando abaixo. Qualquer problema chame o instrutor.
