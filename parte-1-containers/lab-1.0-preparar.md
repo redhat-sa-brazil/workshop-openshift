@@ -18,8 +18,6 @@ Existem duas opções de _SSH Client_ que recomendamos:
 
 * [**PutTTY**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
-  > baixe o arquivo `putty-64bit-0.70-installer.msi`
-
 * [**Git Bash**](https://git-scm.com/download/win) \(incluso no GIT SCM for Windows\)
 
 ### 2.0 Máquina Virtual
@@ -34,10 +32,10 @@ Temos três diferentes opções para obter e utilizar essa VM:
   > [baixe aqui](https://drive.google.com/open?id=16CHefCCaXL9wfhsx6C7jgH11ODO5mFdP) \(`~845mb`\) ou peça ao instrutor o arquivo!
 
 * **VM criada pelo aluno**: VM Criada pelo próprio aluno usando alguma ferramenta de Virtualização
+
   * Virtual Box
   * KVM
   * VMware Fusion
-  * etc
 
 #### 2.0.1 - Instalar um virtualizador
 
@@ -155,4 +153,6 @@ E adicione o docker no boot:
 systemctl enable docker
 systemctl start docker
 ```
+
+
 
