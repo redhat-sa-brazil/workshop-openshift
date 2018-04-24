@@ -12,8 +12,6 @@
   * [2.2 - Deploy Imagem](2-openshift/2.2-deploy-imagem.md)
   * [2.3 - Tolerância à Falhas](2-openshift/2.3-tolerancia-a-falhas.md)
   * [2.4 - Source to Image \(S2I\)](2-openshift/2.4-source-to-image-s2i.md)
-  * [2.5 - Usando Dockerfile](2-openshift/2.5-usando-dockerfile.md)
-  * [2.6 - Binary Deployment](2-openshift/2.6-binary-deployment.md)
   * [2.7 - Health Checks](2-openshift/2.7-health-checks.md)
   * [2.8 - Integração Contínua \(Webhook\)](2-openshift/2.8-integracao-continua-webhook.md)
   * [2.9 - Agregação de Logs](2-openshift/2.9-agregacao-de-logs.md)
@@ -26,4 +24,7 @@
   * [2.16 - ConfigMap e Secrets](2-openshift/2.16-configmap-e-secrets.md)
   * [2.17 - Canary Release](2-openshift/2.17-canary-release.md)
   * [2.18 - Blue/Green Deployment](2-openshift/2.18-blue-green-deployment.md)
+* 3.0 - Extras
+  * [3.1 - Deployment usando Dockerfile](3.0-extras/2.5-usando-dockerfile.md)
+  * [3.2 - Deployment utilizando um binário](3.0-extras/2.6-binary-deployment.md)
 
