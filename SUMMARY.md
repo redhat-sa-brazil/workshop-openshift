@@ -12,9 +12,7 @@
   * [2.2 - Deploy Imagem](2-openshift/2.2-deploy-imagem.md)
   * [2.3 - Tolerância à Falhas](2-openshift/2.3-tolerancia-a-falhas.md)
   * [2.4 - Source to Image \(S2I\)](2-openshift/2.4-source-to-image-s2i.md)
-  * [2.7 - Health Checks](2-openshift/2.7-health-checks.md)
-  * [2.8 - Integração Contínua \(Webhook\)](2-openshift/2.8-integracao-continua-webhook.md)
-  * [2.9 - Agregação de Logs](2-openshift/2.9-agregacao-de-logs.md)
+  * [2.5 - Integração Contínua](2-openshift/2.8-integracao-continua-webhook.md)
   * [2.10 - Banco de Dados](2-openshift/2.10-banco-de-dados.md)
   * [2.11 - Pipeline](2-openshift/2.11-pipeline.md)
   * [2.12 - Limite de Recursos](2-openshift/2.12-limite-de-recursos.md)
@@ -27,4 +25,6 @@
 * 3.0 - Extras
   * [3.1 - Deployment usando Dockerfile](3.0-extras/2.5-usando-dockerfile.md)
   * [3.2 - Deployment utilizando um binário](3.0-extras/2.6-binary-deployment.md)
+  * [3.3 - Health Checks](3.0-extras/2.7-health-checks.md)
+* [3.4 - Agregação de Logs](2.9-agregacao-de-logs.md)
 
