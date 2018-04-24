@@ -1,4 +1,4 @@
-# WORKSHOP-OPENSHIFT
+# Introdução
 
 ## O que é isso?
 
@@ -30,9 +30,9 @@ Para conseguir aproveitar o material, nossa recomendação é:
 
 Esse material é dividido em 3 partes:
 
-* [**Parte 1 - Linux Containers:**](/parte1/parte-1-linux-containers.md) _Material dedicado à discussão introdutória sobre a tecnologia de containers Linux._
-* [**Parte 2 - OpenShift \(Dev\)**](/parte2/parte-2-openshift-dev.md)**:** _Material dedicado à discussão sobre o OpenShift na perspectiva do desenvolvedor._
-* [**Parte 3 - OpenShift \(Ops\)**](/parte3/parte-3-openshift-ops.md)**:** _Material dedicado à discussão sobre o OpenShift na perspectiva do administrador._
+* [**Parte 1 - Linux Containers:**](parte-1-linux-containers/) _Material dedicado à discussão introdutória sobre a tecnologia de containers Linux._
+* [**Parte 2 - OpenShift \(Dev\)**](parte-2-openshift-para-devs/)**:** _Material dedicado à discussão sobre o OpenShift na perspectiva do desenvolvedor._
+* [**Parte 3 - OpenShift \(Ops\)**](parte-3-openshift-para-ops/)**:** _Material dedicado à discussão sobre o OpenShift na perspectiva do administrador._
 
 ## Posso contribuir?
 
