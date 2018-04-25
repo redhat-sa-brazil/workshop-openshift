@@ -22,9 +22,9 @@
   * [2.16 - ConfigMap e Secrets](2-openshift/2.16-configmap-e-secrets.md)
   * [2.17 - Canary Release](2-openshift/2.17-canary-release.md)
   * [2.18 - Blue/Green Deployment](2-openshift/2.18-blue-green-deployment.md)
-* 3.0 - Extras
+* 3 - Extras
   * [3.1 - Deployment usando Dockerfile](3.0-extras/2.5-usando-dockerfile.md)
   * [3.2 - Deployment utilizando um binário](3.0-extras/2.6-binary-deployment.md)
   * [3.3 - Health Checks](3.0-extras/2.7-health-checks.md)
-* [3.4 - Agregação de Logs](2.9-agregacao-de-logs.md)
+  * [3.4 - Agregação de Logs](3.0-extras/2.9-agregacao-de-logs.md)
 
