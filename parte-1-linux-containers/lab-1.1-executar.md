@@ -28,7 +28,9 @@ Por padrão, o registry `docker.io` já vem configurado como podemos ver na imag
 Para buscar novas imagens nos Registries configurados, usa-se:
 
 ```text
-docker search centos
+docker search fedora
+
+docker search ubuntu
 ```
 
 Nesse caso, ele irá buscar as imagens do centos no Dockerhub \(docker.io\) que já vem pré-configurado com o Docker.
@@ -80,7 +82,7 @@ Caso você encontre o erro abaixo:
 Ele acontece porque o registry da Red Hat exige certificado SSL. Para resolver isso, instale o seguinte pacote:
 
 ```text
-yum install python-rhsm-certificates -y
+yum install http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm
 ```
 
 Agora faça novamente o pull da imagem `rhel-atomic`:
@@ -164,7 +166,7 @@ Caso queira entrar em um container já em execução, para fazer _attach_ no pro
 Uma das vantagens do uso de containers é a possibilidade de abstração da complexidade de implantação de um determinado serviço. Vamos rodar agora uma imagem do wordpress e ver o trabalho necessário para colocar esse CMS no ar.
 
 ```text
-docker run --rm -p 8080:80 wordpress
+docker run --rm -p 80:8080 wordpress
 ```
 
 O parametro -p exporta a porta interna do container \(80\) para a nossa máquina na porta 8080. Esse parâmetro será explicado melhor nos próximos exercícios.
@@ -173,7 +175,7 @@ O parametro -p exporta a porta interna do container \(80\) para a nossa máquina
 
 Agora podemos abrir nosso browser na página: 
 
-[http://localhost:8080](http://localhost:8080)
+[http://localhost:8080](http://<ip da sua VM>:8080)
 
 > _nota_: caso esteja usando uma VM local acesse a URL utilizando o endereço IP da sua VM. Execute o comando `ip a s` dentro do shel da VM para saber o IP da rede interna do VirtualBox.
 >

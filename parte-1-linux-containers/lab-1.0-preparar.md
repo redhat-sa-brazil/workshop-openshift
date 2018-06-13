@@ -6,49 +6,30 @@
 
 ## Opções de execução
 
-Você tem 3 opções disponíveis para a execução dos laboratórios . Consulte o instrutor para saber qual das opções abaixo você deve seguir.
+Você tem 2 opções disponíveis para a execução dos laboratórios . Consulte o instrutor para saber qual das opções abaixo você deve seguir.
 
-### 1.0 Para usuários de estação de trabalho com MS Windows
-
-#### 1.0.1 Cliente SSH
-
-Instale um cliente SSH para acessar o _shell_ da VM que será utilizada durante todo o nosso workshop.
-
-Existem duas opções de _SSH Client_ que recomendamos:
-
-* [**PutTTY**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-
-  > baixe o arquivo `putty-64bit-0.70-installer.msi`
-
-* [**Git Bash**](https://git-scm.com/download/win) \(incluso no GIT SCM for Windows\)
-
-### 2.0 Máquina Virtual
+### 1.0 Máquina Virtual local
 
 Durante este workshop utilizaremos utilizaremos uma VM Linux como ambiente base dos laboratórios propostos aqui.
 
 Temos três diferentes opções para obter e utilizar essa VM:
 
-* **Cloud Provider**: ambiente pré configurado pelo Instrutor
 * **Virtual Box Appliance**: VM pré instalada e fornecida pelo Instrutor
 
   > [baixe aqui](https://drive.google.com/open?id=16CHefCCaXL9wfhsx6C7jgH11ODO5mFdP) \(`~845mb`\) ou peça ao instrutor o arquivo!
 
 * **VM criada pelo aluno**: VM Criada pelo próprio aluno usando alguma ferramenta de Virtualização
   * Virtual Box
-  * KVM
-  * VMware Fusion
-  * etc
 
-#### 2.0.1 - Instalar um virtualizador
+#### 1.0.1 - Instalar um virtualizador
 
-Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoal/profissional, recomendamos o uso de uma ferramenta de virtualização. Dentre as diversas opções, **recomendamos o VirtualBox \(Windows/Mac\) ou o Virt-Manager/KVM \(Linux\):**
+Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoal/profissional, recomendamos o uso de uma ferramenta de virtualização. Dentre as diversas opções, **recomendamos o VirtualBox**
 
 * [**https://www.virtualbox.org**](https://www.virtualbox.org)
-* [**https://virt-manager.org**](https://virt-manager.org)
 
-#### 2.0.3 - Criar a máquina virtual \(VM\)
+#### 1.0.2 - Criar a máquina virtual \(VM\)
 
-Nos exercícios desse material vamos usar o **CentOS**.
+Nos exercícios desse material vamos usar a Distro **CentOS 7**.
 
 Após a instalação do virtualizador e a cópia do ISO do sistema operacional, vamos criar uma máquina virtual nas seguintes características:
 
@@ -59,7 +40,7 @@ Após a instalação do virtualizador e a cópia do ISO do sistema operacional, 
 * **SO**: Red Hat 64bits
 * **BOOT**: ISO \(apontar pro caminho correto\)
 
-#### 2.0.4 - Instalação do Sistema Operacional \(SO\)
+#### 1.0.3 - Instalação do Sistema Operacional \(SO\)
 
 Alguns passos importantes para a instalação:
 
@@ -75,81 +56,26 @@ Alguns passos importantes para a instalação:
 
 ![](../.gitbook/assets/centos-install-networking%20%281%29.png)
 
-#### 2.0.5 - Instalar os pré-requisitos para trabalhar com containers
 
-Recomendamos acessar o _shell_ da VM usando um _SSH client_ \(PuTTY ou Git Bash no caso do windows\).
+### 2.0 Máquina Virtual em um Cloud Provider
 
-Para isso abra seu SSH client, informe o IP da VM \(pode ser obtido através do comando `ip a s` executado dentro da janela da VM\) e faça a conexão informando usuário e senha.
+Siga as orientações passadas pelo Instrutor!
 
-> Caso necessite, peça ajuda ao instrutor!
-
-**2.0.5.1 Update do S.O \(OPCIONAL!\)**
-
-Antes de começarmos a instalação do ambiente, precisamos garantir que todos os pacotes do sistema estejam atualizados:
-
-```text
-# yum update -y
-# systemctl reboot
-```
-
-**2.0.5.2 Instalação dos pacotes mínimos necessários**
-
-```text
-# yum install vim wget git bash-completion docker
-```
-
-**2.0.5.3 Preparação do Docker Storage no host \(OPCIONAL!\)**
-
-Antes de inicializarmos o runtime de containers, precisamos preparar o segundo disco para ser usado como registro local de imagens. Para tal, precisamos descobrir qual o dispositivo é o disco:
-
-```text
-# lsblk
-```
-
-Depois precisamos editar o arquivo `/etc/sysconfig/docker-storage-setup`com o seguinte conteúdo \(adaptando o `vdb` ou `sdb` para o dispositivo em questão\):
-
-```text
-STORAGE_DRIVER="devicemapper"
-DEVS="sdb"
-VG="docker"
-```
-
-Depois precisamos executar o utilitário para criar e configurar o storage do docker. Execute a linha de comando abaixo:
-
-```text
-# docker-storage-setup
-```
-
-**2.0.5.4 Habilitando o Deamon do Docker Engine no host \(OPCIONAL!\)**
-
-Para finalizar, configuramos o Systemd para habilitar e inicializar o runtime:
-
-```text
-# systemctl enable docker
-# systemctl start docker
-```
-
-Caso queira confirmar que tudo está certo, execute:
-
-```text
-# docker run hello-world
-```
-
-### 3.0 Para usuários com sua própria VM na nuvem
+### 3.0 Instalação dos pacotes necessários para o Test Drive
 
 Acesse a sua instância conforme explicado pelo seu instrutor e, logo após, com usuário `root` execute:
 
 ```text
-yum install vim wget git bash-completion docker-1.12.6 ansible -y
+yum install vim wget git bash-completion docker ansible -y
 ```
 
 > INFO: Caso você não esteja como root, basta executar o comando abaixo. Qualquer problema chame o instrutor.
 >
 > ```text
-> sudo su -
+> sudo -i
 > ```
 
-E adicione o docker no boot:
+Em seguida habilite o serviço do Docker Daemon no SystemD
 
 ```text
 systemctl enable docker

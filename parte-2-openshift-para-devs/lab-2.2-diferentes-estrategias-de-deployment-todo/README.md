@@ -1,4 +1,7 @@
-# Lab 2.2 - Diferentes estratégias de deployment \(TODO\)
+# Lab 2.2 - Diferentes estratégias de deployment
+
+ * Canary Release
+ * Blue/Green
 
 
 
