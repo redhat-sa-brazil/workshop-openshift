@@ -21,28 +21,22 @@ Este trabalho está licenciado sob a [**Licença Atribuição-NãoComercial-Comp
 
 ## Como usar?
 
-**Não existe uma maneira certa ou errada de usar o conteúdo deste material.** Você poderia segur como um roteiro independente, usando a sua máquina particular como ambiente de experimentações, ou você pode se reunir com colegas e compartilhar a experiência.
+**Não existe uma maneira certa ou errada de usar o conteúdo deste material.** Você poderia seguir como um roteiro independente, usando a sua máquina particular como ambiente de experimentação, ou você pode se reunir com colegas e compartilhar a experiência em um dos eventos de Test-Drive Workshops.
 
-**Se você tiver interesse de participar de um workshop com o time Red Hat Brasil, entre em contato com o seu time de contas/parceiro!**
+Para conseguir aproveitar o material, você precisará:
 
-Para conseguir aproveitar o material, nossa recomendação é:
+* _Reserve entre **4-6 horas** para discussão dos assuntos e execução das atividades._
+* _Tenha um computador com **acesso à Internet** (http/https) e **editor de arquivos YAML** (Vim, VSCode, Notepad++)._
+* _Caso não tenha acesso a um ambiente **Red Hat OpenShift 4**, você pode usar o [**Red Hat CodeReady Containers**](https://github.com/code-ready/crc)._
 
-* _Reserve entre **4-8 horas** para discussão dos assuntos e execução das atividades._
-* _Acesso à **Internet é indispensável**._
-* _Caso opte por usar uma VM local recomendamos que os participantes utilizem **um PC capaz de rodar máquinas virtuais**:_
-  * _**Processador dual-core de 2GHz**_
-  * _**8GB de memória RAM**_
-  * _**40GB de disco livre**_
-  * _**Virtualizador \(QEMU/KVM, Oracle VirtualBox, VMware Workstation\)**_
+Todo o roteiro pode ser acessado através do [**Github Pages**](https://redhat-sa-brazil.github.io/workshop-openshift), ou utilizando o [**docsify.js**](https://docsify.js.org) a partir da cópia deste repositório.
 
-## Por onde começar?
-
-Esse material é dividido em 2 partes:
-
-* [**Parte 1 - Linux Containers:**](parte-1-linux-containers/) _Material dedicado à discussão introdutória sobre a tecnologia de containers Linux._
-* [**Parte 2 - OpenShift \(Dev\)**](parte-2-openshift-para-devs/)**:** _Material dedicado à discussão sobre o OpenShift na perspectiva do desenvolvedor._
+```bash
+$ git clone https://github.com/redhat-sa-brazil/workshop-openshift.git
+$ cd workshop-openshift
+$ docsify serve docs
+```
 
 ## Posso contribuir?
 
-**Aceitamos contribuições de todas as formas!** Você pode fazer uso da funcionalidade de "Issues" direto do repositório fonte no [**Github**](https://github.com/redhat-sa-brazil/workshop-openshift). Uma outra alternativa é através das funcionalidades de colaboração do próprio [**GitBook**](https://redhat-sa-brazil.gitbooks.io/workshop-openshift). Fique a vontade de usar qualquer um dos dois!
-
+**Sem dúvida!** Você pode fazer uso da funcionalidade de "Issues" direto do repositório fonte no [**Github**](https://github.com/redhat-sa-brazil/workshop-openshift), mas por favor siga o fluxo de trabalho do [**GitFlow**](https://datasift.github.io/gitflow/IntroducingGitFlow.html). 
