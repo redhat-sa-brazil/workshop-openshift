@@ -19,7 +19,7 @@ Este trabalho está licenciado sob a [**Licença Atribuição-NãoComercial-Comp
 Para conseguir aproveitar o material, nossa recomendação é:
 
 * _Reserve entre **4-8 horas** para discussão dos assuntos e execução das atividades._
-* _Acesso à** Internet é indispensável**._
+* _Acesso à **Internet é indispensável**._
 * _Caso opte por usar uma VM local recomendamos que os participantes utilizem **um PC capaz de rodar máquinas virtuais**:_
   * _**Processador dual-core de 2GHz**_
   * _**8GB de memória RAM**_

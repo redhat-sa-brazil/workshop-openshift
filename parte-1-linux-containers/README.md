@@ -11,7 +11,7 @@ Ao contrário da tecnologia de virtualização que encapsula um sistema operacio
 * **Namespaces:** _Permite criar uma abstração de um recurso de sistema global particular e fazê-lo aparecer como uma instância separada para processos dentro de um namespace. Conseqüentemente, vários containers podem usar o mesmo recurso simultaneamente sem criar um conflito._
 * **Control Groups \(cgroups\):** _Permite agrupar processos para fins de gerenciamento de recursos do sistema. Os Cgroups alocam o tempo da CPU, a memória do sistema, a largura de banda da rede ou combinações destes entre os grupos de tarefas definidos pelo usuário._
 * **SELinux:** _Fornece uma separação segura, pois impede que os processos raiz dentro do container interfiram com outros processos globais._
-* **Linux Capabilities: **Permite a limitação dos privilégios disponíveis a processos que rodam como root em pequenos grupos de privilégios. Dese modo, um processo rodando com privilégios de root pode ser limitado a obter apenas as permissões mínimas que ele precisa para executar suas tarefas.
+* **Linux Capabilities:** Permite a limitação dos privilégios disponíveis a processos que rodam como root em pequenos grupos de privilégios. Dese modo, um processo rodando com privilégios de root pode ser limitado a obter apenas as permissões mínimas que ele precisa para executar suas tarefas.
 
 Entendendo essas funcionalidades, podemos perceber que **containers são linux** já que estão intimamente acoplados as features nativas do kernel do linux.
 
@@ -28,7 +28,7 @@ Com o surgimento de novas tecnologias de containers e com uma grande demanda por
 
 ## O que são imagens e como funcionam?
 
-Os **containers são entidades efêmeras por natureza**, baseadas em imagens imutáveis. Estas armazenam informações de **metadados \(informações e parâmetros\) **e os **dados \(executáveis, bibliotecas e arquivos\)** que serão usados com o container.
+Os **containers são entidades efêmeras por natureza**, baseadas em imagens imutáveis. Estas armazenam informações de **metadados \(informações e parâmetros\)** e os **dados \(executáveis, bibliotecas e arquivos\)** que serão usados com o container.
 
 ![](../.gitbook/assets/docker-layered-filesystem%20%281%29.png)
 

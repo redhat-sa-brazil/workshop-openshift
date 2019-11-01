@@ -1,13 +1,16 @@
 # Lab 1.0 - Preparar
+
 ## Lab 1.0 - Objetivos
+
 Preparar o ambiente local para os próximos exercícios.
 
 ## Opções de execução
+
 Você tem 2 opções disponíveis para a execução dos laboratórios. Consulte o instrutor para saber qual das opções abaixo você deve seguir.
 
 ### 1.0 Máquina Virtual local
-Durante este workshop utilizaremos utilizaremos uma VM Linux como ambiente base dos laboratórios propostos aqui.
-Temos duas diferentes opções para obter e utilizar essa VM:
+
+Durante este workshop utilizaremos utilizaremos uma VM Linux como ambiente base dos laboratórios propostos aqui. Temos duas diferentes opções para obter e utilizar essa VM:
 
 * **Virtual Box Appliance**: VM pré instalada e fornecida pelo Instrutor
 
@@ -17,11 +20,13 @@ Temos duas diferentes opções para obter e utilizar essa VM:
   * Virtual Box
 
 #### 1.0.1 - Instalar um virtualizador
+
 Para conseguirmos montar um ambiente local sem interferir na sua máquina pessoal/profissional, recomendamos o uso de uma ferramenta de virtualização. Dentre as diversas opções, **recomendamos o VirtualBox**
 
 * [**https://www.virtualbox.org**](https://www.virtualbox.org)
 
 #### 1.0.2 - Criar a máquina virtual \(VM\)
+
 Nos exercícios desse material vamos usar a Distro **CentOS 7**.
 
 Após a instalação do virtualizador e a cópia do ISO do sistema operacional, vamos criar uma máquina virtual nas seguintes características:
@@ -50,9 +55,11 @@ Alguns passos importantes para a instalação:
 ![](../.gitbook/assets/centos-install-networking%20%281%29.png)
 
 ### 2.0 Máquina Virtual em um Cloud Provider
+
 Siga as orientações passadas pelo Instrutor!
 
 ### 3.0 Instalação dos pacotes necessários para o Test Drive
+
 Acesse a sua instância conforme explicado pelo seu instrutor e, logo após, com usuário `root` execute:
 
 ```text

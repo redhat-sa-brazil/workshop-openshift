@@ -26,6 +26,7 @@
     * [2.1.16 - Idle](parte-2-openshift-para-devs/lab-2.1-show-me-the-code/2.1.16-idle.md)
     * [2.1.17 - Image Stream](parte-2-openshift-para-devs/lab-2.1-show-me-the-code/2.1.17-image-stream.md)
     * [2.1.18 - ConfigMap e Secrets](parte-2-openshift-para-devs/lab-2.1-show-me-the-code/2.1.18-configmap-e-secrets.md)
-  * [Lab 2.2 - Diferentes estratégias de deployment](parte-2-openshift-para-devs/lab-2.2-diferentes-estrategias-de-deployment-todo/README.md)
-    * [2.2.1 Canary Release](parte-2-openshift-para-devs/lab-2.2-diferentes-estrategias-de-deployment-todo/2.2.1-canary-release.md)
-    * [2.2.2 Blue/Green deployment](parte-2-openshift-para-devs/lab-2.2-diferentes-estrategias-de-deployment-todo/2.2.2-blue-green-deployment.md)
+  * [Lab 2.2 - Diferentes estratégias de deployment](parte-2-openshift-para-devs/lab-2.2-diferentes-estrategias-de-deployment/README.md)
+    * [2.2.1 Canary Release](parte-2-openshift-para-devs/lab-2.2-diferentes-estrategias-de-deployment/2.2.1-canary-release.md)
+    * [2.2.2 Blue/Green deployment](parte-2-openshift-para-devs/lab-2.2-diferentes-estrategias-de-deployment/2.2.2-blue-green-deployment.md)
+

@@ -173,9 +173,9 @@ O parametro -p exporta a porta interna do container \(80\) para a nossa máquina
 
 ![](../.gitbook/assets/wordpress.gif)
 
-Agora podemos abrir nosso browser na página: 
+Agora podemos abrir nosso browser na página:
 
-[http://localhost:8080](http://<ip da sua VM>:8080)
+[http://localhost:8080](http://<ip%20da%20sua%20VM>:8080)
 
 > _nota_: caso esteja usando uma VM local acesse a URL utilizando o endereço IP da sua VM. Execute o comando `ip a s` dentro do shel da VM para saber o IP da rede interna do VirtualBox.
 >
