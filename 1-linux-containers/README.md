@@ -2,7 +2,7 @@
 
 ## Afinal, o que são containers?
 
-A tecnologia de container Linux é, na verdade, um conjunto de capacidades que permitem o isolamento e contenção de aplicações. Apesar da recente exposição do termo, **essa tecnologia tem sua origem no UNIX V7, em 1979**,** **com a introdução do _chroot_. Depois disso, tivemos tecnologias como BSD Jails \(2000\), Solaris Zones \(2001\), Process Containers \(2006\) e LXC \(2008\).
+A tecnologia de container Linux é, na verdade, um conjunto de capacidades que permitem o isolamento e contenção de aplicações. Apesar da recente exposição do termo, **essa tecnologia tem sua origem no UNIX V7, em 1979**, ****com a introdução do _chroot_. Depois disso, tivemos tecnologias como BSD Jails \(2000\), Solaris Zones \(2001\), Process Containers \(2006\) e LXC \(2008\).
 
 ![](../.gitbook/assets/virtualization-vs-containers.png)
 
@@ -12,7 +12,7 @@ Ao contrário da tecnologia de virtualização que encapsula um sistema operacio
 * **Control Groups \(cgroups\):** _Permite agrupar processos para fins de gerenciamento de recursos do sistema, como uso de CPU e Memória principal. Dessa forma podemos implementar contenção do uso de recursos computacionais compartilhados do host._
 * **SELinux:** _Fornece uma segurança adicional, implementando uma camada de controle de acesso mandatório \(MAC\) complementar às permissões POSIX. O objetivo é os processos dentro do container interfiram com outros processos em execução no host._
 
-Apesar de ser uma tecnologia antiga, os containers ganharam popularidade principalmente pela sua **portabilidade ** e **simplicidade**. Soluções como [Docker](https://www.docker.com/) simplificaram a operacionalização de containers Linux \(das funcionalidades mencionada anteriormente\) e permitiram que este pudesse ser compartilhado através de imagens em formato padrão.
+Apesar de ser uma tecnologia antiga, os containers ganharam popularidade principalmente pela sua **portabilidade**  e **simplicidade**. Soluções como [Docker](https://www.docker.com/) simplificaram a operacionalização de containers Linux \(das funcionalidades mencionada anteriormente\) e permitiram que este pudesse ser compartilhado através de imagens em formato padrão.
 
 Além do Docker, existem também outras soluções de ferramental de containers no mercado:
 
@@ -23,7 +23,7 @@ Com o surgimento de novas tecnologias de containers e com uma grande demanda por
 
 ## O que são imagens e como funcionam?
 
-Os **containers são entidades efêmeras por natureza**, baseadas em imagens imutáveis. As imagens são a base de execução dos containers, e armazenam informações de **metadados \(parâmetros e \) **e os **dados \(executáveis, bibliotecas e arquivos\)** que serão usados na sua execução.
+Os **containers são entidades efêmeras por natureza**, baseadas em imagens imutáveis. As imagens são a base de execução dos containers, e armazenam informações de **metadados \(parâmetros e \)** e os **dados \(executáveis, bibliotecas e arquivos\)** que serão usados na sua execução.
 
 ![](../.gitbook/assets/docker-layered-filesystem.png)
 

@@ -27,7 +27,7 @@ Esse material é dividido em 3 partes:
 
 * [**Parte 1 - Linux Containers**](1-linux-containers/): _Material dedicado à discussão introdutória sobre a tecnologia de containers Linux._
 * [**Parte 2 - Plataforma OpenShift**](2-openshift/): _Material dedicado à discussão sobre a plataforma de containers OpenShift, principalmente pela perspectiva do usuário final._
-* [**Parte 3 - Conteúdo Extra**](3.0-extras/): _Material complementar dedicado à discussão de assuntos mais avançados._
+* [**Parte 3 - Conteúdo Extra**](): _Material complementar dedicado à discussão de assuntos mais avançados._
 
 ## Posso contribuir?
 
