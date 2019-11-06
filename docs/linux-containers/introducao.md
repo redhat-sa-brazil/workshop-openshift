@@ -62,19 +62,19 @@ __Veja abaixo algumas vantagens importantes para o uso de contêineres:__
 Os contêineres usam recursos internos do SO para criar um ambiente isolado
 em que os recursos são gerenciados usando recursos do SO. Essa abordagem
 minimiza a quantidade de sobrecarga de CPU e na memória em comparação a
-um hipervisor de máquina virtual. 
+um hipervisor de máquina virtual.
 
 - Isolamento de ambiente:
 
 Os contêineres funcionam em um ambiente fechado onde as alterações feitas
 no SO de host ou outros aplicativos não afetam o contêiner. Como as bibliotecas
 necessárias para um contêiner são autocontidas, o aplicativo pode ser executado
-sem interrupções. 
+sem interrupções.
 
 - Implantação rápida:
 
 Os contêineres são implantados rapidamente porque não há necessidade
-de instalar todo o sistema operacional subjacente. 
+de instalar todo o sistema operacional subjacente.
 
 - Implantação em múltiplos ambientes:
 
