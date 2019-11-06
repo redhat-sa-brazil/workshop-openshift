@@ -18,4 +18,4 @@ jobs:
       run:  gem install mdl
 
     - name: Run linter
-      run: mdl docs/
+      run: mdl -r ~MD013 docs/
