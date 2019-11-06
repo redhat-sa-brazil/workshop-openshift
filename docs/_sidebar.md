@@ -2,3 +2,7 @@
   - [Instruções](home)
 - **Linux Containers**
   - [Introdução](/linux-containers/introducao)
+- **Developer Experience**
+  - [Introdução](/developer-experience/introducao)
+  - [Build Automation](/developer-experience/build-automation)
+  - [Images e ImageStreams](/developer-experience/images-imagestreams)
