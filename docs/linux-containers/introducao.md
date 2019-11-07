@@ -144,3 +144,120 @@ Dentre os mais famosos temos:
 <https://registry.access.redhat.com>
 
 <https://registry.fedoraproject.org>
+
+## Laboratório
+
+Toda instalação do Podman acompanha configurações dos registros remotos mais comuns, podemos ver isso por meio do comando abaixo, que nos dá a informação dos registros pré configurados.
+
+```
+$ podman info
+
+[...]
+registries:
+  blocked: null
+  insecure: null
+  search:
+  - registry.redhat.io
+  - registry.access.redhat.com
+  - quay.io
+  - docker.io
+[...]
+
+```
+
+Para buscar imagens nos registros configurados, usa-se:
+
+```
+$ podman search centos
+
+INDEX       NAME                                                        DESCRIPTION                                       STARS   OFFICIAL   AUTOMATED
+quay.io     quay.io/jdeathe/centos-ssh-haproxy                 ## Overview  This build uses the base image ...   0
+quay.io     quay.io/reynn/ansible-centos                                                                         0
+quay.io     quay.io/sdase/centos                                                                                 0
+docker.io   docker.io/library/centos                           The official build of CentOS.                     5657    [OK]
+docker.io   docker.io/pivotaldata/centos-gpdb-dev              CentOS image for GPDB development. Tag names...   10
+                1                  [OK]
+[...]
+```
+
+Nesse caso ele iá buscar as imagens do CentOS no registry.redhat.io, registry.access.redhat.com, quay.io e docker.io. Estes já vem pŕe configurados com o Podman.
+
+Você também pode filtrar pelo número de estrelas que um repositório possui, para isso basta passar o parametro *--filter=stars=10*.
+Abaixo a busca traz somente resultados que tenham mais que 10 estrelas.
+
+```
+$ podman search centos --filter=stars=10
+
+INDEX       NAME                                        DESCRIPTION                                       STARS   OFFICIAL   AUTOMATED
+docker.io   docker.io/library/centos                    The official build of CentOS.                     5657    [OK]
+docker.io   docker.io/pivotaldata/centos-gpdb-dev       CentOS image for GPDB development. Tag names...   10
+docker.io   docker.io/jdeathe/centos-ssh                OpenSSH / Supervisor / EPEL/IUS/SCL Repos - ...   114                [OK]
+docker.io   docker.io/ansible/centos7-ansible           Ansible on Centos7                                125                [OK]
+docker.io   docker.io/consol/centos-xfce-vnc            Centos container with "headless" VNC session...   100                [OK]
+docker.io   docker.io/kinogmt/centos-ssh                CentOS with SSH                                   29                 [OK]
+docker.io   docker.io/imagine10255/centos6-lnmp-php56   centos6-lnmp-php56                                57                 [OK]
+docker.io   docker.io/tutum/centos                      Simple CentOS docker image with SSH access        44
+docker.io   docker.io/centos/mysql-57-centos7           MySQL 5.7 SQL database server                     64
+docker.io   docker.io/centos/postgresql-96-centos7      PostgreSQL is an advanced Object-Relational ...   39
+docker.io   docker.io/centos/httpd-24-centos7           Platform for running Apache httpd 2.4 or bui...   26
+```
+
+## Baixando imagens dos registros
+
+Além de nome, imagens possuem tags (sufixo separado por ':') que podem identificar versões ou variações de uma imagem específica. Para baixar uma imagem para o storage local de imagens, usa-se:
+
+```
+$ podman pull centos:7
+[...]
+```
+
+É possível também baixar imagens de registries específicos quando especificamos isso na linha de comando. No exemplo abaixo utilizaremos o registry oficial da Red Hat.
+
+```
+$ podman pull registry.access.redhat.com/rhel-atomic
+
+podman pull registry.access.redhat.com/rhel-atomic
+Trying to pull registry.access.redhat.com/rhel-atomic...Getting image source signatures
+Copying blob 72325e24e69c done
+Copying blob be2a678047d5 done
+Copying config d8bc85b978 done
+Writing manifest to image destination
+Storing signatures
+d8bc85b978032f3af9b012900e9d4f1331c71500008b0d9a617fdbd8fcac902c
+```
+
+Para verificar quais imagens estão disponíveis localmente, usa-se:
+
+```
+$ podman images
+
+REPOSITORY                               TAG      IMAGE ID       CREATED       SIZE
+registry.access.redhat.com/rhel-atomic   latest   d8bc85b97803   4 weeks ago   80.9 MB
+```
+
+## Removendo imagens locais
+
+Para remover as imagens do repositório local, usa-se:
+
+```
+$ podman rmi <ID/tag>
+[...]
+```
+
+Vamos remover a imagem do rhel atomic baixado anteriormente:
+
+```
+$ podman imagens | grep rhel-atomic
+[...]
+```
+
+Tendo o ID da imagem, podemos apagá-la:
+
+```
+$ podman rmi d8bc85b97803
+
+$ podman images
+REPOSITORY   TAG   IMAGE ID   CREATED   SIZE
+```
+
+Caso a imagem já esteja sendo utilizada por um container, o podman não irá executar a exclusão da imagem e retornará o ID do container para que você exclua o container e em seguida a imagem.
