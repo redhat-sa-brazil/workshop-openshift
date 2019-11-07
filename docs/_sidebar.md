@@ -4,9 +4,4 @@
   - [Introdução](/linux-containers/introducao)
   - [Podman, Buildah e Skopeo no RHEL 8](/linux-containers/podman)
   - [RedHat Quay e Docker Hub](/linux-containers/registros)
-- **Openshift básico**
-  - [Definição OpenShift](/openshift-basico/openshift)
-  - [Componentes e Arquitetura básica](/openshift-basico/componentes-arqui)
-  - [Instaladores (IPI vs UPI)](/openshift-basico/Instaladores)
-  - [CodeReady Container(CRC)](/openshift-basico/crc)
-  - [Interfaces - Web Console e 'oc'](/openshift-basico/interfaces)
+
