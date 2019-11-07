@@ -2,3 +2,9 @@
   - [Instruções](home)
 - **Linux Containers**
   - [Introdução](/linux-containers/introducao)
+- **OpenShift básico**
+  - [Definição OpenShift](/openshift-basico/openshift)
+  - [Componentes e arquitetura basica](/openshift-basico/comp-arqui)
+  - [Instaladores(IPI vs UPI)](/openshift-basico/instal)
+  - [CodeReady Container(CRC)](/openshift-basico/crc)
+  - [Interfaces - WebConsole e 'oc'](/openshift-basico/interfaces) 
