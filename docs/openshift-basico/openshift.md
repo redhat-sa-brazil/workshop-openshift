@@ -39,7 +39,6 @@ sem bloqueio de fornecedor.
 
 O OpenShift fornece segurança em várias camadas usando o SELinux, controle de acesso baseado em função e a capacidade de integração com sistemas de autenticação externos.
 
-
 - Gerenciamento de armazenamento dinâmico:
 
 O OpenShift fornece gerenciamento de armazenamento estático e dinâmico para dados de contêiner, usando os conceitos de Volumes Persistentes e Declarações de Volume Persistente do Kubernetes.
