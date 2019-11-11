@@ -101,19 +101,9 @@ conceito de imagem, que será nosso próximo tópico nesse guia.
 
 ## O que são imagens e como funcionam
 
-As  imagens são a base para a execução de contêineres. A imagem é um pacote de sistema de arquivos
-que contém todas as dependências necessárias para executar um processo: **arquivos de  configuração, pacotes de sistema, bibliotecas, etc.**
-Os contêineres em execução usam uma visualização imutável da
-imagem, permitindo que vários contêineres utilizem a mesma imagem
-simultaneamente.
-
-Como mecanismo de otimização, de espaço e de performance, essas imagens são construídas em camadas sobrepostas, também imutáveis. Dessa forma conseguimos aproveitar camadas comuns entre as diferentes imagens, poupando espaço de armazenamento e melhorando a performance. Por exemplo:
+A imagem é um pacote de sistema de arquivos que contém todas as dependências necessárias para executar um processo: **arquivos de  configuração, pacotes de sistema, bibliotecas, etc.**
 
 ![Imagem de Container](../images/imagem_container.png)
-
-Como as imagens são arquivos, elas podem ser gerenciadas
-por sistemas de controle de versão, aprimorando a automação no contêiner
-e o provisionamento de imagens.
 
 ## Onde as imagens ficam armazenadas
 
