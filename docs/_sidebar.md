@@ -7,4 +7,4 @@
   - [Componentes e arquitetura basica](/openshift-basico/comp-arqui)
   - [Instaladores(IPI vs UPI)](/openshift-basico/instal)
   - [CodeReady Container(CRC)](/openshift-basico/crc)
-  - [Interfaces - WebConsole e 'oc'](/openshift-basico/interfaces) 
+  - [Interfaces - WebConsole e 'oc'](/openshift-basico/interfaces)
