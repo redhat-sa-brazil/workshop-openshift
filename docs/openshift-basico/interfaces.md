@@ -80,7 +80,7 @@ NAME                  READY   STATUS      RESTARTS   AGE     IP            NODE 
 
 ## Escalando pods
 
-Use o comando `oc pods` para escalar um pod específico.
+Use o comando `oc scale` para escalar um pod específico.
 
 ```
 $ oc scale dc web --replicas=2
