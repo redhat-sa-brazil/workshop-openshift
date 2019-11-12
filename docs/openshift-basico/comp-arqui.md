@@ -1,9 +1,9 @@
 
 # Arquitetura e Componentes
 
-![Arquitetura e Componentes](../images/arqui-comp.png)
-
 O OpenShift é executado em uma variedade de plataformas de infraestrutura, do bare metal à nuvem privada e à nuvem pública.
+
+![Arquitetura e Componentes](../images/arqui-comp.png)
 
 Existem dois tipos de ***hosts*** em um ambiente OpenShift. **Worker nodes** são onde a carga de trabalho do usuário e vários componentes do OpenShift rodarão. Os worker nodes podem ser facilmente dimensionados e, em provedores de nuvem, até dimensionados automaticamente com base na capacidade do cluster.
 
