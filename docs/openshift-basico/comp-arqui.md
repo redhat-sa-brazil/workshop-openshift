@@ -52,3 +52,5 @@ O OpenShift também inclui uma solução de agregação de logs baseada no **Flu
 O OpenShift estende os recursos de entrada do Kubernetes com um roteador integrado que une o tráfego de fora do cluster para a rede definida por software `(SDN)`. Essa solução de roteamento facilita a exposição da carga de trabalho e a acessibilidade dos consumidores que não estão dentro do cluster.
 
 ![Arquitetura e Componentes](resources/images/13.png)
+
+**Próximo:** [Instaladores e arquitetura básica](/openshift-basico/instal)

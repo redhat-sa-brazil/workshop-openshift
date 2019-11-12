@@ -15,3 +15,5 @@ Embora esse método de instalação seja altamente confiável e ofereça uma imp
 ## Comparação
 
 ![IPI](resources/images/comparacao.png)
+
+**Próximo:** [CodeReady Container](/openshift-basico/crc)
