@@ -50,3 +50,5 @@ $ crc start
 Após o serviço ser inicializado, o cluster local deveria estar pronto para receber as operações e comandos desejados. Por exemplo, a partir desse ponto, você pode inicializar o web console, configurar o serviço para ser explorado via `oc` cli, bem como acessar as funcionalidades providenciadas pelo CodeReady Containers através da sua CLI.
 
 Mais informações sobre uso e comandos do CodeReady Containers: <https://code-ready.github.io/crc/#common-tasks_gsg>
+
+**Próximo:** [Interfaces - WebConsole e 'oc'](/openshift-basico/interfaces)
