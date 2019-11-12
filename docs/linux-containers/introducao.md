@@ -251,3 +251,5 @@ REPOSITORY   TAG   IMAGE ID   CREATED   SIZE
 ```
 
 Caso a imagem já esteja sendo utilizada por um container, o podman não irá executar a exclusão da imagem e retornará o ID do container para que você exclua o container e em seguida a imagem.
+
+**Próximo:** [Podman, Buildah e Skopeo](/linux-containers/podman)

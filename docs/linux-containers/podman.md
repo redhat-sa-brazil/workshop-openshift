@@ -96,3 +96,5 @@ $ skopeo inspect registry.access.com/rhel:latest
 ```
 
 Esses e outros comandos, bem como seus argumentos e flags, poderão ser explorados à seguir nos próximos capítulos do workshop onde aprofundaremos um pouco o conhecimento sobre containers e orquestração.
+
+**Próximo:** [Registros](/linux-containers/registros)
