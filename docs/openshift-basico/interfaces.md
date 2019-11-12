@@ -63,63 +63,98 @@ Now using project "openshift-demo" on server "https://seu-link".
 ## Criando um novo aplicativo
 
 ```
-$ oc new-app https://github.com/sclorg/cakephp-ex //VOLTAR
---> Found image 40de956 (9 days old) in imagestream "openshift/php" under tag "7.2" for "php"
-
+$ oc new-app https://github.com/redhat-sa-brazil/demo-openshift-python.git' --name='web'
 (...)
-
-    Run 'oc status' to view your app.
 ```
 
 ## Visualizando pods
 
 Use o comando oc get pods para visualizar os pods do projeto atual.
-Viewpods.png
 
-## Visualizando logs de pod
+```
+$ oc get pods
+NAME                  READY   STATUS      RESTARTS   AGE     IP            NODE                           NOMINATED NODE
+<<nome do pod>>       0/1     Completed   0          5m45s   10.131.0.10   <<identificação do node>>      <none>
+(...)
+```
 
-Use o comando oc logs para visualizar os logs de um pod específico.
-Viewpods2.png
+## Escalando pods
 
-## Visualizando o Projeto Atual
+Use o comando oc pods para escalar um pod específico.
 
-Use o comando oc project para visualizar o projeto atual.
-Viewproject.png
+```
+$ oc scale dc web --replicas=2
+(...)
+```
 
-## Visualizando o status do projeto atual
+## Expondo o componente
 
-Use o comando oc status para visualizar informações sobre o projeto atual, como Serviços, DeploymentConfigs e BuildConfigs.
-Projectstatus.png
+Use o comando oc expose para criar uma rota pública e expor o componente web.
+
+```
+$ oc expose service/web --hostname='demo.apps.ocp.acme.com'
+(...)
+```
 
 ## Listando recursos de API suportados
 
 Use o comando oc api-resources para visualizar a lista de recursos da API suportados no servidor.
-Api.png
+
+```
+$ oc api-resources
+(...)
+```
+
+Pode pode ainda usar o comando oc explain para explicação de cada _api-resource_.
 
 ## Ajuda
 
-Você pode obter ajuda com os comandos da CLI e os recursos da OpenShift Container Platform das seguintes maneiras:
+Adicionalmente, você pode obter ajuda com os comandos da CLI e os recursos da OpenShift Container Platform das seguintes maneiras:
 Use oc help para obter uma lista e descrição de todos os comandos da CLI disponíveis:
 
-Exemplo: obtenha ajuda geral para a CLI
-Ochelp.png
+```
+$ oc help
 
-Use o sinalizador --help para obter ajuda sobre um comando específico da CLI:
+OpenShift Client
 
-Exemplo: obtenha ajuda para o comando oc create
-Ochelp2.png
+This client helps you develop, build, deploy, and run your applications on any
+OpenShift or Kubernetes cluster. It also includes the administrative
+commands for managing a cluster under the 'adm' subcommand.
 
-Use o comando oc explan para visualizar a descrição e os campos de um recurso específico:
-ochelp3.png
+Usage:
+  oc [flags]
+
+Basic Commands:
+  login           Log in to a server
+  new-project     Request a new project
+
+(...)
+```
+
+Você ainda pode usar o sinalizador --help para obter ajuda sobre um comando específico da CLI:
+
+```
+$ oc create --help
+
+Create a resource from a file or from stdin.
+
+ JSON and YAML formats are accepted.
+
+Usage:
+  oc create -f FILENAME [flags]
+(...)
+```
 
 ## Desconectando-se da CLI
 
 Você pode desconectar a CLI para encerrar sua sessão atual.
-
 Use o comando oc logout.
 
-logout.png
-Isso exclui o token de autenticação salvo do servidor e o remove do seu arquivo de configura
-ção.
+```
+$ oc logout
+(...)
+```
+
+Isso exclui o token de autenticação salvo do servidor e o remove do seu arquivo de configuração.
 
 Se você quiser saber mais sobre os comandos oc , como Developer CLI commands  e Administrator CLI commands basta acessar o link <https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/getting-started-cli.html> e será direcionado para documentação na qual explica cada um dos comandos disponíveis a serem usados no terminal.
