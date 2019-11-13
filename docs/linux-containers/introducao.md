@@ -3,62 +3,23 @@
 
 ## Afinal, o que são containers
 
-A tecnologia de container Linux é, na verdade, um conjunto de capacidades
-que permitem o isolamento e contenção de aplicações. Apesar da recente
-exposição do termo, essa é uma tecnologia que vem sendo aprimorada desde
-o UNIX, com o chroot, ou do BSD, com o Jails.
+A tecnologia de container Linux é, na verdade, um conjunto de capacidades que permitem o isolamento e contenção de aplicações. Apesar da recente exposição do termo, essa é uma tecnologia que vem sendo aprimorada desde o UNIX, com o chroot, ou do BSD, com o Jails.
 
 ![Virtualizacao](../images/kubernets.png)
 
-Ao contrário da tecnologia de virtualização que encapsula um
-sistema operacional completo em cima de um hardware virtual
-para usar como casulo para aplicações, containers usam de
-funcionalidades nativas do kernel Linux
-para garantir isolamento e contenção das aplicações,
-como por exemplo:
+Ao contrário da tecnologia de virtualização que encapsula um sistema operacional completo em cima de um hardware virtual para usar como casulo para aplicações, containers usam de funcionalidades nativas do kernel Linux para garantir isolamento e contenção das aplicações, como por exemplo:
 
-- Namespaces:
+- **Namespaces:** *Permite criar uma abstração de um recurso de sistema global particular e fazê-lo aparecer como uma instância separada para processos dentro de um namespace. Conseqüentemente, vários containers podem usar o mesmo recurso simultaneamente sem criar um conflito.*
 
-Permite criar uma abstração de um recurso de sistema
-global particular e fazê-lo aparecer como uma instância separada
-para processos dentro de um namespace. Conseqüentemente,
-vários containers podem usar o mesmo recurso simultaneamente
-sem criar um conflito.
+- **Control Groups (cgroups):** *Permite agrupar processos para fins de gerenciamento de recursos do sistema. Os Cgroups alocam o tempo da CPU, a memória do sistema, a largura de banda da rede ou combinações destes entre os grupos de tarefas definidos pelo usuário.*
 
-- Control Groups (cgroups):
+- **SELinux:** *Fornece uma separação segura, pois impede que os processos raiz dentro do container interfiram com outros processos globais.*
 
-Permite agrupar processos para fins
-de gerenciamento de recursos do sistema. Os Cgroups alocam o
-tempo da CPU, a memória do sistema, a largura de banda da rede
-ou combinações destes entre os grupos de tarefas definidos
-pelo usuário.
+- **Linux Capabilities:** *Permite a limitação dos privilégios disponíveis a processos que rodam como root em pequenos grupos de privilégios. Desse modo, um processo rodando com privilégios de root pode ser limitado a obter apenas as permissões mínimas que ele precisa para executar suas tarefas.*
 
-- SELinux:
+Apesar das diversas funcionalidades, existem situações que podem não funcionar conforme esperado quando executamos, por exemplo, um container com Ubuntu em um servidor hospedeiro rodando CentOS. Vale sempre lembrar que, container é linux e sua execução depende das bibliotecas e principalmente do kernel do host. Há muitos mecanismos de contêiner disponíveis para gerenciar e executar contêineres individuais, incluindo *Rocket, Drawbridge, LXC, Docker e Podman.*
 
-Fornece uma separação segura, pois impede que os
-processos raiz dentro do container interfiram com outros processos globais.
-
-- Linux Capabilities:
-
-Permite a limitação dos privilégios
-disponíveis a processos que rodam como root em pequenos grupos de privilégios.
-Desse modo, um processo rodando com privilégios de root pode ser limitado
-a obter apenas as permissões mínimas que ele precisa para executar suas tarefas.
-_______________________________________________________________________________________
-Apesar das diversas funcionalidades, existem situações que podem
-não funcionar conforme esperado quando executamos, por exemplo,
-um container com Ubuntu em um servidor hospedeiro rodando CentOS.
-Vale sempre lembrar que, container é linux e sua execução depende
-das bibliotecas e principalmente do kernel do host.
-Há muitos mecanismos de contêiner disponíveis para gerenciar e executar
-contêineres individuais, incluindo *Rocket, Drawbridge, LXC, Docker e Podman.*
-
-Apesar de ser uma tecnologia antiga, os containers ganharam mais popularidade
-hoje em dia principalmente pela sua portabilidade. Soluções como Docker
-ficaram realmente atrativas quando permitiram que um container pudesse
-ser compartilhado entre infraestruturas heterogêneas. Isso foi possível
-graças a criação do
-conceito de imagem, que será nosso próximo tópico nesse guia.
+Apesar de ser uma tecnologia antiga, os containers ganharam mais popularidade hoje em dia principalmente pela sua portabilidade. Soluções como Docker ficaram realmente atrativas quando permitiram que um container pudesse ser compartilhado entre infraestruturas heterogêneas. Isso foi possível graças a criação do conceito de imagem, que será nosso próximo tópico nesse guia.
 
 ## O que são imagens e como funcionam
 
@@ -68,23 +29,15 @@ A imagem é um pacote de sistema de arquivos que contém todas as dependências 
 
 ## Onde as imagens ficam armazenadas
 
-As imagens do contêiner precisam estar disponíveis localmente
-para que o tempo de execução do contêiner as execute, elas
-geralmente são armazenadas e mantidas em um repositório de imagens.
+As imagens do contêiner precisam estar disponíveis localmente para que o tempo de execução do contêiner as execute, elas geralmente são armazenadas e mantidas em um repositório de imagens.
 
-Existem dois tipos de repositórios, ou registros, importantes
-para armazenamento das imagens de containers: **registro local (ou storage local)
-e registros remotos (públicos/privados).**
+Existem dois tipos de repositórios, ou registros, importantes para armazenamento das imagens de containers: **registro local (ou storage local) e registros remotos (públicos/privados).**
 
-O **storage local** é um espaço de armazenamento especial que reside
-no mesmo host que executa os containers. Esse é usado para armazenar
-as imagens que serão usadas para executar containers nessa máquina,
-servindo como uma camada de cache. Esse é o primeiro repositório a
-ser consultado em busca de imagens.
+O **storage local** é um espaço de armazenamento especial que reside no mesmo host que executa os containers. Esse é usado para armazenar as imagens que serão usadas para executar containers nessa máquina, servindo como uma camada de cache. Esse é o primeiro repositório a ser consultado em busca de imagens.
 
 Para `buscar imagens nos registros` configurados, usa-se:
 
-```
+```bash
 $ podman search centos
 
 INDEX       NAME                                                        DESCRIPTION                                       STARS   OFFICIAL   AUTOMATED
@@ -97,12 +50,11 @@ docker.io   docker.io/pivotaldata/centos-gpdb-dev              CentOS image for 
 [...]
 ```
 
-Nesse caso ele iá buscar as imagens do CentOS no registry.redhat.io, registry.access.redhat.com, quay.io e docker.io. Estes já vem pŕe configurados com o Podman.
+Nesse caso ele iá buscar as imagens do CentOS no `registry.redhat.io`, `registry.access.redhat.com`, `quay.io` e `docker.io`. Estes já vem pŕe configurados com o Podman.
 
-Você também pode filtrar pelo número de estrelas que um repositório possui, para isso basta passar o parametro *--filter=stars=10*.
-Abaixo a busca traz somente resultados que tenham mais que 10 estrelas.
+Você também pode filtrar pelo número de estrelas que um repositório possui, para isso basta passar o parâmetro `--filter=stars=10`. Abaixo a busca traz somente resultados que tenham mais que 10 estrelas.
 
-```
+```bash
 $ podman search centos --filter=stars=10
 
 INDEX       NAME                                        DESCRIPTION                                       STARS   OFFICIAL   AUTOMATED
@@ -120,12 +72,12 @@ docker.io   docker.io/centos/httpd-24-centos7           Platform for running Apa
 
 ```
 
-***Toda instalação do Podman acompanha configurações dos registros remotos mais comuns, podemos ver isso por meio do comando abaixo, que nos dá a informação dos registros pré configurados.***
+Toda instalação do Podman acompanha configurações dos registros remotos mais comuns, podemos ver isso por meio do comando abaixo, que nos dá a informação dos registros pré configurados.
 
-```
+```bash
 $ podman info
 
-[...]
+(...)
 registries:
   blocked: null
   insecure: null
@@ -134,60 +86,61 @@ registries:
   - registry.access.redhat.com
   - quay.io
   - docker.io
-[...]
+(...)
 
 ```
 
-Para `remover as imagens do repositório local`, usa-se:
+Para remover as imagens do repositório local, usa-se:
 
-```
+```bash
 $ podman rmi <ID/tag>
-[...]
+
+(...)
 ```
 
 Vamos remover a imagem do rhel atomic:
 
-```
+```bash
 $ podman imagens | grep rhel-atomic
-[...]
+
+(...)
 ```
 
 Primeiro efetuamos a busca acima, para obter o ID, tendo o ID da imagem, podemos apagá-la:
 
-```
+```bash
 $ podman rmi d8bc85b97803
 
+d8bc85b97803
+
 $ podman images
+
 REPOSITORY   TAG   IMAGE ID   CREATED   SIZE
 ```
 
 Caso a imagem já esteja sendo utilizada por um container, o podman não irá executar a exclusão da imagem e retornará o ID do container para que você exclua o container e em seguida a imagem.
 
-Os **registros remotos** são servidores, públicos ou privados,
-responsáveis por compartilhar imagens construidas por
-entidades e/ou usuários. Estes registros podem permitir não
-só o acesso para download de imagens, mas também envio
-de imagens novas por usuários autenticados/autorizados.
-Dentre os mais famosos temos:
+Os **registros remotos** são servidores, públicos ou privados, responsáveis por compartilhar imagens construídas por entidades e/ou usuários. Estes registros podem permitir não só o acesso para download de imagens, mas também envio de imagens novas por usuários autenticados/autorizados. Dentre os mais famosos temos:
 
-<https://quay.io>
+- <https://quay.io>
 
-<https://hub.docker.com>
+- <https://hub.docker.com>
 
-<https://registry.access.redhat.com>
+- <https://registry.access.redhat.com>
 
-<https://registry.fedoraproject.org>
+- <https://registry.fedoraproject.org>
 
 Além de nome, imagens possuem tags (sufixo separado por ':') que podem identificar versões ou variações de uma imagem específica. Para `baixar uma imagem para o storage local de imagens`, usa-se:
 
-```
+```bash
 $ podman pull centos:7
-[...]
+
+(...)
 ```
 
 É possível também `baixar imagens de registries específicos` quando especificamos isso na linha de comando. No exemplo abaixo utilizaremos o registry oficial da Red Hat.
 
-```
+```bash
 $ podman pull registry.access.redhat.com/rhel-atomic
 
 podman pull registry.access.redhat.com/rhel-atomic
