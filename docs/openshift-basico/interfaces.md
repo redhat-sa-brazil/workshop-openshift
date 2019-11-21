@@ -19,24 +19,27 @@ $ oc < comando >
 
 Caso você queira instalar na sua máquina local, você pode baixar e descompactar a CLI com uma assinatura ativa do OpenShift Enterprise no Red Hat Customer Portal ou através do link: <https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/>
 
+## Pré-requisitos
+
+- Você deve ter acesso a um cluster da Plataforma OpenShift Container.
+- Você deve ter o link de acesso ao Console, seja ele local ou providenciado pelo instrutor.
+- Você deve ter instalado a CLI.
+
 ## Efetuando login no Console
 
 Você pode efetuar login via console para acessar e gerenciar seu cluster.
 
-Acesse o link disponibilizado de Web Console, e insira as credencias fornecidas.
+Acesse o link disponibilizado de Web Console, e insira as credenciais.
 
-![]()
+![Login Screen](resources/images/login-screen.png)
+
+Em seguida, você deveria ver o dashboard principal da Openshift Container Platform.
+
+![Dashboard](resources/images/dashboard.png)
 
 ## Efetuando login na CLI
 
 Você também pode efetuar login via CLI para acessar e gerenciar seu cluster.
-
-### Pré-requisitos
-
-- Você deve ter acesso a um cluster da Plataforma OpenShift Container.
-- Você deve ter instalado a CLI.
-
-#### Procedimento
 
 Efetue login na CLI usando o comando `oc login` e insira as informações necessárias quando solicitado.
 
@@ -76,6 +79,10 @@ $ oc new-project openshift-demo
 Now using project "openshift-demo" on server "https://seu-link".
 ```
 
+Similarmente, no console, acesse a aba `Home` e selecione `Projects` no sidebar à esquerda e você poderá visualizar e criar novos projetos através do botão em azul `Create Project`.
+
+![Projetos](resources/images/projects-page-ocp.png)
+
 ## Visualizando pods
 
 Use o comando `oc get pods` para visualizar os pods do projeto atual. Caso seu projeto tenha ao menos um pod, a saída será a seguinte:
@@ -86,6 +93,10 @@ NAME                  READY   STATUS      RESTARTS   AGE     IP            NODE 
 <<nome do pod>>       0/1     Completed   0          5m45s   10.131.0.10   <<identificação do node>>      <none>
 (...)
 ```
+
+Similarmente, no console, acesse a aba `Workloads` e selecione `Pods` no sidebar à esquerda e você poderá visualizar e gerenciar os pods do projeto em questão.
+
+![Pods](resources/images/pods-page-ocp.png)
 
 ## Listando recursos de API suportados
 
@@ -152,6 +163,9 @@ Usage:
 (...)
 ```
 
+Ou ainda, caso queira explorar mais o web console, bem como configurá-la corretamente, acesse a documentação oficial.
+[Web Console - Documentação Oficial Red Hat](https://docs.openshift.com/container-platform/4.2/web-console/web-console.html)
+
 ## Desconectando-se da CLI
 
 Você pode desconectar a CLI para encerrar sua sessão atual.
@@ -163,6 +177,8 @@ $ oc logout
 ```
 
 Isso exclui o token de autenticação salvo do servidor e o remove do seu arquivo de configuração.
+
+Similarmente, você pode deslogar do console na barra de navegação no alto da tela, e selecionar `Log out`.
 
 Veremos com mais detalhes sobre como criar e gerenciar nossas aplicações no capítulo à seguir.
 **Pŕoximo:** [Automação de Build](/developer-experience/build-automation)
