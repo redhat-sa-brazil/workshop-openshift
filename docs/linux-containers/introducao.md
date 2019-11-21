@@ -35,7 +35,7 @@ Existem dois tipos de repositórios, ou registros, importantes para armazenament
 
 O **storage local** é um espaço de armazenamento especial que reside no mesmo host que executa os containers. Esse é usado para armazenar as imagens que serão usadas para executar containers nessa máquina, servindo como uma camada de cache. Esse é o primeiro repositório a ser consultado em busca de imagens.
 
-Para `buscar imagens nos registros` configurados, usa-se:
+Para **buscar imagens nos registros** configurados, usa-se:
 
 ```bash
 $ podman search centos
