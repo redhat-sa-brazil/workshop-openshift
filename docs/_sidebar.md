@@ -1,7 +1,5 @@
 - **Preparação**
   - [Instruções](home)
-- **Linux Containers**
-  - [Introdução](/linux-containers/introducao)
 - **OpenShift básico**
   - [Definição OpenShift](/openshift-basico/openshift)
   - [Componentes e arquitetura basica](/openshift-basico/comp-arqui)
